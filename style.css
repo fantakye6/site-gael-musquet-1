@@ -7,6 +7,37 @@ body {
     color: #1f2937;
 }
 
+/* Navbar / Onglets */
+.navbar {
+    background-color: #0e7490;
+    padding: 0.5rem;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 1rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
 /* Hero / bandeau */
 .hero {
     background: url('assets/worldmap.jpg') center/cover no-repeat;
@@ -23,6 +54,11 @@ body {
     background-color: rgba(14, 116, 144, 0.6);
     padding: 2rem;
     border-radius: 10px;
+}
+
+#hero-text {
+    opacity: 0; /* commence invisible */
+    transition: opacity 2s;
 }
 
 /* Titres */
@@ -78,6 +114,34 @@ h2 {
     margin: 3rem auto;
     padding: 0 1rem;
     text-align: center;
+}
+
+.gallery .images {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 300px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+/* Footer */
+footer {
+    background-color: #e2e8f0;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #0e7490;
+    text-decoration: none;
 }
 
 .gallery .images {

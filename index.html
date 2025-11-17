@@ -6,12 +6,24 @@
     <title>Gaël Musquet – Humanitaire et Données</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navigation / onglets -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="biographie.html"><i class="fas fa-user"></i> Biographie</a></li>
+            <li><a href="engagements.html"><i class="fas fa-hands-helping"></i> Projets</a></li>
+            <li><a href="vision.html"><i class="fas fa-lightbulb"></i> Vision & Valeurs</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
     <!-- Hero / Bandeau principal -->
     <header class="hero">
         <div class="hero-overlay">
-            <h1>“Il n’y a pas de résilience sans partage de l’information.”</h1>
+            <h1 id="hero-text">“Il n’y a pas de résilience sans partage de l’information.”</h1>
             <p>— Gaël Musquet</p>
         </div>
     </header>
@@ -20,8 +32,7 @@
     <section class="intro">
         <img src="images/gael-musquet.jpg" alt="Portrait de Gaël Musquet" class="portrait">
         <h2>Gaël Musquet – L’humanitaire à travers la donnée</h2>
-        <p>Météorologue de formation et hacker citoyen, Gaël Musquet place la technologie au service de l’humain.
-        À travers des initiatives comme HAND et OpenStreetMap, il mobilise la cartographie et les données libres pour sauver des vies, reconstruire après les catastrophes et redonner du pouvoir aux citoyens.</p>
+        <p>Météorologue de formation et hacker citoyen, Gaël Musquet place la technologie au service de l’humain. À travers des initiatives comme HAND et OpenStreetMap, il mobilise la cartographie et les données libres pour sauver des vies et redonner du pouvoir aux citoyens.</p>
         <p>Son engagement illustre une conviction simple : la technologie n’a de sens que si elle renforce la solidarité et la résilience collective.</p>
     </section>
 
@@ -30,21 +41,4 @@
         <a href="engagements.html" class="btn-primary">Découvrir ses projets humanitaires</a>
     </section>
 
-    <!-- Galerie / images représentatives -->
-    <section class="gallery">
-        <h2>Galerie & Témoignages</h2>
-        <div class="images">
-            <img src="assets/map1.jpg" alt="Carte OpenStreetMap" />
-            <img src="assets/hand1.jpg" alt="HAND - Hackers Against Natural Disasters" />
-            <img src="assets/sosmed.jpg" alt="SOS Méditerranée" />
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 – Site réalisé dans le cadre du projet BUT. Inspiration humanitaire et données ouvertes.</p>
-        <p><a href="contact.html">Contact & Sources</a></p>
-    </footer>
-</body>
-</html>
-
+    <!-- Galerie
