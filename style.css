@@ -1,4 +1,4 @@
-/* Polices globales */
+/* =================== Polices globales =================== */
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
@@ -7,7 +7,7 @@ body {
     color: #1f2937;
 }
 
-/* Navbar / Onglets encadrés en ligne */
+/* =================== Navbar / Onglets =================== */
 .navbar {
     background-color: #faf9f5;
     padding: 1rem 0;
@@ -41,7 +41,7 @@ body {
     color: white;
 }
 
-/* Hero / bandeau */
+/* =================== Hero / Bandeau principal =================== */
 .hero {
     background: url('assets/worldmap.jpg') center/cover no-repeat;
     height: 60vh;
@@ -81,7 +81,7 @@ body {
     100% { transform: translateX(-100%); }
 }
 
-/* Titres */
+/* =================== Titres =================== */
 h1, h2 {
     font-family: 'Lato', sans-serif;
 }
@@ -96,7 +96,7 @@ h2 {
     margin-bottom: 1rem;
 }
 
-/* Intro / accroche + portrait stylé + pin */
+/* =================== Intro / Portrait =================== */
 .intro {
     max-width: 800px;
     margin: 2rem auto;
@@ -141,7 +141,7 @@ h2 {
     transform: translateX(-50%) rotate(0deg) scale(1.05);
 }
 
-/* Section projets */
+/* =================== Section Projets =================== */
 .projects {
     max-width: 1000px;
     margin: 3rem auto;
@@ -175,7 +175,7 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
-/* Galerie */
+/* =================== Galerie =================== */
 .gallery {
     max-width: 1000px;
     margin: 3rem auto;
@@ -198,7 +198,7 @@ h2 {
     transition: all 1s ease;
 }
 
-/* Footer */
+/* =================== Footer =================== */
 footer {
     background-color: #e2e8f0;
     text-align: center;
@@ -210,7 +210,8 @@ footer a {
     color: #0e7490;
     text-decoration: none;
 }
-/* ===== Effet Hacker / Terminal ===== */
+
+/* =================== Effet Hacker / Terminal =================== */
 .hacker-text-container {
     margin-top: 20px;
     display: flex;
@@ -233,7 +234,7 @@ footer a {
     animation: glow 2s infinite alternate;
 }
 
-/* Effet de glow hacking */
+/* Effet glow hacking */
 @keyframes glow {
     0% { box-shadow: 0 0 10px rgba(0,255,200,0.2); }
     100% { box-shadow: 0 0 30px rgba(0,255,200,0.6); }
@@ -257,7 +258,7 @@ footer a {
     padding: 0;
 }
 
-/* Alignement du titre */
+/* Titre de section */
 .section-title {
     text-align: center;
     margin-bottom: 15px;
