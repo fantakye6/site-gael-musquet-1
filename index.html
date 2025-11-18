@@ -3,81 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaël Musquet – Humanitaire et Données</title>
+    <title>Gaël Musquet – Humanité & Technologie</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-    <!-- Navigation / onglets encadrés -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
-            <li><a href="biographie.html"><i class="fas fa-user"></i> Biographie</a></li>
-            <li><a href="engagements.html"><i class="fas fa-hands-helping"></i> Projets</a></li>
-            <li><a href="vision.html"><i class="fas fa-lightbulb"></i> Vision & Valeurs</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
-    </nav>
 
-    <!-- Hero / Bandeau principal -->
-    <header class="hero">
-        <div class="hero-overlay">
-            <div class="marquee">
-                <span id="hero-text">“Il n’y a pas de résilience sans partage de l’information.” — Gaël Musquet</span>
-            </div>
-        </div>
+<body>
+
+    <!-- 🔹 NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <a href="#">Accueil</a>
+            <a href="#">Biographie</a>
+            <a href="#">Engagements</a>
+            <a href="#">Projets</a>
+            <a href="#">Galerie</a>
+            <a href="#">Vision & Valeurs</a>
+            <a href="#">Contact</a>
+        </nav>
     </header>
 
-    <section class="intro">
-        <div class="portrait-container">
-            <img src="images/gael-musquet.jpg" alt="Portrait de Gaël Musquet" class="portrait">
-            <img src="images/image-removebg-preview-2.png" alt="image-removebg-preview-2" class="pin-image">
-        </div>
-        <h2>Gaël Musquet – L’humanitaire à travers la donnée</h2>
-        <p>Météorologue de formation et hacker citoyen, Gaël Musquet place la technologie au service de l’humain. À travers des initiatives comme HAND et OpenStreetMap, il mobilise la cartographie et les données libres pour sauver des vies et redonner du pouvoir aux citoyens.</p>
-        <p>Son engagement illustre une conviction simple : la technologie n’a de sens que si elle renforce la solidarité et la résilience collective.</p>
-    </section>
-    
-    
+    <!-- 🔹 HERO SECTION -->
+    <section class="hero">
 
-    <!-- Section Découvrir ses projets humanitaires -->
-    <section class="projects">
-        <h2>Découvrir ses projets humanitaires</h2>
-        <div class="project-cards">
-            <div class="project-card">
-                <img src="assets/hand1.jpg" alt="HAND - Hackers Against Natural Disasters">
-                <h3>HAND</h3>
-                <p>Hackers Against Natural Disasters : outils libres pour anticiper ou répondre aux catastrophes.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/map1.jpg" alt="OpenStreetMap & Urgences">
-                <h3>OpenStreetMap</h3>
-                <p>Cartographie collaborative pour les secours lors de crises comme Haïti ou Philippines.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/sosmed.jpg" alt="SOS Méditerranée">
-                <h3>SOS Méditerranée</h3>
-                <p>Systèmes de géolocalisation et communication pour coordonner les secours en mer.</p>
-            </div>
+        <!-- Photo + punaise -->
+        <div class="photo-container">
+            <img src="assets/gael.jpg" alt="Gaël Musquet" class="photo-gael">
+            <img src="assets/pin.png" class="pin" alt="punaise">
+        </div>
+
+        <!-- Citation animée -->
+        <div class="quote-box">
+            <p class="quote">
+                “Il n’y a pas de résilience sans partage de l’information.”
+            </p>
         </div>
     </section>
 
-    <!-- Galerie / images représentatives -->
-    <section class="gallery">
-        <h2>Galerie & Témoignages</h2>
-        <div class="images">
-            <img src="assets/map1.jpg" alt="Carte OpenStreetMap" />
-            <img src="assets/hand1.jpg" alt="HAND - Hackers Against Natural Disasters" />
-            <img src="assets/sosmed.jpg" alt="SOS Méditerranée" />
+    <!-- 🔹 TEXTE HACKER -->
+    <section class="hacker-section">
+        <div class="hacker-text-container">
+            <pre id="hacker-text"></pre>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 – Site réalisé dans le cadre du projet BUT. Inspiration humanitaire et données ouvertes.</p>
-        <p><a href="contact.html">Contact & Sources</a></p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
