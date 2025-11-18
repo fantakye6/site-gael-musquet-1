@@ -219,27 +219,24 @@ footer a {
 
 #hacker-text {
     font-family: "Courier New", monospace;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #00ffcc;
     background: #001a1a;
-    padding: 1.5rem;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 700px;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: none;
     white-space: pre-line;
     line-height: 1.5;
     border-left: 3px solid #00ffcc;
     box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+    animation: glow 2s infinite alternate;
 }
 
 /* Effet de glow hacking */
 @keyframes glow {
     0% { box-shadow: 0 0 10px rgba(0,255,200,0.2); }
     100% { box-shadow: 0 0 30px rgba(0,255,200,0.6); }
-}
-
-#hacker-text {
-    animation: glow 2s infinite alternate;
 }
 
 /* Curseur de terminal */
@@ -253,3 +250,17 @@ footer a {
     100% { opacity: 0; }
 }
 
+/* Bloc hacker élargi (terminal pleine largeur) */
+.large-terminal {
+    width: 98%;
+    margin: 20px auto;
+    padding: 0;
+}
+
+/* Alignement du titre */
+.section-title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
