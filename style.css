@@ -104,7 +104,7 @@ h2 {
     text-align: center;
 }
 
-..portrait-container {
+.portrait-container {
     position: relative;
     display: inline-block;
 }
@@ -126,16 +126,16 @@ h2 {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(14, 116, 144, 0.6);
 }
 
-/* Pin emoji style réel, gros et centré */
-.pin-emoji {
+/* Punaise */
+.pin-image {
     position: absolute;
-    font-size: 4rem;       /* très gros */
-    color: #ef4444;        /* rouge pin */
-    top: 50%;              /* vertical milieu */
-    left: 50%;             /* horizontal milieu */
-    transform: translate(-50%, -100%); /* centre horizontal + pointe en haut du centre */
-    pointer-events: none;   /* pour ne pas bloquer hover sur la photo */
+    width: 50px;      /* ajuster selon taille voulue */
+    top: -10px;       /* légèrement au-dessus de la photo */
+    left: 50%;        /* centre horizontal */
+    transform: translateX(-50%); /* centre la punaise */
+    pointer-events: none; /* ne bloque pas le hover sur la photo */
 }
+
 
 /* Section projets */
 .projects {
