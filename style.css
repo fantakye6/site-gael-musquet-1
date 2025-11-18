@@ -210,3 +210,46 @@ footer a {
     color: #0e7490;
     text-decoration: none;
 }
+/* ===== Effet Hacker / Terminal ===== */
+.hacker-text-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#hacker-text {
+    font-family: "Courier New", monospace;
+    font-size: 1rem;
+    color: #00ffcc;
+    background: #001a1a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 700px;
+    white-space: pre-line;
+    line-height: 1.5;
+    border-left: 3px solid #00ffcc;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+}
+
+/* Effet de glow hacking */
+@keyframes glow {
+    0% { box-shadow: 0 0 10px rgba(0,255,200,0.2); }
+    100% { box-shadow: 0 0 30px rgba(0,255,200,0.6); }
+}
+
+#hacker-text {
+    animation: glow 2s infinite alternate;
+}
+
+/* Curseur de terminal */
+#hacker-text::after {
+    content: "█";
+    animation: blink 0.7s infinite alternate;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
