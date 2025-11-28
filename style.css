@@ -1,3 +1,7 @@
+html, body {
+    overflow-x: hidden;
+}
+
 /* =================== Polices globales =================== */
 body {
     font-family: 'Open Sans', sans-serif;
@@ -145,67 +149,13 @@ body {
 .portrait-container:hover .pin-image {
     transform: translateX(-50%) rotate(0deg) scale(1.05);
 }
-
-/* =================== Section Projets =================== */
-.projects {
-    max-width: 1000px;
-    margin: 3rem auto;
-}
-
-.project-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.project-card {
-    border: 2px solid #0e7490;
-    border-radius: 10px;
-    padding: 1rem;
-    width: 280px;
-    transition: 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-/* =================== Galerie =================== */
-.gallery {
-    max-width: 1000px;
-    margin: 3rem auto;
-}
-
-.gallery .images {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.gallery img {
-    width: 300px;
-    border-radius: 8px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 1s ease;
-}
-
-/* =================== Footer =================== */
-footer {
-    background-color: #e2e8f0;
-    text-align: center;
-    padding: 1rem;
-}
-
 /* =================== Effet Hacker =================== */
 .hacker-text-container {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     width: 100%;
+    box-sizing: border-box;
 }
 
 #hacker-text {
@@ -244,4 +194,58 @@ footer {
 @keyframes blink {
     0% { opacity: 1; }
     100% { opacity: 0; }
+}
+
+/* =================== Section Projets =================== */
+.projects {
+    max-width: 1000px;
+    margin: 3rem auto;
+}
+
+.project-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.project-card {
+    border: 2px solid #0e7490;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 280px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* =================== Galerie =================== */
+.gallery {
+    width: 100px;
+    margin: 3rem auto;
+}
+
+.gallery .images {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    max-width: 300px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s ease;
+}
+
+/* =================== Footer =================== */
+footer {
+    background-color: #e2e8f0;
+    text-align: center;
+    padding: 1rem;
 }
