@@ -17,6 +17,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
+    border-bottom: 2px solid #0e7490;
+    padding-bottom: 0.5rem;
 }
 
 .nav-toggle {
@@ -86,13 +88,10 @@ body {
 }
 
 .marquee {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
     overflow: hidden;
-    border: 2px solid white;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    background-color: rgba(14,116,144,0.7);
+    white-space: nowrap;
+    box-sizing: border-box;
 }
 
 .marquee span {
@@ -104,7 +103,7 @@ body {
 }
 
 @keyframes marquee {
-    0% { transform: translateX(100%); }
+    0% { transform: translateX(0%); }
     100% { transform: translateX(-100%); }
 }
 
@@ -228,24 +227,33 @@ body {
     margin: 3rem auto;
 }
 
-.gallery .images {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
 .gallery img {
+    width: 100%;
     max-width: 300px;
     border-radius: 8px;
     opacity: 0;
     transform: translateY(30px);
-    transition: 1s ease;
+    transition: all 1s ease;
+    flex: 1 1 280px;
 }
+
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+    flex: 1 1 280px;
+}
+
 
 /* =================== Footer =================== */
 footer {
     background-color: #e2e8f0;
     text-align: center;
     padding: 1rem;
+}
+html, body {
+    overflow-x: hidden;
 }
