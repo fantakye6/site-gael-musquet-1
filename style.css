@@ -1,7 +1,10 @@
 html, body {
     overflow-x: hidden;
 }
-
+.navbar {
+    background-color: #faf9f5;
+    padding: 1rem 0;
+}
 /* =================== Polices globales =================== */
 body {
     font-family: 'Open Sans', sans-serif;
