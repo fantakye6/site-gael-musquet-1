@@ -32,11 +32,11 @@ html,body{overflow-x:hidden;margin:0;padding:0;font-family:'Open Sans',sans-seri
 
 /* =================== Hacker Text =================== */
 .hacker-text-container{margin-top:20px;display:flex;justify-content:center;width:100%;box-sizing:border-box}
-#hacker-text{font-family:"Courier New",monospace;font-size:1.1rem;color: rgba(107,163,122,0.7);;background:#001a1a;padding:2rem;border-radius:10px;width:90%;max-width:1100px;white-space:pre-line;border-left: 3px solid rgba(107,163,122,0.7);box-shadow: 0 0 20px rgba(107,163,122,0.3);animation:glow 2s infinite alternate}
+#hacker-text{font-family:"Courier New",monospace;font-size:1.1rem;color:00ffcc;background:#001a1a;padding:2rem;border-radius:10px;width:90%;max-width:1100px;white-space:pre-line;border-left: 3px solid #00ffcc;box-shadow: 0 0 20px rgba(0,255,200,0.3);animation:glow 2s infinite alternate}
 @media(max-width:600px){#hacker-text{font-size:.9rem;padding:1.2rem;width:95%}}
 @keyframes glow{0%{box-shadow:0 0 10px rgba(0,255,200,.2)}100%{box-shadow:0 0 30px rgba(0,255,200,.6)}}
-#hacker-text::after{content:"█";animation:blink .7s infinite alternate}
-@keyframes blink{0%{opacity:1}100%{opacity:0}}
+#hacker-text::after{content:"█";animation:blink 0.7s infinite alternate}
+@keyframes blink{0%{opacity:1}100%{opacity:0;}}
 
 /* =================== Section Projets =================== */
 .projects{max-width:1000px;margin:3rem auto;text-align:center}
