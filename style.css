@@ -34,6 +34,26 @@ body {
     list-style: none;
 }
 
+/* =================== Navbar Desktop =================== */
+.navbar {
+    background-color: #faf9f5;
+    border-bottom: 2px solid #0e7490;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+/* Menu desktop */
+#nav-menu {
+    display: flex;      /* visible en desktop */
+    gap: 1rem;
+    list-style: none;
+}
+
 #nav-menu li a {
     color: #0e7490;
     text-decoration: none;
@@ -46,6 +66,59 @@ body {
     background-color: #0e7490;
     color: white;
 }
+
+/* Hamburger toggle caché sur desktop */
+.nav-toggle {
+    display: none;
+}
+
+/* =================== Navbar Mobile =================== */
+@media (max-width: 768px) {
+
+    /* Hamburger visible uniquement sur mobile */
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #0e7490;
+    }
+
+    #nav-menu {
+        display: none;           /* masqué par défaut sur mobile */
+        flex-direction: column;  
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #faf9f5;
+        align-items: center;     /* centre les items */
+    }
+
+    #nav-menu.show {
+        display: flex;           /* affiché au clic */
+    }
+
+    #nav-menu li {
+        width: 100%;             
+        text-align: center;
+        border-bottom: 1px solid #0e7490; /* seul trait de séparation */
+        padding: 0;              
+    }
+
+    #nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    #nav-menu li a {
+        display: block;
+        width: 100%;
+        padding: 0.75rem 0;      
+        border: none;            
+        text-align: center;      
+    }
+}
+
 
 /* Hamburger toggle caché sur desktop */
 .nav-toggle {
