@@ -23,12 +23,12 @@ function typeWriter() {
 
 typeWriter();
 
-// ===== Menu responsive =====
-const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.getElementById('nav-menu');
+// ===== Menu sur Mobile =====
+const toggle = document.getElementById("nav-toggle");
+const menu = document.getElementById("nav-menu");
 
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("show");
 });
 
 // ===== Animation des images de la galerie =====

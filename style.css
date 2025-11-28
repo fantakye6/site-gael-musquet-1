@@ -1,64 +1,43 @@
- html, body {
-    overflow-x: hidden;
-}
-.navbar {
-    background-color: #faf9f5;
-    padding: 1rem 0;
-}
-/* =================== Polices globales =================== */
-body {
-    font-family: 'Open Sans', sans-serif;
+/* =================== GLOBAL =================== */
+html, body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
     background-color: #faf9f5;
     color: #1f2937;
 }
 
-/* =================== Navbar Desktop =================== */
+/* =================== NAVBAR =================== */
 .navbar {
     background-color: #faf9f5;
     border-bottom: 2px solid #0e7490;
 }
 
 .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
 }
 
 /* Menu desktop */
 #nav-menu {
-    display: flex;      /* visible en desktop */
-    gap: 1rem;
-    list-style: none;
-}
-
-/* =================== Navbar Desktop =================== */
-.navbar {
-    background-color: #faf9f5;
-    border-bottom: 2px solid #0e7490;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-}
-
-/* Menu desktop */
-#nav-menu {
-    display: flex;      /* visible en desktop */
+    display: flex; /* desktop */
     gap: 1rem;
     list-style: none;
 }
 
 #nav-menu li a {
-    color: #0e7490;
-    text-decoration: none;
-    font-weight: bold;
+    display: inline-block;
     padding: 0.5rem 1rem;
+    border: 2px solid #0e7490;
+    border-radius: 8px;
+    color: #0e7490;
+    font-weight: bold;
+    text-decoration: none;
     transition: 0.3s;
 }
 
@@ -67,32 +46,30 @@ body {
     color: white;
 }
 
-/* Hamburger toggle caché sur desktop */
+/* Hamburger toggle - desktop hidden */
 .nav-toggle {
     display: none;
 }
 
-/* =================== Navbar Mobile =================== */
+/* =================== MOBILE NAVBAR =================== */
 @media (max-width: 768px) {
-
-    /* Hamburger visible uniquement sur mobile */
     .nav-toggle {
         display: block;
+        font-size: 1.8rem;
         background: none;
         border: none;
-        font-size: 1.8rem;
         cursor: pointer;
         color: #0e7490;
     }
 
     #nav-menu {
-        display: none;           /* masqué par défaut sur mobile */
-        flex-direction: column;  
+        display: none;           /* masqué par défaut */
+        flex-direction: column;
         width: 100%;
         margin: 0;
         padding: 0;
         background-color: #faf9f5;
-        align-items: center;     /* centre les items */
+        align-items: center;
     }
 
     #nav-menu.show {
@@ -100,63 +77,10 @@ body {
     }
 
     #nav-menu li {
-        width: 100%;             
+        width: 100%;
         text-align: center;
-        border-bottom: 1px solid #0e7490; /* seul trait de séparation */
-        padding: 0;              
-    }
-
-    #nav-menu li:last-child {
-        border-bottom: none;
-    }
-
-    #nav-menu li a {
-        display: block;
-        width: 100%;
-        padding: 0.75rem 0;      
-        border: none;            
-        text-align: center;      
-    }
-}
-
-
-/* Hamburger toggle caché sur desktop */
-.nav-toggle {
-    display: none;
-}
-
-/* =================== Navbar Mobile =================== */
-@media (max-width: 768px) {
-
-    /* Hamburger visible uniquement sur mobile */
-    .nav-toggle {
-        display: block;
-        background: none;
-        border: none;
-        font-size: 1.8rem;
-        cursor: pointer;
-        color: #0e7490;
-    }
-
-    #nav-menu {
-        display: none;           /* masqué par défaut sur mobile */
-        flex-direction: column;  
-        width: 100%;
-        margin: 0;
+        border-bottom: 1px solid #0e7490; /* seul trait */
         padding: 0;
-        background-color: #faf9f5;
-        align-items: center;     /* centre les items */
-    }
-
-    #nav-menu.show {
-        display: flex;           /* affiché au clic */
-    }
-
-    #nav-menu li {
-        width: 100%;             
-        text-align: center;
-        border-bottom: 1px solid #0e7490; /* seul trait de séparation */
-        padding: 0;              
     }
 
     #nav-menu li:last-child {
@@ -164,14 +88,15 @@ body {
     }
 
     #nav-menu li a {
+        border: none;            /* pas d'encadré sur mobile */
+        padding: 0.75rem 0;
         display: block;
         width: 100%;
-        padding: 0.75rem 0;      
-        border: none;            
-        text-align: center;      
+        text-align: center;
     }
 }
-/* =================== Hero =================== */
+
+/* =================== HERO =================== */
 .hero {
     background: url('assets/worldmap.jpg') center/cover no-repeat;
     height: 60vh;
@@ -179,7 +104,8 @@ body {
     align-items: center;
     justify-content: center;
 }
-/* =================== Intro / Portrait =================== */
+
+/* =================== INTRO / PORTRAIT =================== */
 .intro {
     max-width: 800px;
     margin: 2rem auto;
@@ -219,113 +145,4 @@ body {
 
 .portrait-container:hover .pin-image {
     transform: translateX(-50%) rotate(0deg) scale(1.05);
-}
-/* =================== Effet Hacker =================== */
-.hacker-text-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-#hacker-text {
-    font-family: "Courier New", monospace;
-    font-size: 1.1rem;
-    color: #00ffcc;
-    background: #001a1a;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 1100px;
-    white-space: pre-line;
-    border-left: 3px solid #00ffcc;
-    box-shadow: 0 0 20px rgba(0,255,200,0.3);
-    animation: glow 2s infinite alternate;
-}
-
-@media (max-width: 600px) {
-    #hacker-text {
-        font-size: 0.9rem;
-        padding: 1.2rem;
-        width: 95%;
-    }
-}
-
-@keyframes glow {
-    0% { box-shadow: 0 0 10px rgba(0,255,200,0.2); }
-    100% { box-shadow: 0 0 30px rgba(0,255,200,0.6); }
-}
-
-#hacker-text::after {
-    content: "█";
-    animation: blink 0.7s infinite alternate;
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-/* =================== Section Projets =================== */
-.projects {
-    max-width: 1000px;
-    margin: 3rem auto;
-}
-
-.project-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.project-card {
-    border: 2px solid #0e7490;
-    border-radius: 10px;
-    padding: 1rem;
-    width: 280px;
-    transition: 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-/* =================== Galerie =================== */
-.gallery {
-    width: 100px;
-    margin: 3rem auto;
-}
-
-.gallery img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 8px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease;
-    flex: 1 1 280px;
-}
-
-.gallery img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 8px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease;
-    flex: 1 1 280px;
-}
-
-
-/* =================== Footer =================== */
-footer {
-    background-color: #e2e8f0;
-    text-align: center;
-    padding: 1rem;
-}
-html, body {
-    overflow-x: hidden;
 }
