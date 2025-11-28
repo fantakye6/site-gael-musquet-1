@@ -41,14 +41,15 @@ nav-menu {
     color: white;
 }
 /* =================== Navbar / Onglets - Mobile  =================== */
+/* Mobile : menu vertical simplifié */
 @media (max-width: 768px) {
-  #nav-menu {
+    #nav-menu {
         display: none;
         flex-direction: column;
         width: 100%;
         background-color: #faf9f5;
         border-top: 2px solid #0e7490;
-        gap: 0; /* supprime l’espace horizontal inutile */
+        gap: 0; /* pas de gap horizontal */
     }
 
     #nav-menu.show {
@@ -56,11 +57,27 @@ nav-menu {
     }
 
     #nav-menu li {
+        list-style: none;
         border-bottom: 1px solid #0e7490; /* trait séparateur */
         padding: 0.5rem 0;
         text-align: center;
     }
+
+    #nav-menu a {
+        border: none; /* on enlève les encadrés */
+        padding: 0.5rem 1rem; /* on garde un peu de padding pour le clic */
+        display: block;
+        color: #0e7490;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    #nav-menu a:hover {
+        background-color: rgba(14, 116, 144, 0.1); /* léger hover */
+        color: #0e7490;
+    }
 }
+
 /* =================== Hero =================== */
 .hero {
     background: url('assets/worldmap.jpg') center/cover no-repeat;
