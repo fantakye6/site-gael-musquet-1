@@ -18,7 +18,7 @@ function typeEffect() {
     if (index < content.length) {
         hackerText.textContent += content.charAt(index);
         index++;
-        setTimeout(typeEffect, 50); // vitesse d’écriture
+        setTimeout(typeEffect, 75); // vitesse d’écriture
     }
 }
 
