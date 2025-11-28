@@ -10,223 +10,80 @@ html, body {
 
 /* =================== Navbar =================== */
 .navbar {
-    background-color: #faf9f5;
+    background: #faf9f5;
     border-bottom: 2px solid #0e7490;
 }
-
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
 }
-
-.logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: #0e7490;
-}
-
-#nav-menu {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-}
-
+.logo { font-weight: bold; font-size: 1.5rem; color: #0e7490; }
+#nav-menu { display: flex; gap: 1rem; list-style: none; }
 #nav-menu li a {
-    color: #0e7490;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border: 2px solid #0e7490;
-    border-radius: 8px;
+    color: #0e7490; text-decoration: none; font-weight: bold;
+    padding: 0.5rem 1rem; border: 2px solid #0e7490; border-radius: 8px;
     transition: 0.3s;
 }
-
-#nav-menu li a:hover {
-    background-color: #0e7490;
-    color: white;
-}
-
-/* Hamburger toggle */
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: #0e7490;
-}
+#nav-menu li a:hover { background: #0e7490; color: #fff; }
+.nav-toggle { display: none; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #0e7490; }
 
 /* =================== Responsive Navbar =================== */
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: block;
-    }
-
+@media(max-width:768px){
+    .nav-toggle{ display:block; }
     #nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        background-color: #faf9f5;
-        align-items: center;
+        display: none; flex-direction: column; width: 100%; margin:0; padding:0;
+        background: #faf9f5; align-items:center;
     }
-
-    #nav-menu.show {
-        display: flex;
-    }
-
-    #nav-menu li {
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid #0e7490;
-        padding: 0;
-    }
-
-    #nav-menu li:last-child {
-        border-bottom: none;
-    }
-
-    #nav-menu li a {
-        display: block;
-        width: 100%;
-        padding: 0.75rem 0;
-        border: none;
-    }
+    #nav-menu.show{ display:flex; }
+    #nav-menu li{ width:100%; text-align:center; border-bottom:1px solid #0e7490; padding:0; }
+    #nav-menu li:last-child{ border-bottom:none; }
+    #nav-menu li a{ display:block; width:100%; padding:0.75rem 0; border:none; }
 }
 
-/* =================== Hero / Intro =================== */
-.intro {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    text-align: center;
-}
-
-.portrait-container {
-    position: relative;
-    display: inline-block;
-}
-
+/* =================== Intro / Portrait =================== */
+.intro { max-width:800px; margin:2rem auto; padding:0 1rem; text-align:center; }
+.portrait-container { position:relative; display:inline-block; }
 .portrait {
-    width: 350px;
-    max-width: 90%;
-    border-radius: 15px;
-    margin: 2rem auto;
-    border: 3px solid rgba(107,163,122,0.7);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 15px rgba(14,116,144,0.5);
-    transform: rotate(-2deg);
-    transition: 0.4s ease;
+    width:350px; max-width:90%; border-radius:15px; margin:2rem auto;
+    border:3px solid rgba(107,163,122,0.7);
+    box-shadow:0 15px 40px rgba(0,0,0,0.4),0 0 15px rgba(14,116,144,0.5);
+    transform:rotate(-2deg); transition:0.4s ease;
 }
-
-.portrait-container:hover .portrait {
-    transform: rotate(0deg) scale(1.05);
+.portrait-container:hover .portrait { transform:rotate(0deg) scale(1.05); }
+.pin-image{
+    position:absolute; width:50px; top:-10px; left:50%;
+    transform:translateX(-50%) rotate(-2deg); transition:0.4s ease;
 }
-
-.pin-image {
-    position: absolute;
-    width: 50px;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-2deg);
-    transition: 0.4s ease;
-}
-
-.portrait-container:hover .pin-image {
-    transform: translateX(-50%) rotate(0deg) scale(1.05);
-}
+.portrait-container:hover .pin-image{ transform:translateX(-50%) rotate(0deg) scale(1.05); }
 
 /* =================== Hacker Text =================== */
-.hacker-text-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+.hacker-text-container{ display:flex; justify-content:center; width:100%; margin-top:20px; }
+#hacker-text{
+    font-family:"Courier New", monospace; font-size:1.1rem; color:#00ffcc;
+    background:#001a1a; padding:2rem; border-radius:10px; width:90%; max-width:1100px;
+    white-space:pre-line; border-left:3px solid #00ffcc; box-shadow:0 0 20px rgba(0,255,200,0.3);
+    animation:glow 2s infinite alternate;
 }
-
-#hacker-text {
-    font-family: "Courier New", monospace;
-    font-size: 1.1rem;
-    color: #00ffcc;
-    background: #001a1a;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 1100px;
-    white-space: pre-line;
-    border-left: 3px solid #00ffcc;
-    box-shadow: 0 0 20px rgba(0,255,200,0.3);
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-    0% { box-shadow: 0 0 10px rgba(0,255,200,0.2); }
-    100% { box-shadow: 0 0 30px rgba(0,255,200,0.6); }
-}
-
-#hacker-text::after {
-    content: "█";
-    animation: blink 0.7s infinite alternate;
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
+@keyframes glow{ 0%{box-shadow:0 0 10px rgba(0,255,200,0.2);} 100%{box-shadow:0 0 30px rgba(0,255,200,0.6);} }
+#hacker-text::after{ content:"█"; animation:blink 0.7s infinite alternate; }
+@keyframes blink{ 0%{opacity:1;} 100%{opacity:0;} }
+@media(max-width:600px){ #hacker-text{ font-size:0.9rem; padding:1.2rem; width:95%; } }
 
 /* =================== Projets =================== */
-.projects {
-    max-width: 1000px;
-    margin: 3rem auto;
-    padding: 0 1rem;
+.projects{ max-width:1000px; margin:3rem auto; padding:0 1rem; }
+.project-cards{ display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; }
+.project-card{
+    border:2px solid #0e7490; border-radius:10px; padding:1rem; width:280px; transition:0.3s;
 }
-
-.project-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-}
-
-.project-card {
-    border: 2px solid #0e7490;
-    border-radius: 10px;
-    padding: 1rem;
-    width: 280px;
-    transition: 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
+.project-card:hover{ transform:translateY(-5px) scale(1.03); box-shadow:0 8px 20px rgba(0,0,0,0.25); }
 
 /* =================== Galerie =================== */
-.gallery {
-    max-width: 1000px;
-    margin: 3rem auto;
-    padding: 0 1rem;
-}
-
-.gallery .images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.gallery img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 8px;
-    transition: all 0.5s ease;
-}
+.gallery{ max-width:1000px; margin:3rem auto; padding:0 1rem; }
+.gallery .images{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; }
+.gallery img{ width:100%; max-width:300px; border-radius:8px; transition:all 0.5s ease; }
 
 /* =================== Footer =================== */
-footer {
-    background-color: #e2e8f0;
-    text-align: center;
-    padding: 1rem;
-}
+footer{ background:#e2e8f0; text-align:center; padding:1rem; }
+
