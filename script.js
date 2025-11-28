@@ -1,7 +1,5 @@
 // ===== Animation texte effet hacker =====
-const hackerText = document.getElementById("hacker-text");
-
-const content = `Météorologue de formation et hacker citoyen,
+const hackerText =  `Météorologue de formation et hacker citoyen,
 Gaël Musquet place la technologie au service de l’humain.
 
 À travers des initiatives comme HAND et OpenStreetMap,
@@ -10,20 +8,18 @@ pour sauver des vies et redonner du pouvoir aux citoyens.
 
 Son engagement illustre une conviction simple :
 la technologie n’a de sens que si elle renforce
-la solidarité et la résilience collective.
-`;
+la solidarité et la résilience collective.`;
 
-let index = 0;
-
-function typeEffect() {
-    if (index < content.length) {
-        hackerText.textContent += content.charAt(index);
-        index++;
-        setTimeout(typeEffect, 35); // vitesse d’écriture
+let i = 0;
+const hackerElement = document.getElementById("hacker-text");
+function typeWritter() {
+    if ( i < hackerText.length ) {
+        hackerElement.innerHTML += hackerText.charAt(i);
+        i++;
+        setTimeout(typeWritter, 35); // vitesse d’écriture
     }
 }
-
-typeEffect();
+typeWritter();
 
 /* ---------------------------------------
    2) Animation des images de la GALERIE
