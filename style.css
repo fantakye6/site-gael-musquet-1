@@ -1,43 +1,45 @@
-/* =================== GLOBAL =================== */
+/* =================== Global =================== */
 html, body {
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
     background-color: #faf9f5;
     color: #1f2937;
 }
 
-/* =================== NAVBAR =================== */
+/* =================== Navbar =================== */
 .navbar {
     background-color: #faf9f5;
     border-bottom: 2px solid #0e7490;
 }
 
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: 0 1rem;
 }
 
-/* Menu desktop */
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #0e7490;
+}
+
 #nav-menu {
-    display: flex; /* desktop */
+    display: flex;
     gap: 1rem;
     list-style: none;
 }
 
 #nav-menu li a {
-    display: inline-block;
+    color: #0e7490;
+    text-decoration: none;
+    font-weight: bold;
     padding: 0.5rem 1rem;
     border: 2px solid #0e7490;
     border-radius: 8px;
-    color: #0e7490;
-    font-weight: bold;
-    text-decoration: none;
     transition: 0.3s;
 }
 
@@ -46,24 +48,24 @@ html, body {
     color: white;
 }
 
-/* Hamburger toggle - desktop hidden */
+/* Hamburger toggle */
 .nav-toggle {
     display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #0e7490;
 }
 
-/* =================== MOBILE NAVBAR =================== */
+/* =================== Responsive Navbar =================== */
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
-        font-size: 1.8rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: #0e7490;
     }
 
     #nav-menu {
-        display: none;           /* masqué par défaut */
+        display: none;
         flex-direction: column;
         width: 100%;
         margin: 0;
@@ -73,13 +75,13 @@ html, body {
     }
 
     #nav-menu.show {
-        display: flex;           /* affiché au clic */
+        display: flex;
     }
 
     #nav-menu li {
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid #0e7490; /* seul trait */
+        border-bottom: 1px solid #0e7490;
         padding: 0;
     }
 
@@ -88,24 +90,14 @@ html, body {
     }
 
     #nav-menu li a {
-        border: none;            /* pas d'encadré sur mobile */
-        padding: 0.75rem 0;
         display: block;
         width: 100%;
-        text-align: center;
+        padding: 0.75rem 0;
+        border: none;
     }
 }
 
-/* =================== HERO =================== */
-.hero {
-    background: url('assets/worldmap.jpg') center/cover no-repeat;
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* =================== INTRO / PORTRAIT =================== */
+/* =================== Hero / Intro =================== */
 .intro {
     max-width: 800px;
     margin: 2rem auto;
@@ -124,8 +116,7 @@ html, body {
     border-radius: 15px;
     margin: 2rem auto;
     border: 3px solid rgba(107,163,122,0.7);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4),
-                0 0 15px rgba(14,116,144,0.5);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 15px rgba(14,116,144,0.5);
     transform: rotate(-2deg);
     transition: 0.4s ease;
 }
@@ -145,4 +136,97 @@ html, body {
 
 .portrait-container:hover .pin-image {
     transform: translateX(-50%) rotate(0deg) scale(1.05);
+}
+
+/* =================== Hacker Text =================== */
+.hacker-text-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#hacker-text {
+    font-family: "Courier New", monospace;
+    font-size: 1.1rem;
+    color: #00ffcc;
+    background: #001a1a;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1100px;
+    white-space: pre-line;
+    border-left: 3px solid #00ffcc;
+    box-shadow: 0 0 20px rgba(0,255,200,0.3);
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px rgba(0,255,200,0.2); }
+    100% { box-shadow: 0 0 30px rgba(0,255,200,0.6); }
+}
+
+#hacker-text::after {
+    content: "█";
+    animation: blink 0.7s infinite alternate;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* =================== Projets =================== */
+.projects {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.project-card {
+    border: 2px solid #0e7490;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 280px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* =================== Galerie =================== */
+.gallery {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.gallery .images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+}
+
+/* =================== Footer =================== */
+footer {
+    background-color: #e2e8f0;
+    text-align: center;
+    padding: 1rem;
 }

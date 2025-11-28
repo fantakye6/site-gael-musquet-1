@@ -9,16 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation / onglets encadrés -->
+
+<!-- Navigation -->
 <nav class="navbar">
     <div class="nav-container">
-
         <div class="logo">Gaël Musquet</div>
-
-        <!-- Bouton hamburger -->
         <button class="nav-toggle" id="nav-toggle">☰</button>
-
-        <!-- Menu -->
         <ul id="nav-menu">
             <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
             <li><a href="biographie.html"><i class="fas fa-user"></i> Biographie</a></li>
@@ -26,61 +22,59 @@
             <li><a href="vision.html"><i class="fas fa-lightbulb"></i> Vision & Valeurs</a></li>
             <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
-
     </div>
 </nav>
 
-    <section class="intro">
-        <div class="portrait-container">
-            <img src="images/gael-musquet.jpg" alt="Portrait de Gaël Musquet" class="portrait">
-            <img src="images/image-removebg-preview-2.png" alt="image-removebg-preview-2" class="pin-image">
+<!-- Intro / Portrait -->
+<section class="intro">
+    <div class="portrait-container">
+        <img src="images/gael-musquet.jpg" alt="Portrait de Gaël Musquet" class="portrait">
+        <img src="images/image-removebg-preview-2.png" alt="Pin" class="pin-image">
+    </div>
+    <h2 class="section-title">Gaël Musquet – L’humanitaire à travers la donnée</h2>
+    <div class="hacker-text-container">
+        <pre id="hacker-text"></pre>
+    </div>              
+</section>
+
+<!-- Projets Humanitaires -->
+<section class="projects">
+    <h2>Découvrir ses projets humanitaires</h2>
+    <div class="project-cards">
+        <div class="project-card">
+            <img src="assets/hand1.jpg" alt="HAND">
+            <h3>HAND</h3>
+            <p>Hackers Against Natural Disasters : outils libres pour anticiper ou répondre aux catastrophes.</p>
         </div>
-        <h2 class="section-title">Gaël Musquet – L’humanitaire à travers la donnée</h2>
-        <div class="hacker-text-container large-terminal">
-            <pre id="hacker-text"></pre>
-        </div>              
-    </section>
-    
-    
-
-    <!-- Section Découvrir ses projets humanitaires -->
-    <section class="projects">
-        <h2>Découvrir ses projets humanitaires</h2>
-        <div class="project-cards">
-            <div class="project-card">
-                <img src="assets/hand1.jpg" alt="HAND - Hackers Against Natural Disasters">
-                <h3>HAND</h3>
-                <p>Hackers Against Natural Disasters : outils libres pour anticiper ou répondre aux catastrophes.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/map1.jpg" alt="OpenStreetMap & Urgences">
-                <h3>OpenStreetMap</h3>
-                <p>Cartographie collaborative pour les secours lors de crises comme Haïti ou Philippines.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/sosmed.jpg" alt="SOS Méditerranée">
-                <h3>SOS Méditerranée</h3>
-                <p>Systèmes de géolocalisation et communication pour coordonner les secours en mer.</p>
-            </div>
+        <div class="project-card">
+            <img src="assets/map1.jpg" alt="OpenStreetMap">
+            <h3>OpenStreetMap</h3>
+            <p>Cartographie collaborative pour les secours lors de crises comme Haïti ou Philippines.</p>
         </div>
-    </section>
-
-    <!-- Galerie / images représentatives -->
-    <section class="gallery">
-        <h2>Galerie & Témoignages</h2>
-        <div class="images">
-            <img src="assets/map1.jpg" alt="Carte OpenStreetMap" />
-            <img src="assets/hand1.jpg" alt="HAND - Hackers Against Natural Disasters" />
-            <img src="assets/sosmed.jpg" alt="SOS Méditerranée" />
+        <div class="project-card">
+            <img src="assets/sosmed.jpg" alt="SOS Méditerranée">
+            <h3>SOS Méditerranée</h3>
+            <p>Systèmes de géolocalisation et communication pour coordonner les secours en mer.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 – Site réalisé dans le cadre du projet BUT. Inspiration humanitaire et données ouvertes.</p>
-        <p><a href="contact.html">Contact & Sources</a></p>
-    </footer>
+<!-- Galerie / Témoignages -->
+<section class="gallery">
+    <h2>Galerie & Témoignages</h2>
+    <div class="images">
+        <img src="assets/map1.jpg" alt="Carte OpenStreetMap">
+        <img src="assets/hand1.jpg" alt="HAND">
+        <img src="assets/sosmed.jpg" alt="SOS Méditerranée">
+    </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 – Site réalisé dans le cadre du projet BUT. Inspiration humanitaire et données ouvertes.</p>
+    <p><a href="contact.html">Contact & Sources</a></p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

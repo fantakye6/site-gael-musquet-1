@@ -1,4 +1,12 @@
-// ===== Animation texte effet hacker =====
+// Hamburger menu
+const toggle = document.getElementById("nav-toggle");
+const menu = document.getElementById("nav-menu");
+
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("show");
+});
+
+// Hacker text animation
 const hackerText = `Météorologue de formation et hacker citoyen,
 Gaël Musquet place la technologie au service de l’humain.
 
@@ -13,36 +21,11 @@ la solidarité et la résilience collective.`;
 let i = 0;
 const hackerElement = document.getElementById("hacker-text");
 
-function typeWriter() {
+function typeWritter() {
     if (i < hackerText.length) {
         hackerElement.innerHTML += hackerText.charAt(i);
         i++;
-        setTimeout(typeWriter, 35); // vitesse d’écriture
+        setTimeout(typeWritter, 35);
     }
 }
-
-typeWriter();
-
-// ===== Menu sur Mobile =====
-const toggle = document.getElementById("nav-toggle");
-const menu = document.getElementById("nav-menu");
-
-toggle.addEventListener("click", () => {
-    menu.classList.toggle("show");
-});
-
-// ===== Animation des images de la galerie =====
-const galleryImages = document.querySelectorAll('.gallery img');
-
-window.addEventListener('scroll', () => {
-    const triggerBottom = window.innerHeight * 0.9;
-
-    galleryImages.forEach(img => {
-        const imgTop = img.getBoundingClientRect().top;
-
-        if(imgTop < triggerBottom){
-            img.style.opacity = 1;
-            img.style.transform = 'translateY(0)';
-        }
-    });
-});
+typeWritter();
