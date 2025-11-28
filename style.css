@@ -14,70 +14,87 @@ body {
     color: #1f2937;
 }
 
-/* =================== Navbar / Onglets - Desktop  =================== */
-nav-menu {
+/* =================== Navbar / Onglets =================== */
+.navbar {
+    background-color: #faf9f5;
+    border-bottom: 2px solid #0e7490;
+}
+
+.nav-container {
     display: flex;
-    gap: 1rem; /* espace entre les encadrés */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
 }
 
-#nav-menu li {
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #0e7490;
+}
+
+/* Menu normal desktop */
+#nav-menu {
+    display: flex;
+    gap: 1rem;
     list-style: none;
-    border: none; /* aucun trait sur desktop */
 }
 
-#nav-menu a {
+#nav-menu li a {
     color: #0e7490;
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem 1rem;
-    border: 2px solid #0e7490;
-    border-radius: 8px;
-    display: inline-block;
     transition: 0.3s;
 }
 
-#nav-menu a:hover {
+#nav-menu li a:hover {
     background-color: #0e7490;
     color: white;
 }
-/* =================== Navbar / Onglets - Mobile  =================== */
-/* Mobile : menu vertical simplifié */
+
+/* =================== Navbar Mobile =================== */
 @media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
     #nav-menu {
-        display: none;
-        flex-direction: column;
+        display: none;           /* masqué par défaut */
+        flex-direction: column;  
         width: 100%;
+        margin: 0;
+        padding: 0;
         background-color: #faf9f5;
-        border-top: 2px solid #0e7490;
-        gap: 0; /* pas de gap horizontal */
+        align-items: center;     /* centre les items */
     }
 
     #nav-menu.show {
-        display: flex;
+        display: flex;           /* affiché au clic */
     }
 
     #nav-menu li {
-        list-style: none;
-        border-bottom: 1px solid #0e7490; /* trait séparateur */
-        padding: 0.5rem 0;
+        width: 100%;             /* chaque item prend toute la largeur */
         text-align: center;
+        border-bottom: 1px solid #0e7490; /* seul trait de séparation */
+        padding: 0;              /* on ne veut pas d'espaces horizontaux */
     }
 
-    #nav-menu a {
-        border: none; /* on enlève les encadrés */
-        padding: 0.5rem 1rem; /* on garde un peu de padding pour le clic */
+    #nav-menu li:last-child {
+        border-bottom: none;     /* pas de trait sur le dernier item */
+    }
+
+    #nav-menu li a {
         display: block;
-        color: #0e7490;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    #nav-menu a:hover {
-        background-color: rgba(14, 116, 144, 0.1); /* léger hover */
-        color: #0e7490;
+        width: 100%;
+        padding: 0.75rem 0;      /* padding vertical pour cliquer facilement */
+        border: none;            /* plus d'encadré */
+        text-align: center;      /* centré */
     }
 }
-
 /* =================== Hero =================== */
 .hero {
     background: url('assets/worldmap.jpg') center/cover no-repeat;
