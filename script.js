@@ -1,3 +1,4 @@
+
 // ===== Animation texte effet hacker =====
 const hackerText =  `Météorologue de formation et hacker citoyen,
 Gaël Musquet place la technologie au service de l’humain.
@@ -18,6 +19,12 @@ function typeWritter() {
         i++;
         setTimeout(typeWritter, 35); // vitesse d’écriture
     }
+const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    }); 
 }
 typeWritter();
 

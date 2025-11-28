@@ -8,37 +8,42 @@ body {
 }
 
 /* =================== Navbar / Onglets =================== */
-.navbar {
-    background-color: #faf9f5;
-    padding: 1rem 0;
-    border-bottom: 2px solid #0e7490;
-}
-
-.navbar ul {
-    list-style: none;
+.nav-container {
     display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    gap: 1rem;
-}
-
-.navbar a {
-    color: #0e7490;
-    text-decoration: none;
-    font-weight: bold;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.3rem;
-    padding: 0.5rem 1rem;
-    border: 2px solid #0e7490;
-    border-radius: 8px;
-    transition: 0.3s;
+    padding: 0 1rem;
 }
 
-.navbar a:hover {
-    background-color: #0e7490;
-    color: white;
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #0e7490;
+}
+
+/* Masquer le menu sur mobile */
+@media (max-width: 768px) {
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        background-color: #faf9f5;
+        border-top: 2px solid #0e7490;
+    }
+    #nav-menu li {
+        text-align: center;
+        border-bottom: 1px solid #0e7490;
+    }
+    .nav-toggle {
+        display: block;
+    }
+    #nav-menu.show {
+        display: flex;
+    }
 }
 
 /* =================== Hero / Bandeau principal =================== */
@@ -232,6 +237,17 @@ footer a {
     border-left: 3px solid #00ffcc;
     box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
     animation: glow 2s infinite alternate;
+    width: 100%;
+    max-width: none;
+    padding: 2rem;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+    #hacker-text {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
 }
 
 /* Effet glow hacking */
