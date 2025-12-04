@@ -1,29 +1,98 @@
-/* =================== Hero =================== */
-.hero{background:url(images/worldmap.webp) center/cover no-repeat;height:60vh;display:flex;align-items:center;justify-content:center;position:relative;text-align:center;color:#fff}
-.hero-overlay{background:rgba(0,0,0,0.5);padding:2rem;border-radius:15px}
-.hero h1{font-size:2rem;margin:0 0 1rem}
-.hero p{margin:0 0 1.5rem;font-weight:bold}
-.cta-btn{padding:.8rem 1.5rem;border:2px solid #0e7490;border-radius:10px;color:#0e7490;text-decoration:none;font-weight:bold;transition:.3s}
-.cta-btn:hover{background:#0e7490;color:#fff}
+/* =================== Global =================== */
+html,body{overflow-x:hidden;margin:0;padding:0;font-family:'Open Sans',sans-serif;background:#faf9f5;color:#1f2937}
+
+/* =================== Navbar =================== */
+.navbar{background:#faf9f5;border-bottom:2px solid #0e7490;padding:1.2rem 0}
+.nav-container{display:flex;justify-content:space-between;align-items:center;padding:0 1rem}
+#nav-menu{display:flex;gap:1rem;list-style:none}
+#nav-menu li a{color:#0e7490;text-decoration:none;font-weight:bold;padding:.5rem 1rem;border:2px solid #0e7490;border-radius:8px;transition:.3s}
+#nav-menu li a:hover{background:#0e7490;color:#fff}
+/* Hamburger desktop hidden */
+.nav-toggle{display:none}
+/* Responsive */
+@media(max-width:768px){
+  .nav-toggle{display:block;background:none;border:none;font-size:1.8rem;color:#0e7490;cursor:pointer}
+  #nav-menu{display:none;flex-direction:column;width:100%;margin:0;padding:0;background:#faf9f5;align-items:center}
+  #nav-menu.show{display:flex}
+  #nav-menu li{width:100%;text-align:center;border-bottom:1px solid #0e7490;padding:0}
+  #nav-menu li:last-child{border-bottom:none}
+  #nav-menu li a{display:block;width:100%;padding:.75rem 0;border:none;text-align:center}
+}
+
+
+/* =================== Intro / Portrait =================== */
+.intro{max-width:800px;margin:2rem auto;padding:0 1rem;text-align:center}
+.portrait-container{position:relative;display:inline-block}
+.portrait{width:350px;max-width:90%;border-radius:15px;margin:2rem auto;border:3px solid rgba(107,163,122,.7);box-shadow:0 15px 40px rgba(0,0,0,.4),0 0 15px rgba(14,116,144,.5);transform:rotate(-2deg);transition:.4s ease}
+.portrait-container:hover .portrait{transform:rotate(0deg) scale(1.05)}
+.pin-image{position:absolute;width:50px;top:-10px;left:50%;transform:translateX(-50%) rotate(-2deg);transition:.4s ease}
+.portrait-container:hover .pin-image{transform:translateX(-50%) rotate(0deg) scale(1.05)}
 
 /* =================== Hacker Text =================== */
-.hacker-section{margin:2rem auto;display:flex;justify-content:center;width:100%}
-#hacker-text{font-family:"Courier New",monospace;font-size:1.1rem;color:#00ffc8;background:#001a1a;padding:2rem;border-radius:10px;width:90%;max-width:1100px;white-space:pre-line;border-left:3px solid #00ffc8;box-shadow:0 0 20px rgba(0,255,200,.3);animation:glow 2s infinite alternate}
-@keyframes glow{0%{box-shadow:0 0 10px #00ffc8}100%{box-shadow:0 0 30px #00ffc8}}
-#hacker-text::after{content:"█";animation:blink .7s infinite alternate}
-@keyframes blink{0%{opacity:1}100%{opacity:0}}
-@media(max-width:600px){#hacker-text{font-size:.9rem;padding:1.2rem;width:95%}}
+.hacker-text-container{margin-top:20px;display:flex;justify-content:center;width:100%;box-sizing:border-box;}
+#hacker-text{font-family:"Courier New",monospace;font-size:1.1rem;color:#00ffcc;background:#001a1a;padding:2rem;border-radius:10px;width:90%;max-width:1100px;white-space:pre-line;border-left:3px solid #00ffcc;box-shadow:0 0 20px #00ffcc;animation:glow 1.8s infinite alternate;}
+@media(max-width:600px){#hacker-text{font-size:.9rem;padding:1.2rem;width:95%;}}
+@keyframes glow{0%{box-shadow:0 0 10px #00ffcc,0 0 20px #00ffcc,0 0 30px #00ffcc;}50%{box-shadow:0 0 25px #00ffcc,0 0 50px #00ffcc,0 0 75px #00ffcc;}100%{box-shadow:0 0 15px #00ffcc,0 0 30px #00ffcc,0 0 45px #00ffcc;}}
+#hacker-text::after{content:"█";animation:blink .7s infinite alternate;}
+@keyframes blink{0%{opacity:1;}100%{opacity:0;}}
 
 /* =================== Section Projets =================== */
 .projects{max-width:1000px;margin:3rem auto;text-align:center}
-.projects h2{margin-bottom:2rem;font-size:1.8rem;color:#0e7490}
-.project-cards{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem}
-.project-card{border:2px solid #0e7490;border-radius:10px;padding:1rem;width:280px;transition:.3s;display:flex;flex-direction:column;align-items:center}
+.project-cards{display:flex;justify-content:center;flex-wrap:wrap;gap:1.5rem}
+.project-card{border:2px solid #0e7490;border-radius:10px;padding:1rem;width:280px;transition:.3s}
 .project-card:hover{transform:translateY(-5px) scale(1.03);box-shadow:0 8px 20px rgba(0,0,0,.25)}
-.project-card h3{margin:1rem 0 .5rem}
-.project-card p{text-align:center}
-.logo-bg{background:#fff;padding:1rem;border-radius:10px;width:120px;height:120px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
-.logo-bg img{max-width:100%;max-height:100%}
+.project-card img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:0.8rem;padding:0.3rem;background-color:#f9fcff;box-sizing: border-box;}
+.project-card h3{margin:0.4rem 0;font-size:1.1rem}
+.project-card p{font-size:0.9rem;line-height:1.35;margin:0}
 
-/* =================== Responsive =================== */
-@media(max-width:768px){.hero h1{font-size:1.5rem}.hero p{font-size:1rem}.project-card{width:90%}}
+/* =================== Galerie =================== */
+.gallery{margin:3rem auto;text-align:center}
+.gallery img{width:100%;max-width:300px;border-radius:8px;opacity:1;transform:none;transition:all 0.5s ease;flex:1 1 280px}
+
+/* Carousel specific styles - Hacker / Dark Neon theme */
+.carousel{position:relative;max-width:1100px;margin:1.5rem auto;overflow:visible;padding:18px;border-radius:12px;background:linear-gradient(180deg,#071017 0%, #0c1418 100%);box-shadow:0 12px 40px rgba(2,6,23,0.6);border:1px solid rgba(0,240,150,0.06)}
+.carousel-track{display:flex;transition:transform 0.7s cubic-bezier(.22,.9,.3,1);will-change:transform;gap:14px}
+.carousel-item{min-width:100%;box-sizing:border-box;padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(2,6,11,0.55),rgba(2,6,11,0.35));border-radius:10px;border:1px solid rgba(0,240,150,0.06);transition:transform .35s ease,box-shadow .35s ease}
+.carousel-item:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,240,150,0.06)}
+.carousel-item img{max-width:100%;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.6);display:block;height:auto;flex:0 0 auto;object-fit:cover;filter:contrast(1.05) saturate(1.05)}
+
+/* layout: image + caption side-by-side on larger screens */
+.carousel-item{gap:16px}
+.carousel-item .caption{width:320px;height:320px;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;box-sizing:border-box;font-family:"Courier New", monospace;font-size:1rem;line-height:1.4;color:#00ffcc;background:rgba(3,10,12,0.55);border-radius:8px;border-left:4px solid rgba(0,240,150,0.18);overflow:hidden;text-shadow:0 1px 0 rgba(0,0,0,0.6)}
+.carousel-item .caption strong{color:#00ffcc}
+.carousel-item .caption::before{content:'';position:absolute;pointer-events:none;mix-blend-mode:screen}
+
+/* Neon buttons */
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:transparent;color:#00ffcc;border:2px solid rgba(0,240,150,0.18);padding:.6rem .7rem;border-radius:50%;cursor:pointer;font-size:1.3rem;opacity:0.98;box-shadow:0 6px 18px rgba(0,240,150,0.06), 0 0 16px rgba(0,240,150,0.02) inset}
+.carousel-btn:hover{transform:translateY(-50%) scale(1.04);box-shadow:0 10px 26px rgba(0,240,150,0.16), 0 0 28px rgba(0,240,150,0.06)}
+.carousel-btn.prev{left:10px}
+.carousel-btn.next{right:10px}
+.carousel-btn:focus{outline:2px solid rgba(0,240,150,0.18);outline-offset:3px}
+
+/* Indicators: thin neon bars */
+.carousel-indicators{display:flex;gap:.6rem;justify-content:center;margin-top:12px}
+.carousel-indicators button{width:26px;height:6px;border-radius:6px;border:none;background:rgba(255,255,255,0.04);cursor:pointer;transition:all .2s ease}
+.carousel-indicators button.active{background:linear-gradient(90deg,#00ffcc,#00e08a);box-shadow:0 6px 18px rgba(0,240,150,0.12)}
+
+/* Pause on hover */
+.carousel:hover .carousel-btn{opacity:1}
+
+@media (min-width:900px){
+  .carousel-item{min-height:360px;flex-direction:row;align-items:center}
+  .carousel-item img{width:60%;height:320px;border-radius:6px}
+  .carousel-item .caption{text-align:left}
+}
+
+@media (max-width:900px){
+  .carousel{padding:12px}
+  .carousel-track{gap:12px}
+  .carousel-item{flex-direction:column;padding:12px}
+  .carousel-item img{width:100%;height:200px;border-radius:6px}
+  .carousel-item .caption{width:100%;height:auto;margin-top:12px;border-left:3px solid rgba(0,240,150,0.08)}
+  .carousel-btn.prev{left:6px}
+  .carousel-btn.next{right:6px}
+}
+
+
+/* =================== Footer =================== */
+footer{background-color:#e2e8f0;text-align:center;padding:1rem}

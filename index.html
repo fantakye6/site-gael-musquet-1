@@ -1,35 +1,92 @@
-<!-- Hero -->
-<header class="hero">
-  <div class="hero-overlay">
-    <h1>Quand la cartographie et l’OSINT sauvent des vies</h1>
-    <p>Gaël Musquet – Humanitaire & Données</p>
-    <a href="#projects" class="cta-btn">Découvrir ses projets</a>
-  </div>
-</header>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaël Musquet – Humanitaire et Données</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
-<!-- Hacker Text -->
-<section class="hacker-section">
-  <pre id="hacker-text">Météorologue de formation et hacker citoyen, Gaël Musquet place la technologie au service de l’humain...</pre>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">Gaël Musquet</div>
+        <button class="nav-toggle" id="nav-toggle">☰</button>
+        <ul id="nav-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="biographie.html"><i class="fas fa-user"></i> Biographie</a></li>
+            <li><a href="engagements.html"><i class="fas fa-hands-helping"></i> Projets</a></li>
+            <li><a href="vision.html"><i class="fas fa-lightbulb"></i> Vision & Valeurs</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Intro / Portrait -->
+<section class="intro">
+    <div class="portrait-container">
+        <img src="images/gael-musquet.jpg" alt="Portrait de Gaël Musquet" class="portrait">
+        <img src="images/image-removebg-preview-2.png" alt="Pin" class="pin-image">
+    </div>
+    <h2 class="section-title">Gaël Musquet – L’humanitaire à travers la donnée</h2>
+    <div class="hacker-text-container">
+        <pre id="hacker-text"></pre>
+    </div>              
 </section>
 
-<!-- Projets -->
-<section class="projects" id="projects">
-  <h2>Découvrir ses projets humanitaires</h2>
-  <div class="project-cards">
-    <div class="project-card">
-      <div class="logo-bg"><img src="images/logo-hand.png" alt="HAND"></div>
-      <h3>HAND</h3>
-      <p>Hackers Against Natural Disasters : outils libres pour anticiper ou répondre aux catastrophes.</p>
+<!-- Projets Humanitaires -->
+<section class="projects">
+    <h2>Découvrir ses projets humanitaires</h2>
+    <div class="project-cards">
+        <div class="project-card">
+            <img src="images/logo-hand.png" alt="HAND">
+            <h3>HAND</h3>
+            <p>Hackers Against Natural Disasters : outils libres pour anticiper ou répondre aux catastrophes.</p>
+        </div>
+        <div class="project-card">
+            <img src="images/OSM.jpg" alt="OpenStreetMap">
+            <h3>OpenStreetMap</h3>
+            <p>Cartographie collaborative pour les secours lors de crises comme Haïti ou Philippines.</p>
+        </div>
+        <div class="project-card">
+            <img src="images/sos.jpg" alt="SOS Méditerranée">
+            <h3>SOS Méditerranée</h3>
+            <p>Systèmes de géolocalisation et communication pour coordonner les secours en mer.</p>
+        </div>
     </div>
-    <div class="project-card">
-      <div class="logo-bg"><img src="images/OSM.jpg" alt="OpenStreetMap"></div>
-      <h3>OpenStreetMap</h3>
-      <p>Cartographie collaborative pour les secours lors de crises comme Haïti ou Philippines.</p>
+</section>
+
+<!-- Galerie / Témoignages -->
+<section class="gallery">
+  <h2>Témoignages</h2>
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="carousel-item">
+        <div class="caption">« Les gens seront beaucoup plus rassurés si on les prévient des risques, si on les informe sur les manières de réagir, plutôt que de leur dire: ‘Dormez bien, on s’occupe de tout !’» – Gaël Musquet, au Café Lab Laboo 100% Hacking Against Natural Disasters </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/gallerie-osm.png" alt="Projet OpenStreetMap">
+        <div class="caption">« Grâce à OpenStreetMap, nous avons pu cartographier rapidement les zones sinistrées. » – Collaborateur</div>
+      </div>
+      <div class="carousel-item">
+        <div class="caption">« En quelques coups de fils à la Marine nationale, il a fait en sorte de protéger nos équipes en pleine Méditerranée dans des situations parfois très dangereuses.” » – Jean Karinthi, ancien administrateur de SOS Méditerranée</div>
+      </div>
     </div>
-    <div class="project-card">
-      <div class="logo-bg"><img src="images/sos.jpg" alt="SOS Méditerranée"></div>
-      <h3>SOS Méditerranée</h3>
-      <p>Systèmes de géolocalisation et communication pour coordonner les secours en mer.</p>
-    </div>
+    <button class="carousel-btn prev">❮</button>
+    <button class="carousel-btn next">❯</button>
   </div>
 </section>
+
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 – Site réalisé dans le cadre du projet BUT. Inspiration humanitaire et données ouvertes.</p>
+    <p><a href="contact.html">Contact & Sources</a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
