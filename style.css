@@ -30,9 +30,10 @@ html,body{overflow-x:hidden;margin:0;padding:0;font-family:'Open Sans',sans-seri
 
 /* =================== Hacker Text =================== */
 .hacker-text-container{margin-top:20px;display:flex;justify-content:center;width:100%;box-sizing:border-box;}
-#hacker-text{font-family:"Courier New",monospace;font-size:1.1rem;color:#00ffcc;background:#001a1a;padding:2rem;border-radius:10px;width:90%;max-width:1100px;white-space:pre-line;border-left:3px solid #00ffcc;box-shadow:0 0 20px #00ffcc;animation:glow 1.8s infinite alternate;}
+/* Hacker text: softened neon */
+#hacker-text{font-family:"Courier New",monospace;font-size:1.05rem;color:#9ef7df;background:#021014;padding:1.6rem;border-radius:10px;width:90%;max-width:1100px;white-space:pre-line;border-left:3px solid rgba(158,247,223,0.35);box-shadow:0 0 8px rgba(158,247,223,0.12);animation:glow 3.2s infinite alternate;}
 @media(max-width:600px){#hacker-text{font-size:.9rem;padding:1.2rem;width:95%;}}
-@keyframes glow{0%{box-shadow:0 0 10px #00ffcc,0 0 20px #00ffcc,0 0 30px #00ffcc;}50%{box-shadow:0 0 25px #00ffcc,0 0 50px #00ffcc,0 0 75px #00ffcc;}100%{box-shadow:0 0 15px #00ffcc,0 0 30px #00ffcc,0 0 45px #00ffcc;}}
+@keyframes glow{0%{box-shadow:0 0 6px rgba(158,247,223,0.14);}50%{box-shadow:0 0 12px rgba(158,247,223,0.12);}100%{box-shadow:0 0 6px rgba(158,247,223,0.10);}}
 #hacker-text::after{content:"█";animation:blink .7s infinite alternate;}
 @keyframes blink{0%{opacity:1;}100%{opacity:0;}}
 
@@ -50,29 +51,29 @@ html,body{overflow-x:hidden;margin:0;padding:0;font-family:'Open Sans',sans-seri
 .gallery img{width:100%;max-width:300px;border-radius:8px;opacity:1;transform:none;transition:all 0.5s ease;flex:1 1 280px}
 
 /* Carousel specific styles - Hacker / Dark Neon theme */
-.carousel{position:relative;max-width:1100px;margin:1.5rem auto;overflow:visible;padding:18px;border-radius:12px;background:linear-gradient(180deg,#071017 0%, #0c1418 100%);box-shadow:0 12px 40px rgba(2,6,23,0.6);border:1px solid rgba(0,240,150,0.06)}
+.carousel{position:relative;max-width:1100px;margin:1.5rem auto;overflow:visible;padding:16px;border-radius:12px;background:linear-gradient(180deg,#071017 0%, #0c1418 100%);box-shadow:0 8px 20px rgba(2,6,23,0.45);border:1px solid rgba(0,200,120,0.04)}
 .carousel-track{display:flex;transition:transform 0.7s cubic-bezier(.22,.9,.3,1);will-change:transform;gap:14px}
-.carousel-item{min-width:100%;box-sizing:border-box;padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(2,6,11,0.55),rgba(2,6,11,0.35));border-radius:10px;border:1px solid rgba(0,240,150,0.06);transition:transform .35s ease,box-shadow .35s ease}
-.carousel-item:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,240,150,0.06)}
-.carousel-item img{max-width:100%;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.6);display:block;height:auto;flex:0 0 auto;object-fit:cover;filter:contrast(1.05) saturate(1.05)}
+.carousel-item{min-width:100%;box-sizing:border-box;padding:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(2,6,11,0.6),rgba(2,6,11,0.45));border-radius:10px;border:1px solid rgba(0,200,120,0.04);transition:transform .3s ease,box-shadow .3s ease}
+.carousel-item:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.35)}
+.carousel-item img{max-width:100%;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.45);display:block;height:auto;flex:0 0 auto;object-fit:cover;filter:contrast(1.02) saturate(1.02)}
 
 /* layout: image + caption side-by-side on larger screens */
 .carousel-item{gap:16px}
-.carousel-item .caption{width:320px;height:320px;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;box-sizing:border-box;font-family:"Courier New", monospace;font-size:1rem;line-height:1.4;color:#00ffcc;background:rgba(3,10,12,0.55);border-radius:8px;border-left:4px solid rgba(0,240,150,0.18);overflow:hidden;text-shadow:0 1px 0 rgba(0,0,0,0.6)}
-.carousel-item .caption strong{color:#00ffcc}
+.carousel-item .caption{width:320px;height:320px;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;box-sizing:border-box;font-family:"Courier New", monospace;font-size:1rem;line-height:1.4;color:#bfffe8;background:rgba(3,10,12,0.48);border-radius:8px;border-left:4px solid rgba(0,200,120,0.12);overflow:hidden}
+.carousel-item .caption strong{color:#bfffe8}
 .carousel-item .caption::before{content:'';position:absolute;pointer-events:none;mix-blend-mode:screen}
 
 /* Neon buttons */
-.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:transparent;color:#00ffcc;border:2px solid rgba(0,240,150,0.18);padding:.6rem .7rem;border-radius:50%;cursor:pointer;font-size:1.3rem;opacity:0.98;box-shadow:0 6px 18px rgba(0,240,150,0.06), 0 0 16px rgba(0,240,150,0.02) inset}
-.carousel-btn:hover{transform:translateY(-50%) scale(1.04);box-shadow:0 10px 26px rgba(0,240,150,0.16), 0 0 28px rgba(0,240,150,0.06)}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:transparent;color:#bfffe8;border:1px solid rgba(0,200,120,0.08);padding:.5rem .6rem;border-radius:50%;cursor:pointer;font-size:1.2rem;opacity:0.95;box-shadow:0 4px 12px rgba(0,0,0,0.35)}
+.carousel-btn:hover{transform:translateY(-50%) scale(1.03);box-shadow:0 8px 18px rgba(0,0,0,0.38)}
 .carousel-btn.prev{left:10px}
 .carousel-btn.next{right:10px}
 .carousel-btn:focus{outline:2px solid rgba(0,240,150,0.18);outline-offset:3px}
 
 /* Indicators: thin neon bars */
 .carousel-indicators{display:flex;gap:.6rem;justify-content:center;margin-top:12px}
-.carousel-indicators button{width:26px;height:6px;border-radius:6px;border:none;background:rgba(255,255,255,0.04);cursor:pointer;transition:all .2s ease}
-.carousel-indicators button.active{background:linear-gradient(90deg,#00ffcc,#00e08a);box-shadow:0 6px 18px rgba(0,240,150,0.12)}
+.carousel-indicators button{width:26px;height:6px;border-radius:6px;border:none;background:rgba(255,255,255,0.03);cursor:pointer;transition:all .18s ease}
+.carousel-indicators button.active{background:linear-gradient(90deg,#a8ffea,#6fd9b0);box-shadow:0 6px 14px rgba(0,0,0,0.28)}
 
 /* Pause on hover */
 .carousel:hover .carousel-btn{opacity:1}
