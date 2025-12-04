@@ -19,8 +19,6 @@ html,body{overflow-x:hidden;margin:0;padding:0;font-family:'Open Sans',sans-seri
   #nav-menu li a{display:block;width:100%;padding:.75rem 0;border:none;text-align:center}
 }
 
-/* =================== Hero =================== */
-.hero{background:url('images/gael-musquet2.jpg') center/cover no-repeat;height:60vh;display:flex;align-items:center;justify-content:center}
 
 /* =================== Intro / Portrait =================== */
 .intro{max-width:800px;margin:2rem auto;padding:0 1rem;text-align:center}
