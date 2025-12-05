@@ -22,11 +22,18 @@ html,body{overflow-x:hidden;margin:0;padding:0;font-family:'Open Sans',sans-seri
 
 /* =================== Intro / Portrait =================== */
 .intro{max-width:800px;margin:2rem auto;padding:0 1rem;text-align:center}
-.portrait-container{position:relative;display:inline-block}
-.portrait{width:350px;max-width:90%;border-radius:15px;margin:2rem auto;border:3px solid rgba(107,163,122,.7);box-shadow:0 15px 40px rgba(0,0,0,.4),0 0 15px rgba(14,116,144,.5);transform:rotate(-2deg);transition:.4s ease}
-.portrait-container:hover .portrait{transform:rotate(0deg) scale(1.05)}
-.pin-image{position:absolute;width:50px;top:-10px;left:50%;transform:translateX(-50%) rotate(-2deg);transition:.4s ease}
+.intro{max-width:1100px;margin:2rem auto;padding:0 1rem}
+.intro .section-title{text-align:center;margin-bottom:1rem}
+.intro-content{display:flex;gap:1.5rem;align-items:flex-start}
+.portrait-container{position:relative;flex:0 0 48%}
+.portrait{width:100%;max-width:480px;border-radius:15px;margin:0;border:3px solid rgba(107,163,122,.7);box-shadow:0 18px 50px rgba(0,0,0,.35),0 0 15px rgba(14,116,144,.2);transform:rotate(-2deg);transition:.4s ease}
+.portrait-container:hover .portrait{transform:rotate(0deg) scale(1.03)}
+.pin-image{position:absolute;width:48px;top:-12px;left:45%;transform:translateX(-50%) rotate(-2deg);transition:.4s ease}
 .portrait-container:hover .pin-image{transform:translateX(-50%) rotate(0deg) scale(1.05)}
+
+.hacker-text-container{flex:0 0 48%;display:flex;align-items:center;justify-content:center}
+/* Make hacker-text a square box on desktop */
+#hacker-text{width:320px;height:320px;margin:0;padding:1.4rem;box-sizing:border-box}
 
 /* =================== Hacker Text =================== */
 .hacker-text-container{margin-top:20px;display:flex;justify-content:center;width:100%;box-sizing:border-box;}
