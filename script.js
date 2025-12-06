@@ -1,131 +1,27 @@
-const canvas = document.getElementById('world-lines');
-let ctx = null;
-let lines = [];
-if (canvas) {
-    ctx = canvas.getContext('2d');
+// Replace canvas animation with pin overlay generator
+const pinsContainer = document.getElementById('map-pins');
+if (pinsContainer) {
+    // Example pins (x%, y%) relative to the map container
+    const pins = [
+        { x: 22, y: 34, label: 'Paris' },
+        { x: 48, y: 28, label: 'Lyon' },
+        { x: 70, y: 50, label: 'Marseille' },
+        { x: 35, y: 68, label: 'Bordeaux' },
+        { x: 82, y: 20, label: 'Nice' }
+    ];
 
-    // Debug helpers: log canvas presence and make it briefly visible with an outline
-    try {
-        console.log('[debug] world-lines canvas found:', canvas, 'size:', canvas.width, 'x', canvas.height);
-        // add a visible outline to help spotting the canvas in the page
-        canvas.style.outline = '3px solid rgba(255,0,0,0.6)';
-        // remove the outline after 2s so it doesn't remain
-        setTimeout(() => { canvas.style.outline = ''; }, 2000);
-    } catch (e) { console.log('[debug] canvas debug failed', e); }
-
-    function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    // Shooting-line animation (staggered, star-like)
-    const NUM = 12; // fewer lines
-
-    function createLine(now) {
-        const x = Math.random() * canvas.width;
-        const y = Math.random() * canvas.height;
-        const angle = Math.random() * Math.PI * 2;
-        const dirX = Math.cos(angle);
-        const dirY = Math.sin(angle);
-        const maxLen = 60 + Math.random() * 220; // length in px
-        const speed = 0.2 + Math.random() * 0.9; // px per ms
-        const delay = Math.random() * 2500; // staggered start
-        const fade = 300 + Math.random() * 600; // fade duration ms
-        return {
-            x, y, dirX, dirY, maxLen, speed, delay,
-            state: 'waiting', start: now, runStart: 0, fadeStart: 0, alpha: 1
-        };
+    function createPin(p) {
+        const pin = document.createElement('div');
+        pin.className = 'pin';
+        pin.style.left = p.x + '%';
+        pin.style.top = p.y + '%';
+        pin.innerHTML = `<img src="images/image-removebg-preview-2.png" alt="pin"><div class="pin-label">${p.label}</div>`;
+        pinsContainer.appendChild(pin);
+        // staggered reveal
+        setTimeout(() => pin.classList.add('show'), Math.random() * 1200 + 200);
     }
 
-    const now0 = performance.now();
-    lines = [];
-    for (let i = 0; i < NUM; i++) lines.push(createLine(now0));
-
-    function animate(now) {
-        if (!ctx) return;
-        if (!now) now = performance.now();
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        // draw subtle background faint lines for depth
-        // (optional, light grid effect)
-        // ctx.globalAlpha = 0.08; // keep disabled for now
-
-        lines.forEach((l, idx) => {
-            const t = now - l.start;
-            if (l.state === 'waiting') {
-                if (t >= l.delay) {
-                    l.state = 'running';
-                    l.runStart = now;
-                    l.progress = 0;
-                }
-            }
-            if (l.state === 'running') {
-                const runT = now - l.runStart;
-                l.progress = runT * l.speed; // px
-                const prog = Math.min(l.progress, l.maxLen);
-                const x2 = l.x + l.dirX * prog;
-                const y2 = l.y + l.dirY * prog;
-
-                // line alpha eases out when approaching end
-                const alpha = 0.95 * (1 - (prog / l.maxLen));
-                ctx.strokeStyle = `rgba(255,255,255,${Math.max(0.12, alpha)})`;
-                ctx.lineWidth = 1.6;
-                ctx.beginPath();
-                ctx.moveTo(l.x, l.y);
-                ctx.lineTo(x2, y2);
-                ctx.stroke();
-
-                // red endpoint markers
-                ctx.fillStyle = `rgba(255,70,70,${Math.min(1, 0.9 * (alpha + 0.2))})`;
-                ctx.beginPath();
-                ctx.arc(l.x, l.y, 2.6, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.beginPath();
-                ctx.arc(x2, y2, 2.6, 0, Math.PI * 2);
-                ctx.fill();
-
-                if (l.progress >= l.maxLen) {
-                    l.state = 'fading';
-                    l.fadeStart = now;
-                }
-            }
-
-            if (l.state === 'fading') {
-                const fadeT = now - l.fadeStart;
-                const fadeProgress = fadeT / (300 + Math.random() * 400);
-                const alpha = Math.max(0, 1 - fadeProgress);
-                // draw final thin line with reduced alpha
-                const prog = l.maxLen;
-                const x2 = l.x + l.dirX * prog;
-                const y2 = l.y + l.dirY * prog;
-                ctx.strokeStyle = `rgba(255,255,255,${0.4 * alpha})`;
-                ctx.lineWidth = 1.2;
-                ctx.beginPath();
-                ctx.moveTo(l.x, l.y);
-                ctx.lineTo(x2, y2);
-                ctx.stroke();
-
-                ctx.fillStyle = `rgba(255,70,70,${0.6 * alpha})`;
-                ctx.beginPath();
-                ctx.arc(l.x, l.y, 2.2 * alpha + 0.6, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.beginPath();
-                ctx.arc(x2, y2, 2.2 * alpha + 0.6, 0, Math.PI * 2);
-                ctx.fill();
-
-                if (fadeProgress >= 1) {
-                    // reset this line
-                    const idxNow = performance.now();
-                    lines[idx] = createLine(idxNow);
-                }
-            }
-        });
-
-        requestAnimationFrame(animate);
-    }
-    requestAnimationFrame(animate);
+    pins.forEach(createPin);
 }
 
 // Hamburger menu
