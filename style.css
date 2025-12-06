@@ -1,6 +1,9 @@
-.map-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;overflow:hidden;pointer-events:none}
-.map-bg img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.45;filter:brightness(.9) contrast(1.05);z-index:0}
-#world-lines{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
+/* ==== Fond carte + points lumineux ==== */
+#map-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;
+background:url("images/image-de-fond.png") center/cover no-repeat;opacity:.18}
+#pulse-points{position:fixed;top:0;left:0;width:100%;height:100%;
+z-index:-1;pointer-events:none}
+
 
 /* =================== Global =================== */
 html,body{overflow-x:hidden;margin:0;padding:0;font-family:'Open Sans',sans-serif;color:#1f2937}
