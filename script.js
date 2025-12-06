@@ -21,7 +21,7 @@ if (canvas) {
     window.addEventListener('resize', resize);
 
     // Shooting-line animation (staggered, star-like)
-    const NUM = 12; // fewer lines
+    const NUM = 55; // fewer lines
 
     function createLine(now) {
         const x = Math.random() * canvas.width;
@@ -30,7 +30,7 @@ if (canvas) {
         const dirX = Math.cos(angle);
         const dirY = Math.sin(angle);
         const maxLen = 60 + Math.random() * 220; // length in px
-        const speed = 0.2 + Math.random() * 0.9; // px per ms
+        const speed = 5 + Math.random() * 0.9; // px per ms
         const delay = Math.random() * 2500; // staggered start
         const fade = 300 + Math.random() * 600; // fade duration ms
         return {
