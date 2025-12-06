@@ -27,18 +27,16 @@ body{background:transparent}
 .intro{max-width:1100px;margin:3rem auto;padding:2rem 1rem}
 .intro .section-title{text-align:center;width:100%;margin-bottom:1.5rem}
 .intro-content{display:flex;gap:2rem;align-items:center;flex-wrap:wrap;justify-content:flex-start}
-.portrait-container{position:relative;flex:0 0 280px;display:flex;justify-content:center;align-items:center}
+.portrait-container{flex:0 0 280px;display:flex;justify-content:center;align-items:center;position:relative}
 .portrait-link{display:block;position:relative;border-radius:16px;overflow:hidden;cursor:pointer;z-index:2}
 .portrait{width:100%;height:auto;border-radius:16px;box-shadow:0 14px 34px rgba(2,36,38,0.18);transition:.36s}
 .portrait-link:hover .portrait{transform:translateY(-4px) scale(1.03);filter:brightness(1.04) saturate(1.03)}
 .portrait-cta{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);background:linear-gradient(90deg,#0e9f92,#0b6b6a);color:#fff;padding:10px 14px;border-radius:30px;font-weight:700;box-shadow:0 6px 18px rgba(6,120,110,0.12);z-index:3;opacity:1}
 .halo{position:absolute;top:50%;left:50%;width:300px;height:300px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(0,150,255,0.4),rgba(0,150,255,0));border-radius:50%;filter:blur(50px);z-index:1;animation:halo-pulse 3s infinite ease-in-out}
 @keyframes halo-pulse{0%{transform:translate(-50%,-50%) scale(0.95);opacity:.7}50%{transform:translate(-50%,-50%) scale(1.05);opacity:1}100%{transform:translate(-50%,-50%) scale(0.95);opacity:.7}}
-.hacker-text-container{flex:1;max-width:480px;display:flex;align-items:center;margin:auto 0;justify-content:center} /* largeur réduite */
-#hacker-text{width:100%;min-height:300px;padding:1.5rem;font-family:"Courier New",monospace;font-size:1rem;color:#bfffe6;background:#021014;border-radius:12px;border-left:3px solid rgba(158,247,223,0.45);box-shadow:0 0 12px rgba(158,247,223,0.16);white-space:pre-line;animation:glow 3.2s infinite alternate}
-
-/* Responsive */
-@media(max-width:900px){.intro-content{flex-direction:column;align-items:center}.portrait-container{margin-bottom:1.5rem}#hacker-text{max-width:400px;width:90%}}
+.hacker-text-container{flex:1;min-width:400px;display:flex;align-items:center;justify-content:center;margin:auto 0}
+#hacker-text{width:100%;min-height:360px;padding:1.5rem;font-family:"Courier New",monospace;font-size:1rem;color:#bfffe6;background:#021014;border-radius:12px;border-left:3px solid rgba(158,247,223,0.45);box-shadow:0 0 12px rgba(158,247,223,0.16);white-space:pre-line;animation:glow 3.2s infinite alternate}
+@media(max-width:900px){.intro-content{flex-direction:column;align-items:center}.portrait-container{margin-bottom:1.5rem}#hacker-text{max-width:90%}}
 @media(max-width:600px){.portrait{width:220px}#hacker-text{max-width:350px}}
 
 /* Enhance main title */
