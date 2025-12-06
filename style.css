@@ -25,8 +25,10 @@ body{background:transparent}
 }
 
 /* ===== Intro portrait + hacker côte à côte ===== */
-.intro{max-width:1100px;margin:3rem auto;padding:2rem 1rem;display:flex;gap:2rem;flex-wrap:wrap;align-items:flex-start;justify-content:center}
-.portrait-container{position:relative;max-width:280px;flex:1 1 auto;display:flex;justify-content:center;align-items:center}
+.intro{max-width:1100px;margin:3rem auto;padding:2rem 1rem}
+.intro .section-title{text-align:center;width:100%;display:block;margin-bottom:1.5rem}
+.intro-content{display:flex;gap:2rem;align-items:flex-start;justify-content:space-between;width:100%}
+.portrait-container{position:relative;max-width:320px;flex:0 0 34%;display:flex;justify-content:center;align-items:center}
 .portrait-link{display:block;position:relative;border-radius:16px;overflow:hidden;cursor:pointer;z-index:2}
 .portrait{width:100%;height:auto;border-radius:16px;box-shadow:0 14px 34px rgba(2,36,38,0.18);transition:.36s}
 .portrait-link:hover .portrait{transform:translateY(-4px) scale(1.03);filter:brightness(1.04) saturate(1.03)}
