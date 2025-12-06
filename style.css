@@ -50,6 +50,40 @@ body{background:transparent}
 /* Focus outline for keyboard users */
 .portrait-link:focus{outline:3px solid rgba(14,159,146,0.18);outline-offset:6px}
 
+/* Green halo behind the portrait (pulsing) */
+.portrait-container{position:relative;z-index:1}
+.portrait-container::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:380px;
+  height:380px;
+  transform:translate(-50%,-50%) scale(1);
+  border-radius:18px;
+  background: radial-gradient(circle at center, rgba(10,220,170,0.36) 0%, rgba(10,200,150,0.18) 30%, rgba(10,180,140,0.08) 55%, transparent 70%);
+  filter:blur(12px);
+  opacity:0.95;
+  z-index:0;
+  pointer-events:none;
+  will-change:transform,opacity;
+  animation:halo-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes halo-pulse{
+  0%{transform:translate(-50%,-50%) scale(0.98);opacity:0.6}
+  50%{transform:translate(-50%,-50%) scale(1.06);opacity:1}
+  100%{transform:translate(-50%,-50%) scale(0.98);opacity:0.6}
+}
+
+/* Ensure portrait is above the halo */
+.portrait-link{position:relative;z-index:2}
+.portrait{position:relative;z-index:3}
+
+@media(max-width:600px){
+  .portrait-container::before{width:260px;height:260px;filter:blur(10px)}
+}
+
 .hacker-text-container{flex:0 0 60%;display:flex;align-items:center;justify-content:flex-start}
 /* Make hacker-text wider so content doesn't overflow */
 #hacker-text{width:760px;min-height:440px;margin:0;padding:2rem;box-sizing:border-box}
