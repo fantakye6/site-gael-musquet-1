@@ -34,12 +34,13 @@ body{background:transparent}
 .portrait-cta{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);background:linear-gradient(90deg,#0e9f92,#0b6b6a);color:#fff;padding:10px 14px;border-radius:30px;font-weight:700;box-shadow:0 6px 18px rgba(6,120,110,0.12);z-index:3;opacity:1}
 .halo{position:absolute;top:50%;left:50%;width:300px;height:300px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(0,150,255,0.4),rgba(0,150,255,0));border-radius:50%;filter:blur(50px);z-index:1;animation:halo-pulse 3s infinite ease-in-out}
 @keyframes halo-pulse{0%{transform:translate(-50%,-50%) scale(0.95);opacity:.7}50%{transform:translate(-50%,-50%) scale(1.05);opacity:1}100%{transform:translate(-50%,-50%) scale(0.95);opacity:.7}}
-.hacker-text-container{flex:1;display:flex;align-items:flex-start;justify-content:flex-start}
-#hacker-text{width:100%;padding:2rem;font-family:"Courier New",monospace;font-size:1rem;color:#bfffe6;background:#021014;border-radius:12px;border-left:3px solid rgba(158,247,223,0.45);box-shadow:0 0 12px rgba(158,247,223,0.16);white-space:pre-line;text-align:left;line-height:1.5;animation:glow 3.2s infinite alternate}
+.hacker-text-container{flex:1;min-width:450px;display:flex;align-items:center;justify-content:flex-start}
+#hacker-text{width:100%;padding:2rem;font-family:"Courier New",monospace;font-size:1rem;color:#bfffe6;background:#021014;border-radius:12px;border-left:3px solid rgba(158,247,223,0.45);box-shadow:0 0 12px rgba(158,247,223,0.16);white-space:pre-line;text-align:center;line-height:1.5;animation:glow 3.2s infinite alternate;display:block}
 
 /* Responsive */
 @media(max-width:900px){.intro-content{flex-direction:column;align-items:center}.portrait-container{margin-bottom:1.5rem}#hacker-text{max-width:90%;height:auto}}
 @media(max-width:600px){.portrait{width:220px}#hacker-text{max-width:350px}}
+
 
 /* Enhance main title */
 .intro .section-title{font-family:'Lato',sans-serif;font-size:1.8rem;font-weight:800;color:#072f34;letter-spacing:0.4px;margin-bottom:1rem;text-shadow:0 6px 18px rgba(3,29,33,0.12)}
