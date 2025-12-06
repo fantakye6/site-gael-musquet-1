@@ -7,6 +7,28 @@ toggle.addEventListener("click", () => {
     menu.classList.toggle("show");
 });
 
+// =================== Scroll Animations Intro ===================
+const introSection = document.querySelector('.intro');
+const portraitCTA = document.querySelector('.portrait-cta');
+const halo = document.querySelector('.halo');
+
+function handleScroll() {
+    const rect = introSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if(rect.top < windowHeight * 0.8) { // section visible à 80%
+        portraitCTA.style.opacity = '1';
+        portraitCTA.style.transform = 'translateX(-50%) translateY(-6px)';
+        halo.style.transform = 'translate(-50%, -50%) scale(1.05)'; // halo légèrement plus grand
+    } else {
+        portraitCTA.style.opacity = '0';
+        portraitCTA.style.transform = 'translateX(-50%) translateY(10px)';
+        halo.style.transform = 'translate(-50%, -50%) scale(0.9)';
+    }
+}
+
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('load', handleScroll);
 
 // Hacker text animation
 const hackerText = `Météorologue de formation et hacker citoyen,
