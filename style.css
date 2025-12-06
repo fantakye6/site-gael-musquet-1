@@ -25,30 +25,23 @@ body{background:transparent}
 }
 
 
-/* =================== Intro / Hero =================== */
-.intro{max-width:1200px;margin:3rem auto;padding:0 1rem;text-align:center}
-.intro .section-title{font-family:'Lato',sans-serif;font-size:2rem;font-weight:800;color:#072f34;margin-bottom:1rem;text-shadow:0 6px 18px rgba(3,29,33,0.12)}
+/* ========== Intro / Hero condensé ========== */
+.intro{max-width:1200px;margin:3rem auto;padding:2rem 1rem;display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;background:rgba(0,0,0,0.02);border-radius:16px}
+.intro .section-title{width:100%;font-family:'Lato',sans-serif;font-size:2rem;font-weight:800;color:#072f34;margin-bottom:1.5rem;text-align:center;text-shadow:0 6px 18px rgba(3,29,33,0.12)}
 .intro .section-title::after{content:'';display:block;width:100px;height:4px;background:linear-gradient(90deg,#0e9f92,#0b6b6a);margin:12px auto 0;border-radius:2px}
 
-.intro-content{display:flex;gap:3rem;align-items:center;justify-content:center;flex-wrap:wrap;position:relative}
-
-/* Portrait + halo */
 .portrait-container{position:relative;flex:0 0 auto;display:flex;align-items:center;justify-content:center}
-.portrait-link{display:block;position:relative;border-radius:16px;overflow:hidden;text-decoration:none;cursor:pointer;z-index:2}
-.portrait{width:400px;height:auto;border-radius:16px;box-shadow:0 18px 40px rgba(2,36,38,0.2);transition:transform .36s,filter .36s}
+.portrait-link{display:block;position:relative;border-radius:16px;overflow:hidden;cursor:pointer;z-index:2}
+.portrait{width:380px;height:auto;border-radius:16px;box-shadow:0 18px 40px rgba(2,36,38,0.2);transition:transform .36s,filter .36s}
 .portrait-link:hover .portrait{transform:translateY(-6px) scale(1.04);filter:brightness(1.04) saturate(1.03)}
-
 .portrait-cta{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:linear-gradient(90deg,#0e9f92,#0b6b6a);color:#fff;padding:12px 18px;border-radius:30px;font-weight:700;font-family:'Lato';opacity:1;box-shadow:0 6px 18px rgba(6,120,110,0.15);z-index:3}
-
-/* Halo animé */
 .halo{position:absolute;top:50%;left:50%;width:450px;height:450px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(0,150,255,0.4),rgba(0,150,255,0));border-radius:50%;opacity:1;filter:blur(70px);z-index:1;animation:halo-pulse 3s infinite ease-in-out}
-@keyframes halo-pulse{0%{transform:translate(-50%,-50%) scale(0.9);opacity:0.7}50%{transform:translate(-50%,-50%) scale(1.1);opacity:1}100%{transform:translate(-50%,-50%) scale(0.9);opacity:0.7}}
+@keyframes halo-pulse{0%{transform:translate(-50%,-50%) scale(0.95);opacity:0.7}50%{transform:translate(-50%,-50%) scale(1.05);opacity:1}100%{transform:translate(-50%,-50%) scale(0.95);opacity:0.7}}
 
-/* Hacker text réduit */
-.hacker-text-container{flex:1;display:flex;align-items:center;justify-content:center;max-width:450px}
+.hacker-text-container{flex:1;max-width:450px;display:flex;align-items:center;justify-content:center}
 #hacker-text{width:100%;max-width:450px;min-height:360px;padding:1.5rem;box-sizing:border-box;font-family:"Courier New",monospace;font-size:1rem;color:#bfffe6;background:#021014;border-radius:12px;border-left:3px solid rgba(158,247,223,0.45);box-shadow:0 0 14px rgba(158,247,223,0.2);white-space:pre-line;animation:glow 3.2s infinite alternate}
 
-@media(max-width:1024px){.intro-content{flex-direction:column;align-items:center}.portrait{width:320px;margin-bottom:1.5rem}#hacker-text{width:90%;max-width:400px}}
+@media(max-width:1024px){.intro{flex-direction:column;align-items:center;gap:2rem}.portrait{width:320px;margin-bottom:1.5rem}#hacker-text{width:90%;max-width:400px}}
 @media(max-width:600px){.portrait{width:260px}#hacker-text{max-width:350px}}
 
 /* Make hacker-text wider so content doesn't overflow */
