@@ -41,8 +41,6 @@ body{background:transparent}
 @media(max-width:900px){.intro-content{flex-direction:column;align-items:center}.portrait-container{margin-bottom:1.5rem}#hacker-text{max-width:400px;width:90%}}
 @media(max-width:600px){.portrait{width:220px}#hacker-text{max-width:350px}}
 
-
-
 /* Enhance main title */
 .intro .section-title{font-family:'Lato',sans-serif;font-size:1.8rem;font-weight:800;color:#072f34;letter-spacing:0.4px;margin-bottom:1rem;text-shadow:0 6px 18px rgba(3,29,33,0.12)}
 .intro .section-title::after{content:'';display:block;width:80px;height:4px;background:linear-gradient(90deg,#0e9f92,#0b6b6a);margin:12px auto 0;border-radius:2px}
