@@ -6,15 +6,18 @@
 html,body{overflow-x:hidden;margin:0;padding:0;font-family:'Open Sans',sans-serif;color:#1f2937}
 body{background:transparent}
 
+
 /* =================== Navbar =================== */
-.logo{font-weight:bold;color:#0e7490;text-decoration:none;font-size:1.2rem}
-.logo:hover{color:#0b6b6a}
 .navbar{background:rgba(250,249,245,0.85);border-bottom:2px solid rgba(14,116,144,0.18);padding:1rem 0;position:relative;z-index:1000;backdrop-filter:blur(6px)}
 .nav-container{display:flex;justify-content:space-between;align-items:center;padding:0 1rem}
+.logo{font-weight:bold;color:#0e7490;text-decoration:none;font-size:1.2rem}
+.logo:hover{color:#0b6b6a}
 #nav-menu{display:flex;gap:1rem;list-style:none}
 #nav-menu li a{color:#0e7490;text-decoration:none;font-weight:bold;padding:.5rem 1rem;border:2px solid #0e7490;border-radius:8px;transition:.3s}
 #nav-menu li a:hover{background:#0e7490;color:#fff}
 .nav-toggle{display:none}
+
+/* Responsive mobile */
 @media(max-width:768px){
   .nav-toggle{display:block;background:none;border:none;font-size:1.8rem;color:#0e7490;cursor:pointer}
   #nav-menu{display:none;flex-direction:column;width:100%;margin:0;padding:0;background:#faf9f5;align-items:center}
