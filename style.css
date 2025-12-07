@@ -7,6 +7,8 @@ html,body{overflow-x:hidden;margin:0;padding:0;font-family:'Open Sans',sans-seri
 body{background:transparent}
 
 /* =================== Navbar =================== */
+.logo{font-weight:bold;color:#0e7490;text-decoration:none;font-size:1.2rem}
+.logo:hover{color:#0b6b6a}
 .navbar{background:rgba(250,249,245,0.85);border-bottom:2px solid rgba(14,116,144,0.18);padding:1rem 0;position:relative;z-index:1000;backdrop-filter:blur(6px)}
 .nav-container{display:flex;justify-content:space-between;align-items:center;padding:0 1rem}
 #nav-menu{display:flex;gap:1rem;list-style:none}
