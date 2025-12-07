@@ -75,11 +75,11 @@ body{background:transparent}
   color:#072f34;
   text-align:center;
   margin-bottom:1.5rem;
+   font-weight:800;
 }
 
 /* =================== Galerie =================== */
 .gallery{max-width:1100px;margin:2.5rem auto;padding:0 1rem}
-.gallery h2{font-family:'Lato',sans-serif;margin-bottom:1rem;color:#0b2a33;text-align:center}
 .carousel{position:relative;overflow:visible}
 .carousel-track{display:flex;transition:transform .6s ease;will-change:transform;gap:20px}
 .carousel-item{min-width:100%;box-sizing:border-box;display:flex;flex-direction:column;background:#ffffff;border-radius:12px;padding:14px;box-shadow:0 6px 20px rgba(15,23,42,0.06);border:1px solid rgba(15,23,42,0.04);transition:transform .3s ease,box-shadow .3s ease}
