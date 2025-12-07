@@ -67,6 +67,16 @@ body{background:transparent}
 .project-card h3{margin:.4rem 0;font-size:1.1rem;color:#072f34}
 .project-card p{font-size:.9rem;line-height:1.35;margin:0;color:#0b2a33}
 
+/* Titres uniformes */
+.projects h2,
+.gallery h2 {
+  font-family:'Lato',sans-serif;
+  font-size:1.5rem; 
+  color:#072f34;
+  text-align:center;
+  margin-bottom:1.5rem;
+}
+
 /* =================== Galerie =================== */
 .gallery{max-width:1100px;margin:2.5rem auto;padding:0 1rem}
 .gallery h2{font-family:'Lato',sans-serif;margin-bottom:1rem;color:#0b2a33;text-align:center}
