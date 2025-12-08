@@ -139,3 +139,55 @@ section, header, footer, .intro, .projects, .gallery { position: static !importa
   text-shadow: 0 6px 18px rgba(3,29,33,0.12) !important;
   text-align: center !important;
 }
+
+
+/* =================== PAGES INTERNES : Général =================== */
+.page-content{max-width:1000px;margin:3rem auto 5rem;padding:0 1rem}
+#nav-menu li a.active{background:#0e7490;color:#fff;box-shadow:0 4px 8px rgba(14,116,144,0.4)}
+.section-title{font-family:'Lato',sans-serif;font-size:1.8rem;font-weight:800;color:#072f34;letter-spacing:.4px;margin:0 auto 2rem;text-shadow:0 6px 18px rgba(3,29,33,.12);text-align:center}
+.section-title::after{content:'';display:block;width:80px;height:4px;background:linear-gradient(90deg,#0e9f92,#0b6b6a);margin:12px auto 0;border-radius:2px}
+
+/* =================== PAGE BIOGRAPHIE : Mise en page =================== */
+.biography-details{padding-top:2rem}
+.bio-grid{display:flex;gap:3rem;align-items:flex-start}
+.bio-image-container{flex:0 0 300px;text-align:center}
+.bio-portrait{width:100%;height:auto;border-radius:12px;box-shadow:0 10px 25px rgba(2,36,38,.15)}
+.citation{margin-top:1.5rem;font-style:italic;color:#0e7490;font-size:1.1rem;padding:10px 15px;border-left:3px solid #0e7490;background-color:#f7fbfd;text-align:left}
+.bio-text{flex:1}
+.bio-text h3{color:#072f34;font-family:'Lato',sans-serif;border-bottom:2px solid #e2e8f0;padding-bottom:.5rem;margin-top:2rem}
+.bio-text h3:first-child{margin-top:0}
+
+/* =================== Section Cartes Personnalité =================== */
+.carte-personnalite{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:4rem}
+.bio-carte{background:#fdfdff;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.05);padding:20px;height:100px;overflow:hidden;transition:all .4s cubic-bezier(.25,.46,.45,.94);cursor:pointer;border:1px solid #e2e8f0}
+.bio-carte:hover{height:220px;box-shadow:0 10px 30px rgba(14,116,144,.15);transform:translateY(-5px)}
+.carte-header{display:flex;align-items:center;gap:12px;color:#0e7490;margin-bottom:15px}
+.carte-header i{font-size:1.8rem;color:#0b6b6a}
+.carte-header h3{margin:0;font-size:1.2rem;color:#072f34}
+.carte-content{opacity:0;transition:opacity .3s ease .1s}
+.bio-carte:hover .carte-content{opacity:1}
+
+/* =================== Section Timeline Immersive (Verticale Simple) =================== */
+.timeline-container{position:relative;max-width:800px;margin:0 auto;padding-top:20px}
+.timeline-container::after{content:'';position:absolute;width:3px;background-color:#0e7490;top:0;bottom:0;left:50%;margin-left:-1.5px}
+.timeline-event{padding:10px 40px;position:relative;width:50%;box-sizing:border-box}
+.timeline-event:nth-child(odd){left:0;text-align:right}
+.timeline-event:nth-child(even){left:50%;text-align:left}
+.event-point{width:20px;height:20px;position:absolute;right:-10px;background-color:#fff;border:3px solid #0e7490;top:15px;border-radius:50%;z-index:1}
+.timeline-event:nth-child(even) .event-point{left:-10px}
+.event-content{background:#fafafa;padding:15px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,.05);border-left:5px solid #0e7490}
+.timeline-event:nth-child(odd) .event-content{border-right:5px solid #0e7490;border-left:none}
+.event-content h3::before{content:attr(data-annee);display:block;font-size:.8rem;font-weight:700;color:#0b6b6a;margin-bottom:5px}
+
+/* =================== MEDIA QUERIES (Responsive) =================== */
+@media (max-width:800px){
+    .bio-grid{flex-direction:column;align-items:center;gap:2rem}
+    .bio-image-container{flex:0 0 auto;width:80%;max-width:350px}
+    .citation{width:100%;box-sizing:border-box}
+}
+@media (max-width:600px){
+    .timeline-container::after{left:20px}
+    .timeline-event{width:100%;padding-left:45px;padding-right:10px;left:0!important;text-align:left}
+    .event-point{left:10px!important}
+    .event-content{border-left:5px solid #0e7490!important;border-right:none!important}
+}
