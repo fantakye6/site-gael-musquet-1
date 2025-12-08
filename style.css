@@ -1,15 +1,13 @@
-/* =================== Global et Fond Fixe =================== */
+/* =================== Global et Fond Fixe (Thème clair par défaut) =================== */
 html,body{
     overflow-x:hidden;
     margin:0;
     padding:0;
     font-family:'Open Sans',sans-serif;
-    color:#f0fdfa; /* Texte clair pour le thème sombre */
-    /* Empêche les éléments fixes d'être mangés par un fond du body */
+    color:#1f2937; /* Texte sombre par défaut */
+    /* Assure la transparence pour le fond fixe */
     background-color: transparent !important; 
 }
-/* Le fond du site est géré par l'image fixe en arrière-plan */
-
 .map-bg{
     position:fixed;
     top:0;
@@ -27,54 +25,48 @@ html,body{
     width:100%;
     height:100%;
     object-fit:cover;
-    opacity:.35; /* Carte plus visible */
-    filter:brightness(.5) contrast(1.02); /* Assombrit l'image pour l'effet néon */
+    opacity:.5; /* Visibilité standard */
+    filter:brightness(1); /* Pas de filtre sombre */
     z-index:-1;
     pointer-events:none
 }
 
-
 /* =================== Navbar =================== */
 .navbar{
-    background:rgba(3,13,16,0.85); /* Fond navbar très sombre */
-    border-bottom:2px solid rgba(12,157,145,0.3);
+    background:rgba(255,255,255,0.95); /* Fond navbar clair */
+    border-bottom:1px solid #e5e7eb;
     padding:1rem 0;
     position:relative;
     z-index:1000;
-    backdrop-filter:blur(6px)
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 .nav-container{display:flex;justify-content:space-between;align-items:center;padding:0 1rem}
-.logo{font-weight:bold;color:#0c9d91;text-decoration:none;font-size:1.2rem}
-.logo:hover{color:#0e9f92}
+.logo{font-weight:bold;color:#0e7490;text-decoration:none;font-size:1.2rem}
+.logo:hover{color:#072f34}
 #nav-menu{display:flex;gap:1rem;list-style:none}
 #nav-menu li a{
-    color:#0c9d91;
+    color:#1f2937;
     text-decoration:none;
-    font-weight:bold;
+    font-weight:500;
     padding:.5rem 1rem;
-    border:2px solid #0c9d91;
     border-radius:8px;
     transition:.3s;
-    box-shadow: 0 0 5px rgba(12, 157, 145, 0.4);
 }
-#nav-menu li a:hover{background:#0c9d91;color:#030d10;box-shadow:0 0 10px #0c9d91}
+#nav-menu li a:hover{background:#f3f4f6;color:#0e7490}
 .nav-toggle{display:none}
-#nav-menu li a.active{background:#0c9d91;color:#030d10;box-shadow:0 0 10px #0c9d91}
-
+#nav-menu li a.active{background:#0e7490;color:#fff;box-shadow:0 4px 8px rgba(14,116,144,0.4)}
 
 /* Responsive mobile */
 @media(max-width:768px){
-  .nav-toggle{display:block;background:none;border:none;font-size:1.8rem;color:#0c9d91;cursor:pointer}
-  #nav-menu{display:none;flex-direction:column;width:100%;margin:0;padding:0;background:#030d10;align-items:center}
+  .nav-toggle{display:block;background:none;border:none;font-size:1.8rem;color:#1f2937;cursor:pointer}
+  #nav-menu{display:none;flex-direction:column;width:100%;margin:0;padding:0;background:white;align-items:center}
   #nav-menu.show{display:flex}
-  #nav-menu li{width:100%;text-align:center;border-bottom:1px solid #0c9d91;padding:0}
+  #nav-menu li{width:100%;text-align:center;border-bottom:1px solid #e5e7eb;padding:0}
   #nav-menu li:last-child{border-bottom:none}
   #nav-menu li a{display:block;width:100%;padding:.75rem 0;border:none;text-align:center}
 }
 
-
-/* =================== PAGES INTERNES : Général et Titres (NEON) =================== */
-
+/* =================== PAGES INTERNES : Général et Titres =================== */
 /* Conteneur principal de contenu, maintenant transparent et défilant */
 .page-content{
     max-width:1000px;
@@ -82,19 +74,16 @@ html,body{
     padding:0 1rem;
     position: relative; 
     z-index: 10;
-    /* Ce bloc DOIT être transparent pour laisser passer le fond fixe */
     background-color: transparent !important; 
 }
-
-/* Styles des titres (Néon) */
 .section-title{
     font-family:'Lato',sans-serif;
-    font-size:2.2rem;
-    font-weight:900 !important;
-    color:#0c9d91 !important;
+    font-size:1.8rem;
+    font-weight:800;
+    color:#072f34;
     letter-spacing:.4px;
-    margin:0 auto 2.5rem;
-    text-shadow: 0 0 10px #0c9d91, 0 0 20px rgba(12, 157, 145, 0.4); 
+    margin:0 auto 2rem;
+    text-shadow:0 6px 18px rgba(3,29,33,.12);
     text-align:center
 }
 .section-title::after{
@@ -103,67 +92,37 @@ html,body{
     width:80px;
     height:4px;
     background:linear-gradient(90deg,#0e9f92,#0b6b6a);
-    box-shadow: 0 0 8px #0e9f92;
     margin:12px auto 0;
     border-radius:2px
 }
 
-
-/* =================== Styles pour les sections FLOTTANTES (Conteneurs) =================== */
-/* Les conteneurs de sections sont très transparents pour l'immersion */
+/* =================== Styles pour les sections FLOTTANTES (Thème Clair) =================== */
 .carte-personnalite, .timeline-immersive {
-    background-color: rgba(0, 0, 0, 0.4); /* Fond très sombre transparent */
+    background-color: rgba(255, 255, 255, 0.95); /* Fond blanc très léger et lisible */
     padding: 30px; 
     border-radius: 12px;
-    border: 1px solid rgba(12, 157, 145, 0.2);
-    box-shadow: 0 0 15px rgba(12, 157, 145, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
     margin-bottom: 4rem; 
-    transition: all 0.5s ease;
 }
 
-/* Le titre de la page doit être centré et ressortir */
-.page-content > .section-title {
-    background-color: transparent; 
-    margin-bottom: 3rem;
-    padding-top: 1rem;
-}
-.bio-header .subtitle {
-    text-align: center;
-    color: #fff;
-    font-size: 1.1rem;
-    margin-top: -1.5rem;
-    margin-bottom: 3rem;
-    text-shadow: 0 0 3px #000;
-}
-
-
-/* =================== Section Cartes Personnalité (NEON) =================== */
+/* =================== Section Cartes Personnalité =================== */
 .carte-personnalite {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
     padding: 40px 30px;
 }
-
 .bio-carte{
-    background: rgba(0, 0, 0, 0.3); /* Presque transparent, très sombre */
+    background:#ffffff; 
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(12, 157, 145, 0.15); /* Lumière douce */
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
     padding: 20px;
     height: auto;
-    overflow: visible;
-    transition: all 0.4s ease-in-out;
+    transition: all .3s ease-in-out;
     cursor: pointer;
-    border: 1px solid rgba(12, 157, 145, 0.1);
-    opacity: 0; /* Caché pour l'animation JS */
-    transform: translateY(20px);
-}
-.bio-carte:hover {
-    transform: scale(1.05) translateY(-5px);
-    border-color: rgba(12, 157, 145, 0.5);
-    /* Effet néon plus fort et coloré */
-    box-shadow: 0 0 25px rgba(12, 157, 145, 0.8), 0 0 3px #0c9d91; 
-    background: rgba(12, 157, 145, 0.05); /* L'intérieur s'allume un peu */
+    border: 1px solid #e5e7eb;
+    opacity: 1; /* Visible par défaut, animation gérée par JS */
+    transform: translateY(0);
 }
 
 /* Animation d'apparition au scroll (géré par script.js) */
@@ -173,154 +132,96 @@ html,body{
     transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
 }
 
-/* Icônes et Header */
+.bio-carte:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(14, 116, 144, 0.2);
+}
+
 .carte-header {
     display:flex;align-items:center;gap:12px;
-    color: #0c9d91; 
+    color: #0e7490; 
     margin-bottom: 15px;
-    transition: color 0.3s;
 }
 .carte-header i {
     font-size: 2.2rem;
-    color: #0e9f92;
-    text-shadow: 0 0 8px rgba(12, 157, 145, 0.6);
-    animation: none; 
+    color: #0e7490;
     transition: all 0.3s;
 }
 .bio-carte:hover .carte-header i {
-    color: #fff;
-    text-shadow: 0 0 10px #0e9f92, 0 0 20px #0c9d91;
-    animation: glitch-pulse 1.2s infinite; 
+    transform: scale(1.1) rotate(5deg);
 }
 .carte-header h3 {
     margin:0;
     font-size:1.2rem;
-    color: #f0fdfa;
+    color: #072f34;
     font-weight: 700;
 }
 .carte-content {
-    color: #f0fdfa; /* Texte très clair */
+    color: #1f2937;
     line-height: 1.5;
 }
 
-/* Keyframes de l'effet Glitch */
-@keyframes glitch-pulse {
-    0% { transform: translate(0); opacity: 1; }
-    25% { transform: translate(1px, -1px); opacity: 0.9; }
-    50% { transform: translate(-1px, 1px); opacity: 1; }
-    75% { transform: translate(1px, 1px); opacity: 0.95; }
-    100% { transform: translate(0); opacity: 1; }
-}
 
-
-/* =================== Citation Block =================== */
-.citation-block blockquote {
-    font-size: 1.4rem; 
-    text-align: center; 
-    color: #fff; 
-    text-shadow: 0 0 10px #0e9f92;
-    margin: 0;
-    padding: 0;
-}
-
-
-/* =================== Section Timeline Immersive (Verticale Simple) =================== */
+/* =================== Section Timeline Immersive (Verticale Standard) =================== */
 .timeline-container{position:relative;max-width:800px;margin:0 auto;padding-top:20px}
-/* La ligne centrale devient Néon */
 .timeline-container::after{
     content:'';
     position:absolute;
     width:3px;
-    background-color:#0c9d91;
+    background-color:#0e7490;
     top:0;
     bottom:0;
     left:50%;
     margin-left:-1.5px;
-    box-shadow: 0 0 10px rgba(12, 157, 145, 0.8);
-    animation: pulse-neon 4s infinite alternate;
 }
 .timeline-event{padding:10px 40px;position:relative;width:50%;box-sizing:border-box}
 .timeline-event:nth-child(odd){left:0;text-align:right}
 .timeline-event:nth-child(even){left:50%;text-align:left}
 
-/* Les points de la timeline */
 .event-point{
     width:20px;
     height:20px;
     position:absolute;
     right:-10px;
-    background-color:#030d10 !important;
-    border:3px solid #0c9d91;
+    background-color:#ffffff;
+    border:3px solid #0e7490;
     top:15px;
     border-radius:50%;
     z-index:1;
-    box-shadow: 0 0 15px rgba(12, 157, 145, 0.8);
     transition: all 0.3s;
 }
 .timeline-event:nth-child(even) .event-point{left:-10px}
 .timeline-event:hover .event-point {
     transform: scale(1.3);
-    border-color: #fff;
-    box-shadow: 0 0 20px #0c9d91;
+    background: #0e7490;
 }
-
-/* Contenu des événements */
 .event-content{
-    background: rgba(0, 0, 0, 0.5); 
+    background: #f9f9f9; 
     padding:15px;
     border-radius:8px;
     box-shadow:0 2px 5px rgba(0,0,0,.05);
-    border-left:5px solid #0c9d91;
-    transition: border-color 0.3s;
+    border-left:5px solid #0e7490;
 }
-.timeline-event:nth-child(odd) .event-content{border-right:5px solid #0c9d91;border-left:none}
+.timeline-event:nth-child(odd) .event-content{border-right:5px solid #0e7490;border-left:none}
 .event-content h3{
-    color: #0e9f92;
-    text-shadow: 0 0 5px rgba(14, 159, 146, 0.4);
+    color: #072f34;
 }
-.event-content h3::before{content:attr(data-annee);display:block;font-size:.8rem;font-weight:700;color:#0e9f92;margin-bottom:5px}
-
-/* Keyframes pour la ligne de la timeline */
-@keyframes pulse-neon {
-    0% { opacity: 0.8; box-shadow: 0 0 10px rgba(12, 157, 145, 0.5); }
-    100% { opacity: 1; box-shadow: 0 0 20px rgba(12, 157, 145, 1); }
-}
-
-/* =================== Section Médias =================== */
-.media-links a {
-    transition: all 0.3s ease;
-}
-.media-links a:hover {
-    background: #064a43 !important;
-    box-shadow: 0 0 15px #0e9f92 !important;
+.event-content p{
+    color: #4b5563;
 }
 
 
 /* =================== Footer =================== */
 footer{
-    background-color:#030d10;
+    background-color:#f8f9fa;
     text-align:center;
     padding:1rem;
-    border-top: 1px solid rgba(12, 157, 145, 0.1);
+    border-top: 1px solid #e5e7eb;
 }
 footer p{
     color: #6c757d;
 }
 footer a{
-    color: #0c9d91;
+    color: #0e7490;
     text-decoration: none;
-}
-
-
-/* =================== MEDIA QUERIES (Responsive) =================== */
-@media (max-width:800px){
-    .bio-grid{flex-direction:column;align-items:center;gap:2rem}
-    .bio-image-container{flex:0 0 auto;width:80%;max-width:350px}
-    .citation{width:100%;box-sizing:border-box}
-}
-@media (max-width:600px){
-    .timeline-container::after{left:20px}
-    .timeline-event{width:100%;padding-left:45px;padding-right:10px;left:0!important;text-align:left}
-    .event-point{left:10px!important}
-    .timeline-event:nth-child(odd) .event-content{border-right:none;border-left:5px solid #0c9d91}
 }
