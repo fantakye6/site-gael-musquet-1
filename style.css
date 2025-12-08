@@ -149,12 +149,10 @@ section, header, footer, .intro, .projects, .gallery { position: static !importa
 .section-title::after{content:'';display:block;width:80px;height:4px;background:linear-gradient(90deg,#0e9f92,#0b6b6a);margin:12px auto 0;border-radius:2px}
 
 /* =================== Styles pour les sections FLOTTANTES (nouveau) =================== */
-/* Ceci donne l'effet "aéré" : un fond léger aux sections spécifiques au lieu de tout le page-content */
 .carte-personnalite, .timeline-immersive {
-    background-color: rgba(255, 255, 255, 0.92); /* Fond blanc léger et semi-transparent */
-    padding: 30px; 
+    background-color: transparent; 
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
     margin-bottom: 4rem; 
 }
 .page-content > .section-title {
@@ -174,7 +172,7 @@ section, header, footer, .intro, .projects, .gallery { position: static !importa
 
 /* =================== Section Cartes Personnalité =================== */
 .carte-personnalite{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px} /* suppression du margin-bottom car déjà dans le nouveau style flottant */
-.bio-carte{background:#fdfdff;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.05);padding:20px;height:100px;overflow:hidden;transition:all .4s cubic-bezier(.25,.46,.45,.94);cursor:pointer;border:1px solid #e2e8f0}
+.bio-carte{background:rgba (255,255,255,0.1);border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.05);padding:20px;height:100px;overflow:hidden;transition:all .4s cubic-bezier(.25,.46,.45,.94);cursor:pointer;border:1px solid rgba(14,116,144,.0.2)}
 
 /* Styles pour l'animation au scroll (si JS est implémenté) */
 .bio-carte {
