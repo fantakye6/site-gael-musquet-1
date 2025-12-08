@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaël Musquet – Biographie Immersive</title> 
+    <title>Gaël Musquet – Biographie</title> 
     <link rel="stylesheet" href="../style.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+    </head>
 
 <body>
     <div class="map-bg">
-        <img src="../images/image-de-fond.png" alt="Carte du monde en fond sombre">
+        <img src="../images/image-de-fond.png" alt="Carte du monde">
     </div>
 
     <nav class="navbar">
@@ -31,110 +31,97 @@
     </nav>
     
     <div class="page-content"> 
-        
-        <header class="bio-header">
-            <h1 class="section-title">Gaël Musquet – L'Architecte de la Résilience Numérique</h1>
-            <p class="subtitle">Spécialiste de la résilience et technologies libres, engagé pour l’intérêt général</p>
-        </header>
 
-        <main class="bio-main">
+        <h2 class="section-title">Gaël Musquet – Le Météorologue Hacker</h2>
 
-            <section class="carte-personnalite">
-                <div class="bio-carte animate" data-delay="0">
-                    <div class="carte-header">
-                        <i class="fas fa-cloud-showers-heavy"></i> <h3>Origines & Déclic</h3>
-                    </div>
-                    <div class="carte-content">
-                        <p>Né en Guadeloupe, Gaël découvre très tôt la puissance des réseaux citoyens et l’importance de la météo, suite à l’**ouragan de 1989** qui marque son enfance.</p>
-                    </div>
+        <section class="carte-personnalite">
+            <article class="bio-carte" data-categorie="origines">
+                <div class="carte-header">
+                    <i class="fas fa-wind"></i> <h3>Origines & Déclic</h3>
                 </div>
-
-                <div class="bio-carte animate" data-delay="200">
-                    <div class="carte-header">
-                        <i class="fas fa-terminal"></i> <h3>Formation & Hacking</h3>
-                    </div>
-                    <div class="carte-content">
-                        <p>Météorologue de formation, il s’est perfectionné en **ingénierie industrielle et informatique libre**. Il est reconnu comme un "hacker éthique" qui met son expertise au service du bien commun.</p>
-                    </div>
+                <div class="carte-content">
+                    <p>Né en Guadeloupe (1980), son engagement est né d'un événement traumatisant : l'ouragan Hugo (1989) a ravagé son île et sa maison familiale. Le manque d'information et de préparation est devenu sa motivation.</p>
                 </div>
+            </article>
 
-                <div class="bio-carte animate" data-delay="400">
-                    <div class="carte-header">
-                        <i class="fas fa-map-marked-alt"></i> <h3>OpenStreetMap & HAND</h3>
-                    </div>
-                    <div class="carte-content">
-                        <p>Il a été président d'OpenStreetMap France et cofondateur de **HAND (Hackers Against Natural Disasters)**, pour fournir des données vitales lors des crises humanitaires (Haïti, Philippines).</p>
-                    </div>
+            <article class="bio-carte" data-categorie="parcours">
+                <div class="carte-header">
+                    <i class="fas fa-code"></i> <h3>Formation & Rôles</h3>
                 </div>
+                <div class="carte-content">
+                    <p>Météorologue de formation et spécialiste en instrumentation, il est un "hacker éthique". Il a été le Porte-Parole, puis Président d'OpenStreetMap France, et est aujourd'hui expert en résilience.</p>
+                </div>
+            </article>
 
-                <div class="bio-carte animate" data-delay="600">
-                    <div class="carte-header">
-                        <i class="fas fa-shield-alt"></i> <h3>Vision & Impact</h3>
+            <article class="bio-carte" data-categorie="engagement">
+                <div class="carte-header">
+                    <i class="fas fa-hands-helping"></i> <h3>Action Humanitaire</h3>
+                </div>
+                <div class="carte-content">
+                    <p>Cofondateur de **HAND (Hackers Against Natural Disasters)**, il fournit des solutions de cartographie et de données libres (Open Data) pour les secours en Haïti ou aux Philippines.</p>
+                </div>
+            </article>
+
+            <article class="bio-carte" data-categorie="impact">
+                <div class="carte-header">
+                    <i class="fas fa-medal"></i> <h3>Vision & Impact</h3>
+                </div>
+                <div class="carte-content">
+                    <p>Défenseur de l'empouvoirement citoyen, il prouve que les données et les technologies libres sont des outils vitaux pour la résilience. Il est Chevalier de l'Ordre national du Mérite (2018).</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="timeline-immersive">
+            <h2 class="section-title">Chronologie des Actions Clés</h2>
+            
+            <div class="timeline-container">
+                <article class="timeline-event" data-annee="1989">
+                    <div class="event-point"></div>
+                    <div class="event-content">
+                        <h3>Ouragan Hugo en Guadeloupe</h3>
+                        <p>À l'âge de 9 ans, il est directement confronté à la violence de l'ouragan. Ce manque de préparation et de données fiables forge sa détermination à lutter contre les catastrophes.</p>
                     </div>
-                    <div class="carte-content">
-                        <p>Défenseur de l'**empouvoirement citoyen**, il prouve que les technologies libres sont des outils vitaux pour la résilience. Il est Chevalier de l'Ordre national du Mérite (2018).</p>
+                </article>
+                
+                <article class="timeline-event" data-annee="2008">
+                    <div class="event-point"></div>
+                    <div class="event-content">
+                        <h3>Découverte d'OpenStreetMap (OSM)</h3>
+                        <p>Face au manque de données précises sur son territoire, il se tourne vers la cartographie collaborative, devenant rapidement un contributeur majeur et un pionnier de l'Open Data en France.</p>
                     </div>
-                </div>
-            </section>
-
-            <section class="timeline-immersive citation-block animate" data-delay="800">
-                <blockquote style="font-size: 1.4rem; text-align: center; color: #fff; text-shadow: 0 0 5px #0e9f92;">
-                    « La technologie doit rester accessible, transparente et utile au plus grand nombre. »
-                </blockquote>
-            </section>
-
-            <section class="timeline-immersive timeline-horizontal-block animate" data-delay="1000">
-                <h2 class="section-title">Chronologie des Actions Clés</h2>
-                <div class="timeline-container">
-                    <article class="timeline-event" data-annee="1989">
-                        <div class="event-point"></div>
-                        <div class="event-content">
-                            <h3>Ouragan Hugo en Guadeloupe</h3>
-                            <p>Le manque de préparation face à la catastrophe forge sa détermination à lutter contre les risques naturels.</p>
-                        </div>
-                    </article>
-                    
-                    <article class="timeline-event" data-annee="2008">
-                        <div class="event-point"></div>
-                        <div class="event-content">
-                            <h3>Découverte d'OpenStreetMap (OSM)</h3>
-                            <p>Début de l'engagement dans la cartographie collaborative et l'Open Data.</p>
-                        </div>
-                    </article>
-                    
-                    <article class="timeline-event" data-annee="2010">
-                        <div class="event-point"></div>
-                        <div class="event-content">
-                            <h3>Séisme en Haïti : Naissance d'HAND</h3>
-                            <p>Cofondation de Hackers Against Natural Disasters pour l'aide humanitaire rapide.</p>
-                        </div>
-                    </article>
-                    
-                    <article class="timeline-event" data-annee="2018">
-                        <div class="event-point"></div>
-                        <div class="event-content">
-                            <h3>Chevalier de l'Ordre National du Mérite</h3>
-                            <p>Reconnaissance officielle de son engagement citoyen et numérique.</p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="timeline-immersive media-block animate" data-delay="1200">
-                <h2 class="section-title">Interviews & Reportages</h2>
-                <div class="media-links" style="text-align: center; margin-top: 20px;">
-                    <a href="https://www.youtube.com/watch?v=OcIjqEwE_0U" target="_blank" class="media-btn" style="background: #0e9f92; color: #030d10; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-right: 15px; box-shadow: 0 0 10px #0e9f92;">Voir la vidéo YouTube</a>
-                    <a href="https://www.tf1info.fr/high-tech/un-jour-une-idee-gael-musquet-aide-les-populations-a-reagir-en-cas-de-catastrophes-naturelles-2074225.html" target="_blank" class="media-btn" style="background: #0e9f92; color: #030d10; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; box-shadow: 0 0 10px #0e9f92;">Lire l’article TF1</a>
-                </div>
-            </section>
-
-        </main>
+                </article>
+                
+                <article class="timeline-event" data-annee="2010">
+                    <div class="event-point"></div>
+                    <div class="event-content">
+                        <h3>Séisme en Haïti : Naissance d'HAND</h3>
+                        <p>Le chaos post-séisme confirme l'urgence de fournir des outils libres aux secours. Il cofonde Hackers Against Natural Disasters (HAND) pour mobiliser la technologie et la communauté hacker au service de l'humain.</p>
+                    </div>
+                </article>
+                
+                <article class="timeline-event" data-annee="2011 - 2018">
+                    <div class="event-point"></div>
+                    <div class="event-content">
+                        <h3>Présidence d'OpenStreetMap France</h3>
+                        <p>Il porte la voix de la cartographie libre et citoyenne sur la scène nationale, faisant d'OSM un acteur reconnu dans la gestion de crise.</p>
+                    </div>
+                </article>
+                
+                <article class="timeline-event" data-annee="2018">
+                    <div class="event-point"></div>
+                    <div class="event-content">
+                        <h3>Chevalier de l'Ordre National du Mérite</h3>
+                        <p>Reconnaissance de son engagement et de son rôle essentiel dans la résilience numérique et l'aide humanitaire.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
 
     </div> <footer>
-        <p style="color: #6c757d;">&copy; 2025 – Site réalisé dans le cadre du projet BUT.</p>
-        <p><a href="contact.html" style="color: #0c9d91;">Contact & Sources</a></p>
+        <p>&copy; 2025 – Site réalisé dans le cadre du projet BUT. Inspiration humanitaire et données ouvertes.</p>
+        <p><a href="contact.html">Contact & Sources</a></p>
     </footer>
-
-    <script src="../script.js"></script> 
+<script src="../script.js"></script>
 </body>
 </html>
