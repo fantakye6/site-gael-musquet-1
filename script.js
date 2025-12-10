@@ -1,4 +1,4 @@
-// =================== Navbar (hamburger) ===================
+// ===== Navbar hamburger =====
 const toggle = document.getElementById("nav-toggle");
 const menu = document.getElementById("nav-menu");
 
@@ -8,7 +8,7 @@ if (toggle && menu) {
   });
 }
 
-// =================== Scroll Animations Intro (accueil) ===================
+// ===== Scroll anim intro (si présent) =====
 const introSection = document.querySelector('.intro');
 const portraitCTA = document.querySelector('.portrait-cta');
 const halo = document.querySelector('.halo');
@@ -32,7 +32,7 @@ function handleScroll() {
 window.addEventListener('scroll', handleScroll);
 window.addEventListener('load', handleScroll);
 
-// =================== Hacker text (accueil) ===================
+// ===== Hacker text (si présent) =====
 const hackerText = `Météorologue de formation et hacker citoyen,
 Gaël Musquet place la technologie au service de l’humain.
 
@@ -57,7 +57,7 @@ function typeWritter() {
 }
 if (hackerElement) typeWritter();
 
-// =================== Carousel galerie (si présent) ===================
+// ===== Carousel galerie (si présent) =====
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.querySelector('.carousel-track');
   if (!track) return;
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startAutoplay();
 });
 
-// =================== BIO : focus cartes ===================
+// ===== BIO : focus sur une carte =====
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.page-biographie .carte-personnalite');
   if (!container) return;
@@ -171,53 +171,41 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// =================== Timeline : tabs + carousel lié ===================
+// ===== Timeline slider (version centrage sur la carte active) =====
 document.addEventListener('DOMContentLoaded', () => {
   const bioPage = document.querySelector('.page-biographie');
   if (!bioPage) return;
 
   const track = bioPage.querySelector('.timeline-track');
   const cards = Array.from(bioPage.querySelectorAll('.timeline-card'));
-  const tabs = Array.from(bioPage.querySelectorAll('.timeline-tab'));
   const prevArrow = bioPage.querySelector('.timeline-arrow.left');
   const nextArrow = bioPage.querySelector('.timeline-arrow.right');
 
-  if (!track || !cards.length || !tabs.length || !prevArrow || !nextArrow) return;
+  if (!track || !cards.length || !prevArrow || !nextArrow) return;
 
   let currentIndex = 0;
 
-  function syncUI(index) {
+  function setActiveCard(index) {
     currentIndex = (index + cards.length) % cards.length;
 
-    // cartes actives
     cards.forEach((card, i) => {
       card.classList.toggle('active', i === currentIndex);
     });
 
-    // tabs actives
-    tabs.forEach((tab, i) => {
-      tab.classList.toggle('active', i === currentIndex);
-    });
+    const targetCard = cards[currentIndex];
+    const cardRect = targetCard.getBoundingClientRect();
+    const trackRect = track.getBoundingClientRect();
+    const offset = cardRect.left - trackRect.left - (trackRect.width - cardRect.width) / 2;
 
-    // translation du track
-    const offset = -currentIndex * 100;
-    track.style.transform = `translateX(${offset}%)`;
+    track.scrollBy({ left: offset, behavior: 'smooth' });
   }
 
-  // clic sur une tab
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const idx = parseInt(tab.dataset.index, 10);
-      syncUI(idx);
-    });
+  prevArrow.addEventListener('click', () => {
+    setActiveCard(currentIndex - 1);
   });
 
-  // flèches
-  prevArrow.addEventListener('click', () => {
-    syncUI(currentIndex - 1);
-  });
   nextArrow.addEventListener('click', () => {
-    syncUI(currentIndex + 1);
+    setActiveCard(currentIndex + 1);
   });
 
   // swipe mobile
@@ -236,11 +224,11 @@ document.addEventListener('DOMContentLoaded', () => {
     isDragging = false;
 
     if (Math.abs(dx) > 40) {
-      if (dx < 0) syncUI(currentIndex + 1);
-      else syncUI(currentIndex - 1);
+      if (dx < 0) setActiveCard(currentIndex + 1);
+      else setActiveCard(currentIndex - 1);
     }
   });
 
   // init
-  syncUI(0);
+  setActiveCard(currentIndex);
 });
