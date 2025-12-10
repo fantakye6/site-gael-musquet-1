@@ -1,4 +1,4 @@
-// Hamburger menu
+// =================== Navbar (hamburger) ===================
 const toggle = document.getElementById("nav-toggle");
 const menu = document.getElementById("nav-menu");
 
@@ -14,12 +14,12 @@ const portraitCTA = document.querySelector('.portrait-cta');
 const halo = document.querySelector('.halo');
 
 function handleScroll() {
-  if (!introSection || !portraitCTA || !halo) return; // S'assurer que les éléments existent
+  if (!introSection || !portraitCTA || !halo) return;
 
   const rect = introSection.getBoundingClientRect();
   const windowHeight = window.innerHeight;
 
-  if (rect.top < windowHeight * 0.8) { // section visible à 80%
+  if (rect.top < windowHeight * 0.8) {
     portraitCTA.style.opacity = '1';
     portraitCTA.style.transform = 'translateX(-50%) translateY(-6px)';
     halo.style.transform = 'translate(-50%, -50%) scale(1.05)';
@@ -49,7 +49,7 @@ let i = 0;
 const hackerElement = document.getElementById("hacker-text");
 
 function typeWritter() {
-  if (!hackerElement) return; // S'assurer que l'élément existe
+  if (!hackerElement) return;
 
   if (i < hackerText.length) {
     hackerElement.innerHTML += hackerText.charAt(i);
@@ -58,15 +58,14 @@ function typeWritter() {
   }
 }
 
-// Appeler uniquement si l'élément existe (page d'accueil)
 if (hackerElement) {
   typeWritter();
 }
 
-// =================== Carousel functionality (galerie) ===================
+// =================== Carousel (galerie) ===================
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.querySelector('.carousel-track');
-  if (!track) return; // pas de carousel sur cette page
+  if (!track) return;
 
   const items = Array.from(track.children);
   const prevBtn = document.querySelector('.carousel-btn.prev');
@@ -85,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateIndicators();
   }
 
-  // Indicateurs
   items.forEach((_, idx) => {
     const btn = document.createElement('button');
     btn.addEventListener('click', () => {
@@ -133,16 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
     carouselEl.addEventListener('focusin', stopAutoplay);
     carouselEl.addEventListener('focusout', startAutoplay);
 
-    // touch swipe
     let startX = 0;
     let isDragging = false;
     carouselEl.addEventListener('touchstart', (e) => {
       startX = e.touches[0].clientX;
       isDragging = true;
       stopAutoplay();
-    });
-    carouselEl.addEventListener('touchmove', (e) => {
-      if (!isDragging) return;
     });
     carouselEl.addEventListener('touchend', (e) => {
       if (!isDragging) return;
@@ -202,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setActiveCard(currentIndex);
   });
 
-  // swipe mobile sur la timeline
+  // swipe mobile
   let startX = 0;
   let isDragging = false;
 
@@ -227,6 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // initialisation
+  // initial
   setActiveCard(currentIndex);
 });
