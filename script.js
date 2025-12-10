@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// =================== Timeline slider (Repères de vie) ===================
+// =================== Timeline slider (Quelques repères de son parcours) ===================
 document.addEventListener('DOMContentLoaded', () => {
   const bioPage = document.querySelector('.page-biographie');
   if (!bioPage) return;
