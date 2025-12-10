@@ -1,3 +1,6 @@
+
+
+
 /* =================== Le Fond Fixe =================== */
 .map-bg {
     position: fixed;
@@ -23,7 +26,6 @@
     pointer-events: none;
 }
 
-
 /* =================== Global (Appliqué à TOUTES les pages) =================== */
 html, body {
     overflow-x: hidden;
@@ -35,7 +37,7 @@ html, body {
 
 body {
     background-color: transparent;
-} 
+}
 
 /* Titres généraux (appliqués à toutes les pages) */
 .section-title {
@@ -444,18 +446,17 @@ body {
     transform: scale(1.1);
 }
 
-
 /* Responsive (Accueil) */
 @media(max-width: 900px) {
     .intro-content {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .portrait-container {
         margin-bottom: 1.5rem;
     }
-    
+
     #hacker-text {
         max-width: 90%;
         height: auto;
@@ -468,18 +469,18 @@ body {
         align-items: center;
         padding: 18px;
     }
-    
+
     .carousel-item img {
         width: 55%;
         height: 300px;
     }
-    
+
     .carousel-item img + .caption {
         width: 45%;
         height: auto;
         text-align: left;
     }
-    
+
     .carousel-item.no-img .caption {
         width: 100%;
         height: auto;
@@ -491,16 +492,15 @@ body {
     .portrait {
         width: 220px;
     }
-    
+
     #hacker-text {
         max-width: 350px;
     }
-    
+
     .carousel-track {
         gap: 12px;
     }
 }
-
 
 /* Footer */
 footer {
@@ -517,80 +517,255 @@ footer a {
 
 /* =================== PAGE BIOGRAPHIE (Ciblage Strict) =================== */
 
-/* ======== BIO – HEADER COURT ======== */
+/* Conteneur principal de contenu de la biographie */
+.page-biographie .page-content {
+    max-width: 1000px;
+    margin: 3rem auto 5rem;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 10;
+    background-color: transparent !important;
+}
+
+.page-biographie .page-content > .section-title {
+    background-color: transparent;
+    margin-bottom: 2rem;
+}
+
+/* HEADER BIO COURT */
 .page-biographie .bio-header {
-  max-width: 800px;
-  margin: 3rem auto 2rem;
-  text-align: center;
+    max-width: 800px;
+    margin: 3rem auto 2rem;
+    text-align: center;
 }
 
 .page-biographie .bio-intro {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #0b2a33;
-  margin-top: 0.8rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #0b2a33;
+    margin-top: 0.8rem;
 }
 
-/* On garde tes styles existants pour .carte-personnalite et .bio-carte */
-
-/* ======== TIMELINE – CONTROLES INTERACTIFS ======== */
+/* Styles des blocs flottants (Cartes et Timeline) */
+.page-biographie .carte-personnalite,
 .page-biographie .timeline-immersive {
-  position: relative;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 4rem;
+}
+
+/* Section Cartes Personnalité */
+.page-biographie .carte-personnalite {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.page-biographie .bio-carte {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+    padding: 20px;
+    height: auto;
+    overflow: visible;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    border: 1px solid #e5e7eb;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Animation d'apparition au scroll (géré par script.js) */
+.page-biographie .bio-carte.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.page-biographie .bio-carte:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(14, 116, 144, 0.2);
+}
+
+.page-biographie .carte-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #0e7490;
+    margin-bottom: 15px;
+}
+
+.page-biographie .carte-header i {
+    font-size: 1.8rem;
+    color: #0b6b6a;
+}
+
+.page-biographie .carte-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #072f34;
+}
+
+.page-biographie .carte-content {
+    opacity: 1;
+}
+
+/* Section Timeline */
+.page-biographie .timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.page-biographie .timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: #0e7490;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+}
+
+.page-biographie .timeline-event {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.page-biographie .timeline-event:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.page-biographie .timeline-event:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.page-biographie .event-point {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: -10px;
+    background-color: #fff;
+    border: 3px solid #0e7490;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.page-biographie .timeline-event:nth-child(even) .event-point {
+    left: -10px;
+}
+
+.page-biographie .event-content {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .05);
+    border-left: 5px solid #0e7490;
+}
+
+.page-biographie .timeline-event:nth-child(odd) .event-content {
+    border-right: 5px solid #0e7490;
+    border-left: none;
+}
+
+.page-biographie .event-content h3::before {
+    content: attr(data-annee);
+    display: block;
+    font-size: .8rem;
+    font-weight: 700;
+    color: #0b6b6a;
+    margin-bottom: 5px;
+}
+
+/* TIMELINE – CONTROLES INTERACTIFS */
+.page-biographie .timeline-immersive {
+    position: relative;
 }
 
 .page-biographie .timeline-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .page-biographie .timeline-year-display {
-  font-family: 'Lato', sans-serif;
-  font-weight: 800;
-  font-size: 1.2rem;
-  color: #072f34;
-  padding: 0.4rem 0.9rem;
-  border-radius: 30px;
-  background: rgba(14, 148, 136, 0.08);
+    font-family: 'Lato', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #072f34;
+    padding: 0.4rem 0.9rem;
+    border-radius: 30px;
+    background: rgba(14, 148, 136, 0.08);
 }
 
 .page-biographie .timeline-btn {
-  border: none;
-  background: #0e7490;
-  color: #fff;
-  border-radius: 999px;
-  padding: 0.35rem 0.7rem;
-  cursor: pointer;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(14, 116, 144, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    background: #0e7490;
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.35rem 0.7rem;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(14, 116, 144, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .page-biographie .timeline-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(14, 116, 144, 0.45);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(14, 116, 144, 0.45);
 }
 
-/* Mise en avant de l'événement actif */
+/* État actif / inactif des événements */
 .page-biographie .timeline-event {
-  opacity: 0.4;
-  transform: scale(0.98);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0.4;
+    transform: scale(0.98);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .page-biographie .timeline-event.active {
-  opacity: 1;
-  transform: scale(1);
+    opacity: 1;
+    transform: scale(1);
 }
 
-/* Responsive léger pour le header bio */
+/* Responsive (Biographie) */
 @media (max-width: 600px) {
-  .page-biographie .bio-header {
-    margin-top: 2rem;
-  }
-  .page-biographie .bio-intro {
-    font-size: 0.95rem;
-  }
+    .page-biographie .timeline-container::after {
+        left: 20px;
+    }
+
+    .page-biographie .timeline-event {
+        width: 100%;
+        padding-left: 45px;
+        padding-right: 10px;
+        left: 0 !important;
+        text-align: left;
+    }
+
+    .page-biographie .event-point {
+        left: 10px !important;
+    }
+
+    .page-biographie .event-content {
+        border-left: 5px solid #0e7490 !important;
+        border-right: none !important;
+    }
+
+    .page-biographie .bio-header {
+        margin-top: 2rem;
+    }
+
+    .page-biographie .bio-intro {
+        font-size: 0.95rem;
+    }
 }
