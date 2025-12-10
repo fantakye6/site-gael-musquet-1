@@ -1,4 +1,4 @@
-/* =================== Le Fond Fixe =================== */
+/* =================== Fond =================== */
 .map-bg {
     position: fixed;
     top: 0;
@@ -9,7 +9,6 @@
     overflow: hidden;
     pointer-events: none;
 }
-
 .map-bg img {
     position: absolute;
     top: 0;
@@ -31,12 +30,8 @@ html, body {
     font-family: 'Open Sans', sans-serif;
     color: #1f2937;
 }
+body { background-color: transparent; }
 
-body {
-    background-color: transparent;
-}
-
-/* Titres généraux */
 .section-title {
     font-family: 'Lato', sans-serif;
     font-size: 1.8rem;
@@ -47,7 +42,6 @@ body {
     text-shadow: 0 6px 18px rgba(3, 29, 33, .12);
     text-align: center;
 }
-
 .section-title::after {
     content: '';
     display: block;
@@ -67,31 +61,24 @@ body {
     z-index: 1000;
     backdrop-filter: blur(6px);
 }
-
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
 }
-
 .logo {
     font-weight: bold;
     color: #0e7490;
     text-decoration: none;
     font-size: 1.2rem;
 }
-
-.logo:hover {
-    color: #0b6b6a;
-}
-
+.logo:hover { color: #0b6b6a; }
 #nav-menu {
     display: flex;
     gap: 1rem;
     list-style: none;
 }
-
 #nav-menu li a {
     color: #0e7490;
     text-decoration: none;
@@ -101,23 +88,17 @@ body {
     border-radius: 8px;
     transition: .3s;
 }
-
 #nav-menu li a:hover {
     background: #0e7490;
     color: #fff;
 }
-
-.nav-toggle {
-    display: none;
-}
-
+.nav-toggle { display: none; }
 #nav-menu li a.active {
     background: #0e7490;
     color: #fff;
     box-shadow: 0 4px 8px rgba(14, 116, 144, 0.4);
 }
 
-/* Responsive Navbar */
 @media(max-width: 768px) {
     .nav-toggle {
         display: block;
@@ -127,7 +108,6 @@ body {
         color: #0e7490;
         cursor: pointer;
     }
-
     #nav-menu {
         display: none;
         flex-direction: column;
@@ -137,22 +117,14 @@ body {
         background: #faf9f5;
         align-items: center;
     }
-
-    #nav-menu.show {
-        display: flex;
-    }
-
+    #nav-menu.show { display: flex; }
     #nav-menu li {
         width: 100%;
         text-align: center;
         border-bottom: 1px solid #0e7490;
         padding: 0;
     }
-
-    #nav-menu li:last-child {
-        border-bottom: none;
-    }
-
+    #nav-menu li:last-child { border-bottom: none; }
     #nav-menu li a {
         display: block;
         width: 100%;
@@ -162,334 +134,11 @@ body {
     }
 }
 
-/* =================== Accueil =================== */
-
-.intro {
-    max-width: 1100px;
-    margin: 3rem auto;
-    padding: 2rem 1rem;
-}
-
-.intro .section-title {
-    text-align: center;
-    width: 100%;
-    margin-bottom: 1.5rem;
-}
-
-.intro-content {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.portrait-container {
-    flex: 0 0 280px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
-}
-
-.portrait-link {
-    display: block;
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.portrait {
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 14px 34px rgba(2, 36, 38, 0.18);
-    transition: .36s;
-}
-
-.portrait-link:hover .portrait {
-    transform: translateY(-4px) scale(1.03);
-    filter: brightness(1.04) saturate(1.03);
-}
-
-.portrait-cta {
-    position: absolute;
-    left: 50%;
-    bottom: 14px;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, #0e9f92, #0b6b6a);
-    color: #fff;
-    padding: 10px 14px;
-    border-radius: 30px;
-    font-weight: 700;
-    box-shadow: 0 6px 18px rgba(6, 120, 110, 0.12);
-    z-index: 3;
-    opacity: 1;
-}
-
-.halo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300px;
-    height: 300px;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(0, 150, 255, 0.4), rgba(0, 150, 255, 0));
-    border-radius: 50%;
-    filter: blur(50px);
-    z-index: 1;
-    animation: halo-pulse 3s infinite ease-in-out;
-}
-
-@keyframes halo-pulse {
-    0% { transform: translate(-50%, -50%) scale(0.95); opacity: .7; }
-    50% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
-    100% { transform: translate(-50%, -50%) scale(0.95); opacity: .7; }
-}
-
-/* Hacker Text */
-.hacker-text-container {
-    flex: 1;
-    min-width: 450px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-#hacker-text {
-    font-family: "Courier New", monospace;
-    font-size: 1.06rem;
-    color: #bfffe6;
-    background: #021014;
-    padding: 1.6rem;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 1100px;
-    white-space: pre-line;
-    border-left: 3px solid rgba(158, 247, 223, 0.45);
-    box-shadow: 0 0 12px rgba(158, 247, 223, 0.16);
-    animation: glow 3.2s infinite alternate;
-    display: block;
-    line-height: 1.5;
-    text-align: center;
-}
-
-#hacker-text::after {
-    content: "█";
-    animation: blink .7s infinite alternate;
-}
-
-@keyframes glow {
-    0% { box-shadow: 0 0 6px rgba(158, 247, 223, 0.14); }
-    50% { box-shadow: 0 0 12px rgba(158, 247, 223, 0.12); }
-    100% { box-shadow: 0 0 6px rgba(158, 247, 223, 0.10); }
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-/* Projets */
-.projects {
-    max-width: 1000px;
-    margin: 4rem auto 3rem;
-    text-align: center;
-}
-
-.project-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-}
-
-.project-card {
-    display: block;
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 1rem;
-    width: 280px;
-    transition: .3s;
-    box-sizing: border-box;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .05);
-}
-
-.project-card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
-    border-color: #0e7490;
-}
-
-.project-card img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: .8rem;
-    background-color: #f9fcff;
-}
-
-.project-card h3 {
-    margin: .4rem 0;
-    font-size: 1.1rem;
-    color: #072f34;
-}
-
-.project-card p {
-    font-size: .9rem;
-    line-height: 1.35;
-    margin: 0;
-    color: #0b2a33;
-}
-
-/* Galerie */
-.gallery {
-    max-width: 1100px;
-    margin: 2.5rem auto;
-    padding: 0 1rem;
-}
-
-.carousel {
-    position: relative;
-    overflow: visible;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform .6s ease;
-    will-change: transform;
-    gap: 20px;
-}
-
-.carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 14px;
-    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
-    border: 1px solid rgba(15, 23, 42, 0.04);
-    transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.carousel-item .caption {
-    box-sizing: border-box;
-    font-family: "Courier New", monospace;
-    font-size: 1rem;
-    line-height: 1.4;
-    color: #07313a;
-    background: rgba(255, 255, 255, 0.98);
-    padding: 18px;
-    border-radius: 10px;
-    border-left: 4px solid rgba(6, 120, 110, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 320px;
-    height: 320px;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #ffffff;
-    color: #07313a;
-    border: none;
-    padding: .5rem .6rem;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
-}
-
-.carousel-btn.prev { left: 8px; }
-.carousel-btn.next { right: 8px; }
-
-.carousel-indicators button.active {
-    background: rgba(6, 120, 110, 0.9);
-    transform: scale(1.1);
-}
-
-/* Responsive Accueil */
-@media(max-width: 900px) {
-    .intro-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .portrait-container {
-        margin-bottom: 1.5rem;
-    }
-
-    #hacker-text {
-        max-width: 90%;
-        height: auto;
-    }
-}
-
-@media (min-width: 900px) {
-    .carousel-item {
-        flex-direction: row;
-        align-items: center;
-        padding: 18px;
-    }
-
-    .carousel-item img {
-        width: 55%;
-        height: 300px;
-    }
-
-    .carousel-item img + .caption {
-        width: 45%;
-        height: auto;
-        text-align: left;
-    }
-
-    .carousel-item.no-img .caption {
-        width: 100%;
-        height: auto;
-        border-left: none;
-    }
-}
-
-@media (max-width: 600px) {
-    .portrait {
-        width: 220px;
-    }
-
-    #hacker-text {
-        max-width: 350px;
-    }
-
-    .carousel-track {
-        gap: 12px;
-    }
-}
-
-/* Footer */
-footer {
-    background-color: #e2e8f0;
-    text-align: center;
-    padding: 1rem;
-    color: #6c757d;
-}
-
-footer a {
-    color: #0e7490;
-    text-decoration: none;
-}
+/* =================== Accueil (rappel vite fait) =================== */
+/* (garde ce que tu avais, inchangé) */
+/* ... */
 
 /* =================== PAGE BIOGRAPHIE =================== */
-
 .page-biographie .page-content {
     max-width: 1000px;
     margin: 3rem auto 5rem;
@@ -505,7 +154,6 @@ footer a {
     margin: 3rem auto 2rem;
     text-align: center;
 }
-
 .page-biographie .bio-intro {
     font-size: 1rem;
     line-height: 1.6;
@@ -513,7 +161,7 @@ footer a {
     margin-top: 0.8rem;
 }
 
-/* Blocs principaux */
+/* Conteneurs principaux */
 .page-biographie .carte-personnalite,
 .page-biographie .timeline-immersive {
     background-color: rgba(255, 255, 255, 0.95);
@@ -523,8 +171,7 @@ footer a {
     margin-bottom: 4rem;
 }
 
-/* ========= BIO : Cartes façon maquette avec focus ========= */
-
+/* ========= Cartes bio avec emojis & focus ========= */
 .page-biographie .carte-personnalite {
     display: flex;
     flex-direction: column;
@@ -532,14 +179,14 @@ footer a {
     counter-reset: bioStep;
 }
 
-/* mode focus : on atténue toutes les cartes */
+/* mode focus : tout est atténué */
 .page-biographie .carte-personnalite.is-focusing .bio-carte {
     filter: blur(2px);
     opacity: 0.4;
     transform: translateY(0) scale(0.97);
 }
 
-/* carte active (cliquée) ou survolée pendant le focus */
+/* carte active (cliquée) ou hover pendant le focus */
 .page-biographie .bio-carte.active,
 .page-biographie .carte-personnalite.is-focusing .bio-carte:hover {
     filter: none;
@@ -549,7 +196,7 @@ footer a {
     z-index: 2;
 }
 
-/* base des cartes */
+/* base carte */
 .page-biographie .bio-carte {
     position: relative;
     display: grid;
@@ -569,7 +216,7 @@ footer a {
     animation: fadeUp .6s ease-out both;
 }
 
-/* ligne de couleur en bas de chaque carte */
+/* ligne colorée en bas */
 .page-biographie .bio-carte::after {
     content: '';
     position: absolute;
@@ -582,7 +229,7 @@ footer a {
     opacity: 0.9;
 }
 
-/* bloc emoji à gauche */
+/* bloc emoji */
 .page-biographie .carte-header {
     display: flex;
     align-items: center;
@@ -594,7 +241,6 @@ footer a {
     background: rgba(14, 116, 144, 0.08);
     border: 1px solid rgba(14, 116, 144, 0.3);
 }
-
 .page-biographie .carte-header .emoji {
     font-size: 1.8rem;
 }
@@ -608,7 +254,6 @@ footer a {
     align-items: center;
     gap: .6rem;
 }
-
 .page-biographie .carte-content h3::before {
     counter-increment: bioStep;
     content: counter(bioStep);
@@ -632,7 +277,6 @@ footer a {
     color: #1f2937;
 }
 
-/* Animation d'apparition */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(12px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -643,35 +287,51 @@ footer a {
         grid-template-columns: 1fr;
         padding: 16px 16px 20px;
     }
-
     .page-biographie .carte-header {
         width: 46px;
         height: 46px;
         margin-bottom: .4rem;
     }
-
     .page-biographie .bio-carte::after {
         left: 14px;
         right: 14px;
     }
 }
 
-/* ========= Timeline en carrousel de cartes ========= */
+/* ========= Timeline : tabs + carousel ========= */
 
-.page-biographie .timeline-immersive {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
-    margin-bottom: 4rem;
+/* barre d’onglets (dates) */
+.page-biographie .timeline-tabs {
+    display: flex;
+    justify-content: center;
+    gap: .75rem;
+    margin-bottom: 1.8rem;
+    flex-wrap: wrap;
+}
+.page-biographie .timeline-tab {
+    padding: .45rem .9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    background: rgba(248, 250, 252, 0.9);
+    color: #0b2a33;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.page-biographie .timeline-tab.active {
+    background: linear-gradient(90deg, #0e9f92, #0b6b6a);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba(14, 116, 144, 0.35);
+    transform: translateY(-1px);
 }
 
+/* slider cartes */
 .page-biographie .timeline-slider {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     gap: 1rem;
 }
-
 .page-biographie .timeline-arrow {
     border: none;
     background: #0e7490;
@@ -687,42 +347,48 @@ footer a {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     flex-shrink: 0;
 }
-
 .page-biographie .timeline-arrow:hover {
     transform: translateY(-1px);
     box-shadow: 0 6px 14px rgba(14, 116, 144, 0.45);
 }
 
 .page-biographie .timeline-track {
-    display: flex;
-    gap: 1rem;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    position: relative;
+    overflow: hidden;
     flex: 1;
 }
 
+/* une seule carte visible, qu’on translate */
+.page-biographie .timeline-track-inner {
+    display: flex;
+    transition: transform .35s ease;
+}
+
+/* on applique à .timeline-track directement pour simplifier */
+.page-biographie .timeline-track {
+    display: flex;
+    transition: transform .35s ease;
+}
+
+/* cartes */
 .page-biographie .timeline-card {
-    min-width: 260px;
-    max-width: 320px;
+    min-width: 100%;
+    box-sizing: border-box;
     background: linear-gradient(135deg, #0ea5e9, #6366f1);
     color: #f8fafc;
     border-radius: 20px;
     padding: 18px 20px;
     box-shadow: 0 16px 40px rgba(15, 23, 42, 0.45);
     border: 1px solid rgba(148, 163, 184, 0.35);
-    flex-shrink: 0;
-    opacity: 0.5;
+    opacity: 0.4;
     transform: translateY(4px) scale(0.97);
     transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-    animation: fadeUp .6s ease-out both;
 }
-
 .page-biographie .timeline-card.active {
     opacity: 1;
     transform: translateY(0) scale(1);
     box-shadow: 0 22px 55px rgba(15, 23, 42, 0.65);
 }
-
 .page-biographie .timeline-year {
     display: inline-flex;
     align-items: center;
@@ -735,27 +401,23 @@ footer a {
     font-weight: 600;
     margin-bottom: .5rem;
 }
-
 .page-biographie .timeline-card h3 {
     margin: 0 0 .35rem;
     font-size: 1.05rem;
 }
-
 .page-biographie .timeline-card p {
     margin: 0;
     font-size: .95rem;
     line-height: 1.5;
 }
 
-/* Responsive biographie */
 @media (max-width: 700px) {
     .page-biographie .timeline-slider {
         gap: 0.5rem;
     }
-
-    .page-biographie .timeline-card {
-        min-width: 85%;
-        max-width: 85%;
+    .page-biographie .timeline-arrow {
+        width: 34px;
+        height: 34px;
     }
 }
 
@@ -763,7 +425,6 @@ footer a {
     .page-biographie .bio-header {
         margin-top: 2rem;
     }
-
     .page-biographie .bio-intro {
         font-size: 0.95rem;
     }

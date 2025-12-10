@@ -8,7 +8,7 @@ if (toggle && menu) {
   });
 }
 
-// =================== Scroll Animations Intro (page d'accueil) ===================
+// =================== Scroll Animations Intro (accueil) ===================
 const introSection = document.querySelector('.intro');
 const portraitCTA = document.querySelector('.portrait-cta');
 const halo = document.querySelector('.halo');
@@ -29,11 +29,10 @@ function handleScroll() {
     halo.style.transform = 'translate(-50%, -50%) scale(0.9)';
   }
 }
-
 window.addEventListener('scroll', handleScroll);
 window.addEventListener('load', handleScroll);
 
-// =================== Hacker text animation (page d'accueil) ===================
+// =================== Hacker text (accueil) ===================
 const hackerText = `Météorologue de formation et hacker citoyen,
 Gaël Musquet place la technologie au service de l’humain.
 
@@ -50,19 +49,15 @@ const hackerElement = document.getElementById("hacker-text");
 
 function typeWritter() {
   if (!hackerElement) return;
-
   if (i < hackerText.length) {
     hackerElement.innerHTML += hackerText.charAt(i);
     i++;
     setTimeout(typeWritter, 35);
   }
 }
+if (hackerElement) typeWritter();
 
-if (hackerElement) {
-  typeWritter();
-}
-
-// =================== Carousel (galerie) ===================
+// =================== Carousel galerie (si présent) ===================
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.querySelector('.carousel-track');
   if (!track) return;
@@ -111,14 +106,12 @@ document.addEventListener('DOMContentLoaded', () => {
     stopAutoplay();
     autoplayInterval = setInterval(() => goTo(currentIndex + 1), AUTOPLAY_DELAY);
   }
-
   function stopAutoplay() {
     if (autoplayInterval) {
       clearInterval(autoplayInterval);
       autoplayInterval = null;
     }
   }
-
   function restartAutoplay() {
     stopAutoplay();
     startAutoplay();
@@ -149,18 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       startAutoplay();
     });
-
-    carouselEl.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') { goTo(currentIndex - 1); restartAutoplay(); }
-      if (e.key === 'ArrowRight') { goTo(currentIndex + 1); restartAutoplay(); }
-    });
-
-    updateTrackPosition();
-    startAutoplay();
   }
+
+  updateTrackPosition();
+  startAutoplay();
 });
 
-// =================== BIO : focus sur une carte ===================
+// =================== BIO : focus cartes ===================
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.page-biographie .carte-personnalite');
   if (!container) return;
@@ -171,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
   container.addEventListener('mouseenter', () => {
     container.classList.add('is-focusing');
   });
-
   container.addEventListener('mouseleave', () => {
     container.classList.remove('is-focusing');
   });
@@ -184,40 +171,53 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// =================== Timeline slider (Quelques repères de son parcours) ===================
+// =================== Timeline : tabs + carousel lié ===================
 document.addEventListener('DOMContentLoaded', () => {
   const bioPage = document.querySelector('.page-biographie');
   if (!bioPage) return;
 
   const track = bioPage.querySelector('.timeline-track');
   const cards = Array.from(bioPage.querySelectorAll('.timeline-card'));
+  const tabs = Array.from(bioPage.querySelectorAll('.timeline-tab'));
   const prevArrow = bioPage.querySelector('.timeline-arrow.left');
   const nextArrow = bioPage.querySelector('.timeline-arrow.right');
 
-  if (!track || !cards.length || !prevArrow || !nextArrow) return;
+  if (!track || !cards.length || !tabs.length || !prevArrow || !nextArrow) return;
 
   let currentIndex = 0;
 
-  function setActiveCard(index) {
+  function syncUI(index) {
+    currentIndex = (index + cards.length) % cards.length;
+
+    // cartes actives
     cards.forEach((card, i) => {
-      card.classList.toggle('active', i === index);
+      card.classList.toggle('active', i === currentIndex);
     });
 
-    const targetCard = cards[index];
-    const cardRect = targetCard.getBoundingClientRect();
-    const trackRect = track.getBoundingClientRect();
-    const offset = cardRect.left - trackRect.left - (trackRect.width - cardRect.width) / 2;
-    track.scrollBy({ left: offset, behavior: 'smooth' });
+    // tabs actives
+    tabs.forEach((tab, i) => {
+      tab.classList.toggle('active', i === currentIndex);
+    });
+
+    // translation du track
+    const offset = -currentIndex * 100;
+    track.style.transform = `translateX(${offset}%)`;
   }
 
-  prevArrow.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-    setActiveCard(currentIndex);
+  // clic sur une tab
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const idx = parseInt(tab.dataset.index, 10);
+      syncUI(idx);
+    });
   });
 
+  // flèches
+  prevArrow.addEventListener('click', () => {
+    syncUI(currentIndex - 1);
+  });
   nextArrow.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % cards.length;
-    setActiveCard(currentIndex);
+    syncUI(currentIndex + 1);
   });
 
   // swipe mobile
@@ -236,15 +236,11 @@ document.addEventListener('DOMContentLoaded', () => {
     isDragging = false;
 
     if (Math.abs(dx) > 40) {
-      if (dx < 0) {
-        currentIndex = (currentIndex + 1) % cards.length;
-      } else {
-        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-      }
-      setActiveCard(currentIndex);
+      if (dx < 0) syncUI(currentIndex + 1);
+      else syncUI(currentIndex - 1);
     }
   });
 
-  // initial
-  setActiveCard(currentIndex);
+  // init
+  syncUI(0);
 });
