@@ -606,11 +606,21 @@ footer a {
 }
 
 /* slider cartes */
+.page-biographie .timeline-immersive {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+    margin-bottom: 4rem;
+}
+
 .page-biographie .timeline-slider {
     display: flex;
     align-items: center;
     gap: 1rem;
+    overflow: hidden; /* coupe ce qui dépasse */
 }
+
 .page-biographie .timeline-arrow {
     border: none;
     background: #0e7490;
@@ -635,6 +645,7 @@ footer a {
     display: flex;
     transition: transform .35s ease;
     will-change: transform;
+    overflow: hidden;
 }
 
 /* cartes claires, contours uniquement */
@@ -679,6 +690,22 @@ footer a {
     font-size: .95rem;
     line-height: 1.5;
 }
+
+/* Responsive biographie */
+@media (max-width: 700px) {
+    .page-biographie .timeline-slider {
+        gap: 0.5rem;
+    }
+    .page-biographie .timeline-arrow {
+        width: 34px;
+        height: 34px;
+    }
+    .page-biographie .timeline-card {
+        min-width: 85%;
+        max-width: 85%;
+    }
+}
+
 
 /* Responsive biographie */
 @media (max-width: 700px) {
