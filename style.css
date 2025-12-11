@@ -623,7 +623,10 @@ footer a {
 
 /* flèches */
 .page-biographie .timeline-arrow {
-    border: none;
+    position: relative;      /* important pour z-index */
+    z-index: 5;              /* au-dessus des cartes */
+    pointer-events: auto;    /* s’assure que le clic est pris */
+   border: none;
     background: #0e7490;
     color: #fff;
     border-radius: 999px;
