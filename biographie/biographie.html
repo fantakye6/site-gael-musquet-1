@@ -1,179 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gaël Musquet – Biographie</title>
-  <link rel="stylesheet" href="../style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaël Musquet – Biographie</title> 
+    <link rel="stylesheet" href="../style.css"> <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <base href="/site-gael-musquet-1/">
 </head>
 
-<body class="page-biographie">
-  <div class="map-bg">
-    <img src="../images/image-de-fond.png" alt="Carte du monde">
-  </div>
+<body>
+    <div class="map-bg">
+        <img src="../images/image-de-fond.png" alt="Carte du monde"> </div>
 
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="../index.html" class="logo">Gaël Musquet</a>
-      <button class="nav-toggle" id="nav-toggle">☰</button>
-      <ul id="nav-menu">
-        <li><a href="../index.html"><i class="fas fa-home"></i> Accueil</a></li>
-        <li><a href="biographie.html" class="active"><i class="fas fa-user"></i> Biographie</a></li>
-        <li><a href="../projets.html"><i class="fas fa-hands-helping"></i> Projets</a></li>
-        <li><a href="../vision.html"><i class="fas fa-lightbulb"></i> Vision & Engagement</a></li>
-        <li><a href="../galerie.html"><i class="fas fa-images"></i> Galerie</a></li>
-        <li><a href="../apropos.html"><i class="fas fa-info-circle"></i> À propos</a></li>
-        <li><a href="../contact.html"><i class="fas fa-envelope"></i> Contact & Sources</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="page-content">
-
-    <!-- HEADER BIO COURTE -->
-    <header class="bio-header">
-      <h2 class="section-title">Gaël Musquet – Un parcours forgé par les tempêtes</h2>
-      <p class="bio-intro">
-        Né en 1980 en Guadeloupe, Gaël Musquet grandit sur une île magnifique mais exposée aux ouragans et aux séismes.
-        En 1989, le cyclone Hugo détruit une partie de son quartier : il découvre brutalement ce que signifie manquer
-        d’informations lorsqu’une catastrophe arrive.
-      </p>
-    </header>
-
-    <!-- CARTES BIO AVEC EMOJIS + FOCUS -->
-    <section class="carte-personnalite">
-      <article class="bio-carte active" data-categorie="origines">
-        <div class="carte-header">
-          <span class="emoji">🌀</span>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Gaël Musquet</a>
+            <button class="nav-toggle" id="nav-toggle">☰</button>
+            <ul id="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="biographie/biographie.html" class="active"><i class="fas fa-user"></i> Biographie</a></li> <li><a href="projets.html"><i class="fas fa-hands-helping"></i> Projets</a></li>
+                <li><a href="vision.html"><i class="fas fa-lightbulb"></i> Vision & Engagement</a></li>
+                <li><a href="galerie.html"><i class="fas fa-images"></i> Galerie</a></li>
+                <li><a href="apropos.html"><i class="fas fa-info-circle"></i> À propos</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact & Sources</a></li>
+            </ul>
         </div>
-        <div class="carte-content">
-          <h3>Origines & déclic</h3>
-          <p>
-            Enfant, Gaël observe les nuages, écoute la radio météo et veut comprendre comment mieux se préparer aux tempêtes.
-            Le passage d’Hugo laisse une empreinte durable : il ne s’agit plus seulement de prévoir le temps, mais de protéger des vies.
-          </p>
-        </div>
-      </article>
+    </nav>
+    
+    <main class="page-content">
+        <section class="biography-details">
+            <h2 class="section-title">Parcours et Engagement</h2>
+            <div class="bio-grid">
+                <div class="bio-image-container">
+                    <img src="../images/gael-musquet.jpg" alt="Portrait de Gaël Musquet" class="bio-portrait"> <p class="citation">"La technologie n'est qu'un outil, le citoyen est l'acteur."</p>
+                </div>
+                <div class="bio-text">
+                    <h3>Météorologue et Pionnier de l'Open Data</h3>
+                    <p>Né à Paris et formé en météorologie, Gaël Musquet a rapidement compris l'importance de l'information en temps de crise...</p>
+                    <p>...Cofondateur de l'ONG **Hackers Against Natural Disasters (HAND)**, il est un ardent défenseur de la cartographie collaborative et des données ouvertes (OpenStreetMap). Son travail a été crucial lors de catastrophes majeures, notamment le tremblement de terre en Haïti et le Typhon Haiyan aux Philippines.</p>
+                    <h3>Vision et Philosophie</h3>
+                    <p>Sa philosophie repose sur l'idée que les citoyens, s'ils sont correctement informés et outillés, sont les premiers acteurs de leur résilience.</p>
+                </div>
+            </div>
+        </section>
+        
+        </main>
 
-      <article class="bio-carte" data-categorie="parcours">
-        <div class="carte-header">
-          <span class="emoji">🛠️</span>
-        </div>
-        <div class="carte-content">
-          <h3>Se construire un métier utile</h3>
-          <p>
-            Après son bac, il quitte la Guadeloupe pour suivre des études techniques liées à la météo et aux systèmes de mesure.
-            Il travaille ensuite sur des capteurs et des instruments, puis rejoint des équipes en charge de la prévention des risques.
-          </p>
-        </div>
-      </article>
+    <footer>
+        <p>&copy; 2025 – Site réalisé dans le cadre du projet BUT. Inspiration humanitaire et données ouvertes.</p>
+        <p><a href="contact.html">Contact & Sources</a></p>
+    </footer>
 
-      <article class="bio-carte" data-categorie="communautes">
-        <div class="carte-header">
-          <span class="emoji">🌍</span>
-        </div>
-        <div class="carte-content">
-          <h3>Découverte des communautés libres</h3>
-          <p>
-            Confronté au manque de cartes précises, il se tourne vers la cartographie collaborative et les logiciels libres.
-            Il découvre la force des communautés capables de produire, ensemble, les données dont les territoires ont besoin.
-          </p>
-        </div>
-      </article>
-
-      <article class="bio-carte" data-categorie="terrain">
-        <div class="carte-header">
-          <span class="emoji">🧪</span>
-        </div>
-        <div class="carte-content">
-          <h3>Du laboratoire au terrain</h3>
-          <p>
-            Aujourd’hui, Gaël partage son temps entre formations, exercices de crise et missions sur le terrain.
-            Son fil rouge : rapprocher sciences, technologie et solidarité pour rendre les sociétés moins vulnérables face aux crises.
-          </p>
-        </div>
-      </article>
-    </section>
-
-    <!-- FRISE CHRONOLOGIQUE – SLIDER HORIZONTAL -->
-<section class="timeline-immersive">
-  <h2 class="section-title">À l’essentiel – Le parcours en dates</h2>
-
-  <div class="timeline-tabs">
-    <button class="timeline-tab active" data-index="0">1989</button>
-    <button class="timeline-tab" data-index="1">Années 2000</button>
-    <button class="timeline-tab" data-index="2">Vers 2008</button>
-    <button class="timeline-tab" data-index="3">2010</button>
-    <button class="timeline-tab" data-index="4">Aujourd’hui</button>
-  </div>
-
-  <div class="timeline-slider">
-    <button class="timeline-arrow left" type="button" aria-label="Événement précédent">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-
-    <div class="timeline-track">
-      <article class="timeline-card active" data-annee="1989">
-        <div class="timeline-year">1989</div>
-        <h3>Ouragan Hugo en Guadeloupe</h3>
-        <p>
-          À 9 ans, il vit l’un des ouragans les plus violents de l’histoire de son île.
-          Ce choc face au manque d’alertes fiables deviendra le point de départ de son engagement.
-        </p>
-      </article>
-
-      <article class="timeline-card" data-annee="Années 2000">
-        <div class="timeline-year">Années 2000</div>
-        <h3>Études et premiers pas techniques</h3>
-        <p>
-          Il se spécialise dans les systèmes de mesure et la météo,
-          travaillant sur des capteurs et des instruments pour mieux observer l’atmosphère.
-        </p>
-      </article>
-
-      <article class="timeline-card" data-annee="Vers 2008">
-        <div class="timeline-year">Vers 2008</div>
-        <h3>Rencontre avec les cartes libres</h3>
-        <p>
-          Il rejoint des communautés de cartographie collaborative,
-          et comprend que des citoyens peuvent produire eux-mêmes les cartes qui leur manquent.
-        </p>
-      </article>
-
-      <article class="timeline-card" data-annee="2010">
-        <div class="timeline-year">2010</div>
-        <h3>Premières grandes crises accompagnées</h3>
-        <p>
-          Il participe à des actions de cartographie en situation de catastrophe,
-          mesurant l’impact concret des données partagées sur la coordination des secours.
-        </p>
-      </article>
-
-      <article class="timeline-card" data-annee="Aujourd’hui">
-        <div class="timeline-year">Aujourd’hui</div>
-        <h3>Une vie au service de la résilience</h3>
-        <p>
-          Gaël met désormais son expérience au service des territoires,
-          des institutions et des citoyens qui veulent anticiper et mieux traverser les crises.
-        </p>
-      </article>
-    </div>
-
-     <button class="timeline-arrow right" type="button" aria-label="Événement suivant">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-  </div>
-</section>
-  </div>
- 
-  <!-- Footer -->
-  <footer>
-      <p>&copy; 2025 – Site réalisé dans le cadre du projet BUT. Inspiration humanitaire et données ouvertes.</p>
-      <p><a href="contact.html">Contact & Sources</a></p>
-  </footer>
-
-  <script src="../script.js"></script>
-</body>
+    <script src="../script.js"></script> </body>
 </html>
