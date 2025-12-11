@@ -650,7 +650,7 @@ footer a {
 
 /* cartes claires, contours uniquement */
 .page-biographie .timeline-card {
-    min-width: 100%;
+    min-width: 80%;
     box-sizing: border-box;
     background: rgba(255, 255, 255, 0.9);
     color: #0f172a;
