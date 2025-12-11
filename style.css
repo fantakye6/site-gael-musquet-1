@@ -345,282 +345,285 @@ body {
   background-color: transparent;
 }
 
-/* Header bio */
-.page-biographie .bio-header {
-  max-width: 800px;
-  margin: 3rem auto 2rem;
+/* Bio simple */
+.biography-details {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+  margin-bottom: 4rem;
+}
+
+.bio-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.bio-image-container {
   text-align: center;
 }
 
-.page-biographie .bio-intro {
-  font-size: 1rem;
+.bio-portrait {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 16px;
+  box-shadow: 0 14px 34px rgba(2, 36, 38, 0.18);
+}
+
+.citation {
+  margin-top: 0.8rem;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #0b2a33;
+}
+
+.bio-text h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.15rem;
+  color: #072f34;
+}
+
+.bio-text p {
+  margin: 0 0 0.8rem;
   line-height: 1.6;
   color: #0b2a33;
-  margin-top: 0.8rem;
 }
 
-/* Conteneurs principaux */
-.page-biographie .carte-personnalite,
-.page-biographie .timeline-immersive {
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 30px;
-  border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
-  margin-bottom: 4rem;
+@media (max-width: 800px) {
+  .bio-grid {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .bio-image-container {
+    justify-self: center;
+  }
 }
 
-/* Cartes bio */
-.page-biographie .carte-personnalite {
+/* =================== Section Projets (accueil) =================== */
+.projects {
+  max-width: 1000px;
+  margin: 4rem auto 3rem;
+  text-align: center;
+}
+
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.project-card {
+  display: block;
+  text-decoration: none;
+  border: 2px solid #0e7490;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 280px;
+  transition: .3s;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.project-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+}
+
+.project-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: .8rem;
+  background-color: #f9fcff;
+}
+
+.project-card h3 {
+  margin: .4rem 0;
+  font-size: 1.1rem;
+  color: #072f34;
+}
+
+.project-card p {
+  font-size: .9rem;
+  line-height: 1.35;
+  margin: 0;
+  color: #0b2a33;
+}
+
+/* =================== Galerie =================== */
+.gallery {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+}
+
+.carousel {
+  position: relative;
+  overflow: visible;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform .6s ease;
+  will-change: transform;
+  gap: 20px;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
-  counter-reset: bioStep;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.04);
+  transition: transform .3s ease, box-shadow .3s ease;
+  gap: 16px;
 }
 
-.page-biographie .carte-personnalite.is-focusing .bio-carte {
-  filter: blur(1.2px);
-  opacity: 0.5;
-  transform: translateY(0) scale(0.96);
+.carousel-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
 }
 
-.page-biographie .bio-carte.active,
-.page-biographie .carte-personnalite.is-focusing .bio-carte:hover {
-  filter: none;
-  opacity: 1;
-  transform: translateY(-6px) scale(1.04);
-  box-shadow: 0 26px 60px rgba(15, 23, 42, 0.4);
-  border-color: rgba(14, 116, 144, 0.55);
-  z-index: 2;
+.carousel-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
 }
 
-.page-biographie .bio-carte {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.2rem;
-  align-items: center;
-
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 18px;
-  padding: 18px 22px 22px;
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.18);
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  overflow: hidden;
-
-  transition: transform .25s ease, box-shadow .25s ease,
-              opacity .25s ease, filter .25s ease;
-}
-
-.page-biographie .bio-carte::after {
-  content: '';
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 10px;
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #0e9f92, #8b5cf6);
-  opacity: 0.9;
-}
-
-.page-biographie .carte-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 18px;
-  background: rgba(14, 116, 144, 0.08);
-  border: 1px solid rgba(14, 116, 144, 0.3);
-}
-
-.page-biographie .carte-header .emoji {
-  font-size: 1.8rem;
-}
-
-.page-biographie .carte-content h3 {
-  margin: 0 0 .4rem;
-  font-size: 1.06rem;
-  color: #111827;
-  display: flex;
-  align-items: center;
-  gap: .6rem;
-}
-
-.page-biographie .carte-content h3::before {
-  counter-increment: bioStep;
-  content: counter(bioStep);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  background: #3b82f6;
-  color: #fff;
-  font-size: .85rem;
-  font-weight: 700;
-}
-
-.page-biographie .carte-content p {
-  margin: 0;
-  font-size: .96rem;
-  line-height: 1.55;
-  color: #1f2937;
-}
-
-@media (max-width: 700px) {
-  .page-biographie .bio-carte {
-    grid-template-columns: 1fr;
-    padding: 16px 16px 20px;
-  }
-  .page-biographie .carte-header {
-    width: 46px;
-    height: 46px;
-    margin-bottom: .4rem;
-  }
-  .page-biographie .bio-carte::after {
-    left: 14px;
-    right: 14px;
-  }
-}
-
-/* Timeline */
-.page-biographie .timeline-slider,
-.page-biographie .timeline-track,
-.page-biographie .timeline-card {
-  user-select: none;
-}
-
-.page-biographie .timeline-tabs {
-  display: flex;
-  justify-content: center;
-  gap: .75rem;
-  margin-bottom: 1.8rem;
-  flex-wrap: wrap;
-}
-
-.page-biographie .timeline-tab {
-  padding: .45rem .9rem;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  background: rgba(248, 250, 252, 0.9);
-  color: #0b2a33;
-  font-size: .9rem;
-  cursor: pointer;
-  transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
-}
-
-.page-biographie .timeline-tab.active {
-  background: linear-gradient(90deg, #0e9f92, #0b6b6a);
-  color: #fff;
-  border-color: transparent;
-  box-shadow: 0 8px 20px rgba(14, 116, 144, 0.35);
-  transform: translateY(-1px);
-}
-
-.page-biographie .timeline-immersive {
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 30px;
-  border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
-  margin-bottom: 4rem;
-}
-
-.page-biographie .timeline-slider {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  overflow: hidden;
-}
-
-.page-biographie .timeline-arrow {
-  border: none;
-  background: #0e7490;
-  color: #fff;
-  border-radius: 999px;
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(14, 116, 144, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  flex-shrink: 0;
-  position: relative;
-  z-index: 5;
-}
-
-.page-biographie .timeline-arrow:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(14, 116, 144, 0.45);
-}
-
-.page-biographie .timeline-track {
-  display: flex;
-  transition: transform .35s ease;
-  will-change: transform;
-}
-
-.page-biographie .timeline-card {
-  min-width: 100%;
-  max-width: 100%;
+.carousel-item .caption {
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.9);
-  color: #0f172a;
-  border-radius: 18px;
-  padding: 18px 20px;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-  border: 2px solid rgba(14, 116, 144, 0.18);
-  opacity: 0.55;
-  transform: translateY(4px) scale(0.97);
-  transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.page-biographie .timeline-card.active {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
-  border-color: #0e9f92;
-}
-
-.page-biographie .timeline-year {
-  display: inline-flex;
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #07313a;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 18px;
+  border-radius: 10px;
+  border-left: 4px solid rgba(6, 120, 110, 0.08);
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3px 9px;
-  border-radius: 999px;
-  border: 1px solid rgba(14, 116, 144, 0.35);
-  background: rgba(240, 253, 250, 0.7);
-  color: #0b6b6a;
-  font-size: .8rem;
-  font-weight: 600;
-  margin-bottom: .5rem;
+  text-align: center;
 }
 
-.page-biographie .timeline-card h3 {
-  margin: 0 0 .35rem;
-  font-size: 1.05rem;
-}
-
-.page-biographie .timeline-card p {
+.carousel-item .caption p {
   margin: 0;
-  font-size: .95rem;
-  line-height: 1.5;
 }
 
-@media (max-width: 700px) {
-  .page-biographie .timeline-slider {
-    gap: 0.5rem;
+/* Controls */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  color: #07313a;
+  border: none;
+  padding: .5rem .6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+}
+
+.carousel-btn.prev {
+  left: 8px;
+}
+
+.carousel-btn.next {
+  right: 8px;
+}
+
+.carousel-btn:focus {
+  outline: 2px solid rgba(6, 120, 110, 0.1);
+  outline-offset: 3px;
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(6, 120, 110, 0.18);
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+
+.carousel-indicators button.active {
+  background: rgba(6, 120, 110, 0.9);
+  transform: scale(1.1);
+}
+
+/* Responsive carousel */
+@media (min-width: 900px) {
+  .carousel-item {
+    flex-direction: row;
+    align-items: center;
+    padding: 18px;
   }
-  .page-biographie .timeline-arrow {
-    width: 34px;
-    height: 34px;
+
+  .carousel-item img {
+    width: 55%;
+    height: 300px;
   }
-  .page-biographie .timeline-card {
-    min-width: 100%;
-    max-width: 100%;
+
+  .carousel-item img + .caption {
+    width: 45%;
+    height: auto;
+    text-align: left;
+  }
+
+  .carousel-item.no-img .caption {
+    width: 100%;
+    height: auto;
+    border-left: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .carousel-track {
+    gap: 12px;
+  }
+
+  .carousel-item {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .carousel-item img {
+    height: 200px;
+  }
+
+  .carousel-item .caption {
+    width: 100%;
+    margin-top: 12px;
+    border-left: 3px solid rgba(6, 120, 110, 0.06);
+  }
+
+  .carousel-btn.prev {
+    left: 6px;
+  }
+
+  .carousel-btn.next {
+    right: 6px;
   }
 }
 
