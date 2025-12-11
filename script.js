@@ -176,18 +176,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ===== Timeline slider (tabs + slider ou centrage) =====
+// ===== Timeline : tabs + slider lié =====
 document.addEventListener('DOMContentLoaded', () => {
   const bioPage = document.querySelector('.page-biographie');
   if (!bioPage) return;
 
   const track = bioPage.querySelector('.timeline-track');
   const cards = Array.from(bioPage.querySelectorAll('.timeline-card'));
-  const tabs = Array.from(bioPage.querySelectorAll('.timeline-tab')); // s’il n’y en a pas, c’est pas grave
+  const tabs = Array.from(bioPage.querySelectorAll('.timeline-tab'));
   const prevArrow = bioPage.querySelector('.timeline-arrow.left');
   const nextArrow = bioPage.querySelector('.timeline-arrow.right');
 
-  if (!track || !cards.length || !prevArrow || !nextArrow) return;
+  if (!track || !cards.length || !tabs.length || !prevArrow || !nextArrow) return;
 
   let currentIndex = 0;
 
@@ -197,12 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
     cards.forEach((card, i) => {
       card.classList.toggle('active', i === currentIndex);
     });
-
-    if (tabs.length) {
-      tabs.forEach((tab, i) => {
-        tab.classList.toggle('active', i === currentIndex);
-      });
-    }
+    tabs.forEach((tab, i) => {
+      tab.classList.toggle('active', i === currentIndex);
+    });
 
     const offset = -currentIndex * 100;
     track.style.transform = `translateX(${offset}%)`;
@@ -218,25 +215,22 @@ document.addEventListener('DOMContentLoaded', () => {
   prevArrow.addEventListener('click', () => {
     syncUI(currentIndex - 1);
   });
-
   nextArrow.addEventListener('click', () => {
     syncUI(currentIndex + 1);
   });
 
+  // swipe mobile
   let startX = 0;
   let isDragging = false;
-
   track.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
     isDragging = true;
   });
-
   track.addEventListener('touchend', (e) => {
     if (!isDragging) return;
     const endX = e.changedTouches[0].clientX;
     const dx = endX - startX;
     isDragging = false;
-
     if (Math.abs(dx) > 40) {
       if (dx < 0) syncUI(currentIndex + 1);
       else syncUI(currentIndex - 1);

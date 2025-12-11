@@ -135,7 +135,6 @@ body { background-color: transparent; }
 }
 
 /* =================== Accueil =================== */
-/* (section d’intro + hacker text + projets + galerie — ta version “parfaite”) */
 
 .intro {
     max-width: 1100px;
@@ -458,24 +457,24 @@ footer a {
     counter-reset: bioStep;
 }
 
-/* mode focus : tout est atténué */
+/* mode focus : tout est légèrement atténué */
 .page-biographie .carte-personnalite.is-focusing .bio-carte {
-    filter: blur(2px);
-    opacity: 0.4;
-    transform: translateY(0) scale(0.97);
+    filter: blur(1.2px);
+    opacity: 0.5;
+    transform: translateY(0) scale(0.96);
 }
 
-/* carte active (cliquée) ou hover pendant le focus */
+/* carte active ou hover pendant le focus */
 .page-biographie .bio-carte.active,
 .page-biographie .carte-personnalite.is-focusing .bio-carte:hover {
     filter: none;
     opacity: 1;
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 22px 55px rgba(15, 23, 42, 0.35);
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 26px 60px rgba(15, 23, 42, 0.4);
+    border-color: rgba(14, 116, 144, 0.55);
     z-index: 2;
 }
 
-/* base carte */
 .page-biographie .bio-carte {
     position: relative;
     display: grid;
@@ -523,7 +522,7 @@ footer a {
     font-size: 1.8rem;
 }
 
-/* titre + badge numéro */
+/* titre + badge numéro stylé */
 .page-biographie .carte-content h3 {
     margin: 0 0 .4rem;
     font-size: 1.06rem;
@@ -538,21 +537,47 @@ footer a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     border-radius: 999px;
-    background: #3b82f6;
-    color: #fff;
+    background: radial-gradient(circle at 30% 30%, #fef9c3, #f97316);
+    color: #111827;
     font-size: .85rem;
-    font-weight: 700;
+    font-weight: 800;
+    box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.15);
 }
 
-/* texte */
+/* petite anim du numéro quand carte active */
+.page-biographie .bio-carte.active .carte-content h3::before {
+    animation: pulse-number .5s ease-out;
+}
+@keyframes pulse-number {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
 .page-biographie .carte-content p {
     margin: 0;
     font-size: .96rem;
     line-height: 1.55;
     color: #1f2937;
+}
+
+@media (max-width: 700px) {
+    .page-biographie .bio-carte {
+        grid-template-columns: 1fr;
+        padding: 16px 16px 20px;
+    }
+    .page-biographie .carte-header {
+        width: 46px;
+        height: 46px;
+        margin-bottom: .4rem;
+    }
+    .page-biographie .bio-carte::after {
+        left: 14px;
+        right: 14px;
+    }
 }
 
 /* ========= Timeline : tabs + slider ========= */
@@ -619,20 +644,20 @@ footer a {
 .page-biographie .timeline-card {
     min-width: 100%;
     box-sizing: border-box;
-    background: linear-gradient(135deg, #0ea5e9, #6366f1);
-    color: #f8fafc;
+    background: linear-gradient(135deg, #0e9f92, #0369a1);
+    color: #0f172a;
     border-radius: 20px;
     padding: 18px 20px;
-    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.45);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
     border: 1px solid rgba(148, 163, 184, 0.35);
-    opacity: 0.4;
+    opacity: 0.55;
     transform: translateY(4px) scale(0.97);
     transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 .page-biographie .timeline-card.active {
     opacity: 1;
     transform: translateY(0) scale(1);
-    box-shadow: 0 22px 55px rgba(15, 23, 42, 0.65);
+    box-shadow: 0 22px 55px rgba(15, 23, 42, 0.3);
 }
 .page-biographie .timeline-year {
     display: inline-flex;
@@ -640,7 +665,7 @@ footer a {
     justify-content: center;
     padding: 4px 10px;
     border-radius: 999px;
-    background: rgba(15, 23, 42, 0.22);
+    background: rgba(15, 23, 42, 0.18);
     color: #e0f2fe;
     font-size: .8rem;
     font-weight: 600;
