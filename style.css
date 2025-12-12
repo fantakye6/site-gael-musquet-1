@@ -582,6 +582,11 @@ body {
 
 /* Cartes bio + focus */
 .page-biographie .carte-personnalite {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+  margin-bottom: 4rem;
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
@@ -747,19 +752,23 @@ body {
 }
 
 .page-biographie .timeline-immersive {
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 30px;
-  border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+  background-color: transparent;   /* plus de fond blanc */              /* [web:360][web:358] */
+  padding: 24px 0 0;
+  border-radius: 0;
+  box-shadow: none;
   margin-bottom: 4rem;
 }
 
 .page-biographie .timeline-slider {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  align-items: stretch;
+  justify-content: center;   /* centre le contenu du slider */           /* [web:197][web:354] */
+  gap: 0.75rem;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 
 .page-biographie .timeline-arrow {
   border: none;
@@ -838,70 +847,24 @@ body {
 }
 
 @media (max-width: 700px) {
+  .page-biographie .timeline-immersive {
+    padding: 20px 16px;
+  }
+
   .page-biographie .timeline-slider {
     gap: 0.5rem;
   }
+
   .page-biographie .timeline-arrow {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
   }
+
   .page-biographie .timeline-card {
     min-width: 100%;
     max-width: 100%;
+    padding: 16px 14px;
   }
-}
-
-/* =================== Section Projets (accueil) =================== */
-.projects {
-  max-width: 1000px;
-  margin: 4rem auto 3rem;
-  text-align: center;
-}
-
-.project-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-.project-card {
-  display: block;
-  text-decoration: none;
-  border: 2px solid #0e7490;
-  border-radius: 10px;
-  padding: 1rem;
-  width: 280px;
-  transition: .3s;
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.85);
-}
-
-.project-card:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
-}
-
-.project-card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: .8rem;
-  background-color: #f9fcff;
-}
-
-.project-card h3 {
-  margin: .4rem 0;
-  font-size: 1.1rem;
-  color: #072f34;
-}
-
-.project-card p {
-  font-size: .9rem;
-  line-height: 1.35;
-  margin: 0;
-  color: #0b2a33;
 }
 
 /* =================== Footer =================== */
