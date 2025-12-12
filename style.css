@@ -25,11 +25,14 @@
 
 /* =================== Global =================== */
 html, body {
+  width: 100%;
+  position: relative;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
   color: #1f2937;
+  width: 100%
 }
 
 body {
@@ -807,6 +810,8 @@ body {
   display: flex;
   transition: transform .35s ease;
   will-change: transform;
+  width: 100%;
+  max-width: 100%;
 }
 
 .page-biographie .timeline-card {
