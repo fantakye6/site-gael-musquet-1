@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projets – Gaël Musquet</title>
+
+  <!-- CSS global à la racine -->
   <link rel="stylesheet" href="../style.css">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-  <!-- Fond carte identique à l’accueil -->
+  <!-- Fond carte identique -->
   <div class="map-bg">
     <img src="../images/image-de-fond.png" alt="Carte du monde">
   </div>
@@ -32,115 +34,78 @@
     </div>
   </nav>
 
-  <main class="projects-main">
+  <main class="projects-shell">
 
-    <header class="page-header">
-      <h1>Projets & travaux</h1>
-      <p class="subtitle">Actions, innovations et engagements citoyens</p>
-    </header>
-
-    <!-- A. Projets principaux -->
-    <section class="cards-section" id="projets-principaux">
-      <h2 class="section-title">Projets principaux</h2>
-
-      <!-- OpenStreetMap France -->
-      <article class="card animate" data-delay="0" id="openstreetmap">
-        <img src="../images/OSM.jpg" alt="OpenStreetMap France">
-        <h3>Co‑fondateur d’OpenStreetMap France</h3>
-        <p>Développement de la cartographie libre en France et mobilisation de communautés bénévoles pour l’intérêt général.</p>
-        <p>Production de données géographiques ouvertes réutilisées pour la prévention des risques, les services publics et les initiatives citoyennes.</p>
-      </article>
-
-      <!-- HAND -->
-      <article class="card animate" data-delay="150" id="hand">
-        <img src="../images/logo-hand.png" alt="Collectif HAND">
-        <h3>Collectif HAND</h3>
-        <p>Hackers Against Natural Disasters : utilisation de drones, réseaux mesh, capteurs et open data pour anticiper et gérer les catastrophes naturelles.</p>
-        <p>Actions pour préparer les populations, cartographier les zones à risque et déployer des réseaux de communication résilients.</p>
-      </article>
-
-      <!-- SOS Méditerranée -->
-      <article class="card animate" data-delay="300" id="sosmediterranée">
-        <img src="../images/sos.jpg" alt="SOS Méditerranée">
-        <h3>SOS Méditerranée</h3>
-        <p>Contributions à des systèmes de géolocalisation et de communication pour coordonner les secours en mer.</p>
-        <p>Usage des données ouvertes et de la cartographie pour documenter les opérations de sauvetage et renforcer la vigilance citoyenne.</p>
-      </article>
-
-      <!-- Formateur & conférencier -->
-      <article class="card animate" data-delay="450" id="formateur-conferencier">
-        <img src="../images/formation.jpg" alt="Formations et conférences">
-        <h3>Formateur & conférencier</h3>
-        <p>Interventions sur les risques, la résilience, la souveraineté numérique et l’usage des logiciels libres pour les collectivités, associations et institutions.</p>
-        <p>Transmission d’une culture de la prévention et de la donnée ouverte auprès de publics variés.</p>
-      </article>
-
-      <!-- Expérimentations technologiques -->
-      <article class="card animate" data-delay="600" id="experiments">
-        <img src="../images/techno.jpg" alt="Expérimentations technologiques">
-        <h3>Expérimentations technologiques</h3>
-        <p>Explorations de réseaux radios libres (LoRa, Sigfox), de capteurs météo DIY et de solutions énergétiques autonomes.</p>
-        <p>Conception de dispositifs robustes et peu coûteux adaptés aux contextes de crise et aux territoires isolés.</p>
-      </article>
-    </section>
-
-    <!-- B. Publications & interventions -->
-    <section class="publications-section animate" data-delay="750" id="publications-interventions">
-      <h2 class="section-title">Publications & interventions</h2>
-
-      <ul class="publications-list">
-        <li>Conférence « Cartographier l’urgence » – Collectif HAND.</li>
-        <li>Entretiens pour Arte, France Culture, INRIA et d’autres médias.</li>
-        <li>Interventions sur l’open data pour les catastrophes et la gestion de crise.</li>
-      </ul>
-
-      <a class="button-link" href="https://journals.openedition.org/factsreports/4844"
-         target="_blank" rel="noopener">
-        📘 Lire l’article scientifique (Facts Reports)
-      </a>
-    </section>
-
-    <!-- Articles & ressources externes -->
-    <section class="articles-section animate" data-delay="900">
-      <h2 class="section-title">Articles & ressources</h2>
-
-      <div class="articles-grid">
-
-        <a class="article-card" target="_blank" rel="noopener"
-          href="https://www.sogoodstories.com/magazine/gael-musquet-est-le-robin-des-bois-du-net/">
-          <h3>So good – « Robin des Bois du net »</h3>
-          <p>Portrait de Gaël Musquet et de ses engagements numériques et citoyens.</p>
-        </a>
-
-        <a class="article-card" target="_blank" rel="noopener"
-          href="https://www.geekmaispasque.com/2020/10/innovacteur-gael-musquet-hackers-against-natural-disasters-hacker-ethique/">
-          <h3>Geek Mais Pas Que</h3>
-          <p>Portrait d’un hacker éthique et acteur majeur de la résilience face aux risques.</p>
-        </a>
-
-        <a class="article-card" target="_blank" rel="noopener"
-          href="https://www.urbanisme.fr/invite/gael-musquet-la-donnee-produite-par-la-puissance-publique-devait-revenir-au-public/">
-          <h3>Revue Urbanisme</h3>
-          <p>Réflexion sur le rôle des données publiques et leur retour aux citoyens.</p>
-        </a>
-
-        <a class="article-card" target="_blank" rel="noopener"
-          href="https://www.ouest-france.fr/normandie/eure-gael-musquet-est-un-corsaire-des-temps-modernes-4294362">
-          <h3>Ouest‑France</h3>
-          <p>Portrait de Gaël Musquet comme « corsaire des temps modernes ».</p>
-        </a>
-
+    <!-- HERO -->
+    <section class="projects-hero">
+      <div class="projects-icon">
+        <i class="fas fa-briefcase"></i>
       </div>
+      <h1>Projets & Réalisations</h1>
+      <p class="projects-hero-subtitle">
+        De la cartographie libre à l’innovation technologique au service de l’humanitaire.
+      </p>
     </section>
 
-  </main>
+    <!-- PROJETS PRINCIPAUX -->
+    <section class="projects-section" id="projets-principaux">
+      <h2 class="section-title accent">Projets principaux</h2>
 
-  <!-- Footer identique (chemin adapté) -->
-  <footer>
-    <p>&copy; 2025 – Site réalisé dans le cadre du projet BUT. Inspiration humanitaire et données ouvertes.</p>
-    <p><a href="../contact.html">Contact & Sources</a></p>
-  </footer>
+      <!-- 2 grandes cartes en haut : OSM + HAND -->
+      <div class="projects-grid">
+        <!-- OSM -->
+        <article class="project-pane tilt-left animate" data-delay="0" id="openstreetmap">
+          <div class="pane-header">
+            <div class="pane-icon"><i class="fas fa-map"></i></div>
+            <div>
+              <h3>Co‑fondateur OpenStreetMap France</h3>
+              <div class="pane-tags">
+                <span>Cartographie libre</span>
+                <span>Open Data</span>
+                <span>Communauté</span>
+              </div>
+            </div>
+          </div>
+          <p class="pane-text">
+            Développement et promotion de la cartographie libre en France, via une carte collaborative et open source,
+            créée par des citoyens et utilisée en situation d’urgence.
+          </p>
+          <div class="pane-block">
+            <h4>Impact communautaire</h4>
+            <p>
+              Infrastructure cartographique essentielle pour les ONG, les collectivités et les citoyens lors de crises
+              (ouragans, séismes, inondations).
+            </p>
+          </div>
+        </article>
 
-  <script src="../script.js"></script>
-</body>
-</html>
+        <!-- HAND -->
+        <article class="project-pane tilt-right animate" data-delay="150" id="hand">
+          <div class="pane-header">
+            <div class="pane-icon danger"><i class="fas fa-mobile-alt"></i></div>
+            <div>
+              <h3>Créateur du collectif HAND</h3>
+              <div class="pane-tags">
+                <span>Humanitaire</span>
+                <span>Tech</span>
+                <span>Innovation</span>
+              </div>
+            </div>
+          </div>
+          <p class="pane-text">
+            Hackers Against Natural Disasters : utilisation de technologies ouvertes (drones, réseaux mesh, capteurs, open data)
+            pour anticiper, cartographier et documenter les catastrophes naturelles.
+          </p>
+          <ul class="pane-list">
+            <li>Drones de reconnaissance et cartographie rapide des zones sinistrées.</li>
+            <li>Réseaux mesh pour maintenir la communication en cas de coupure.</li>
+            <li>Capteurs IoT et météo DIY pour surveiller les risques.</li>
+            <li>Open data pour la préparation et le retour d’expérience.</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- 2 cartes en dessous : Formateur & Expérimentations -->
+      <div class="projects-grid secondary-grid">
+        <!-- Formateur & conférencier -->
+        <article class="project-pane
