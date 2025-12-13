@@ -947,11 +947,6 @@ body {
   color: #111827;          /* plus foncé */
   font-size: 1rem;         /* un peu plus grand */
   font-weight: 600;        /* gras léger */
-  max-width: 640px;
-}
-
-.projects-section .section-subtitle {
-  /
 }
 
 /* Sections et grilles */
