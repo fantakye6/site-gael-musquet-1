@@ -1091,6 +1091,19 @@ body {
   box-shadow: 0 12px 30px rgba(16, 185, 129, 0.45);
 }
 
+/* Grille spécifique pour Publications & Interventions */
+.publications-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Cartes au format plus vertical */
+.vertical-card {
+  min-height: 220px;              /* ajuste si besoin */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /* Articles & ressources */
 .articles-grid {
   display: grid;
@@ -1178,16 +1191,6 @@ body {
   }
 }
 
-/* Forcer Publications & Interventions en colonne */
-#publications-interventions {
-  display: block;
-}
-
-#publications-interventions > article {
-  display: block;       /* chaque carte prend toute la largeur */
-  width: 100%;
-  margin-bottom: 1rem;
-}
 /* ========================================== Footer ====================================== */
 footer {
   background-color: #e2e8f0;
