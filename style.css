@@ -919,9 +919,11 @@ body {
 }
 
 .projects-hero h1 {
-  font-size: 2.6rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.8rem;      /* même taille que .section-title */
+  font-weight: 800;
+  color: #072f34;         /* ou la couleur que tu préfères mais cohérente */
   margin: 0.5rem 0;
-  color: #0f172a;
 }
 
 .projects-hero-subtitle {
