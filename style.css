@@ -1101,19 +1101,25 @@ body {
 
 /* Liste stylée pour Expérimentations technologiques */
 .experiments-list {
-  margin: 0.8rem 0 0;
-  padding: 0;
+  margin: 0.6rem 0 0;
+  padding-left: 0;
   list-style: none;
 }
 
 .experiments-list li {
-  padding: 0.45rem 0.7rem;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.35rem;
   font-size: 0.9rem;
-  color: #374151;
-  margin-bottom: 0.4rem;
+  color: #4b5563;
+}
+
+.experiments-list li i[data-lucide] {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.8;
+  color: #7c3aed; /* ou la couleur accent de ta maquette */
 }
 
 /* Bouton */
