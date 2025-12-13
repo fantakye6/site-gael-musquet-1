@@ -894,7 +894,7 @@ body {
 /* Coquille */
 .projects-shell {
   max-width: 1100px;
-  margin: 6rem auto 3rem;
+  margin: 4.5rem auto 3rem;
   padding: 0 1.5rem 4rem;
   color: #111827;
 }
@@ -902,7 +902,7 @@ body {
 /* Hero */
 .projects-hero {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .projects-icon {
@@ -910,7 +910,7 @@ body {
   height: 56px;
   margin: 0 auto;
   border-radius: 50%;
-  background: #10b981;
+  background: #047857;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -938,7 +938,7 @@ body {
 }
 
 .section-title.accent {
-  color: #059669;
+  color: #0f172a;
 }
 .section-subtitle {
   margin: 0.25rem 0 1.8rem;
