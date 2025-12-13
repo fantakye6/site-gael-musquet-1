@@ -942,6 +942,15 @@ body {
 .section-title.accent {
   color: #059669;
 }
+.section-subtitle {
+  margin: 0 0 1.5rem;
+  color: #6b7280;
+  font-size: 0.95rem;
+  max-width: 640px;
+}
+.projects-section .section-subtitle {
+  /* rien à ajouter, la marge par défaut suffit */
+}
 
 /* Sections et grilles */
 .projects-section {
@@ -1091,8 +1100,16 @@ body {
 .articles-grid {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  /* 4 colonnes sur grand écran */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: 1.5rem;
+  justify-items: stretch;
+}
+
+/* Centre la dernière ligne avec 2 cartes */
+.articles-grid .article-card:nth-last-child(2),
+.articles-grid .article-card:last-child {
+  grid-column: span 2;
 }
 
 .article-card {
@@ -1136,6 +1153,17 @@ body {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .articles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .articles-grid .article-card:nth-last-child(2),
+  .articles-grid .article-card:last-child {
+    grid-column: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .projects-shell {
     margin-top: 5rem;
@@ -1145,10 +1173,13 @@ body {
   .projects-hero h1 {
     font-size: 2.1rem;
   }
+
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-
-/* =================== Footer =================== */
+/* ========================================== Footer ====================================== */
 footer {
   background-color: #e2e8f0;
   text-align: center;
