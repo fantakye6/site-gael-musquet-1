@@ -1098,10 +1098,10 @@ body {
 
 /* Cartes au format plus vertical */
 .vertical-card {
-  min-height: 220px;              /* ajuste si besoin */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  min-height: 220px;          /* tu peux réduire/augmenter selon le rendu */
+  display: block;             /* ou flex sans space-between */
+  /* flex-direction: column; */
+  /* justify-content: flex-start; */
 }
 
 /* Articles & ressources */
