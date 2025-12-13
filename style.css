@@ -1123,6 +1123,10 @@ body {
   transition: opacity 0.4s ease-out, transform 0.4s ease-out, box-shadow 0.15s ease;
 }
 
+.vertical-card {
+  margin-bottom: 1rem;
+}
+
 .article-card.visible {
   opacity: 1;
   transform: translateY(0);
