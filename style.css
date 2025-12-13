@@ -1070,6 +1070,51 @@ body {
   color: #4b5563;
   font-size: 0.93rem;
 }
+/* Bloc stats Formateur & Conférencier */
+.trainer-stats {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.trainer-stat {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 0.6rem 0.4rem;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.trainer-number {
+  display: block;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #7c3aed;
+}
+
+.trainer-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+/* Liste stylée pour Expérimentations technologiques */
+.experiments-list {
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experiments-list li {
+  padding: 0.45rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 0.4rem;
+}
 
 /* Bouton */
 .button-link {
