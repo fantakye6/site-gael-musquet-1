@@ -1031,7 +1031,7 @@ body {
 
 .pane-icon.danger {
   background: #fee2e2;
-  color: #b91c1c;
+  color: #2938dd;
 }
 
 .pane-header h3 {
@@ -1090,6 +1090,11 @@ body {
 }
 #openstreetmap .pane-icon i {
   color: #059669;  /* même vert que la planète */
+}
+
+#sos-med .pane-icon.danger {
+  background: #fee2e2;
+  color: #6d1414;
 }
 
 /* Bloc stats Formateur & Conférencier */
