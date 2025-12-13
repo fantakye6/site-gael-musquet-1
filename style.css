@@ -947,6 +947,7 @@ body {
   color: #111827;          /* plus foncé */
   font-size: 1rem;         /* un peu plus grand */
   font-weight: 600;        /* gras léger */
+  text-align: center;  /* centrage */
 }
 
 /* Sections et grilles */
