@@ -1045,6 +1045,23 @@ body {
   font-weight: 600;        /* gras léger */
   text-align: center;  /* centrage */
 }
+
+/* Effet sur le bloc Impact communautaire */
+#openstreetmap .pane-block {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 0.9rem 1rem;
+  background: #f9fafb;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+#openstreetmap .pane-block:hover {
+  transform: translateY(-2px);
+  border-color: #0e9f92;
+  box-shadow: 0 0 0 2px rgba(14, 159, 146, 0.25);
+}
+
 /* Sections et grilles */
 .projects-section {
   margin-bottom: 3rem;
@@ -1181,11 +1198,79 @@ body {
 #sos-med .pane-block h4 {
   color: #6d1414;   /* exemple : rouge SOS, remplace par ce que tu veux */
 }
+#sos-med .pane-block {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 0.9rem 1rem;
+  background: #f9fafb;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+/* Effet commun */
+#sos-med .pane-block:hover {
+  transform: translateY(-2px);
+}
+
+/* 1er bloc : Sensibilisation & plaidoyer */
+#sos-med .pane-block:nth-of-type(1):hover {
+  border-color: #f97316;
+  box-shadow: 0 0 0 2px rgba(249,115,22,0.25);
+}
+
+/* 2e bloc : Données & récits */
+#sos-med .pane-block:nth-of-type(2):hover {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.25);
+}
 
 /* Fond gris pour l'icône de la carte HAND */
 #hand .pane-icon {
   background: #e0f2fe;   
   color: #111827;        
+}
+.hand-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.hand-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* effet commun */
+.hand-chip:hover {
+  transform: translateY(-2px);
+}
+
+/* Couleurs différentes par puce */
+.hand-chip:nth-child(1):hover {
+  border-color: #0e9f92;
+  box-shadow: 0 0 0 2px rgba(14,159,146,0.25);
+}
+
+.hand-chip:nth-child(2):hover {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.25);
+}
+
+.hand-chip:nth-child(3):hover {
+  border-color: #f97316;
+  box-shadow: 0 0 0 2px rgba(249,115,22,0.25);
+}
+
+.hand-chip:nth-child(4):hover {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 2px rgba(124,58,237,0.25);
 }
 
 /* Bloc stats Formateur & Conférencier */
@@ -1198,6 +1283,44 @@ body {
 
 #formateur-conferencier .pane-icon i {
   color: #7c3aed;
+}
+.trainer-stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.trainer-stat {
+  flex: 1;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 0.8rem 1rem;
+  background: #f9fafb;
+  text-align: center;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+/* Effet commun */
+.trainer-stat:hover {
+  transform: translateY(-2px);
+}
+
+/* 50+ Conférences */
+.trainer-stat:nth-child(1):hover {
+  border-color: #0e9f92;
+  box-shadow: 0 0 0 2px rgba(14,159,146,0.25);
+}
+
+/* 20+ Formations */
+.trainer-stat:nth-child(2):hover {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.25);
+}
+
+/* ∞ Personnes */
+.trainer-stat:nth-child(3):hover {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 2px rgba(124,58,237,0.25);
 }
 
 .trainer-stat {
