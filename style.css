@@ -1898,7 +1898,6 @@ html, body, p, h1, h2, h3, h4, h5, h6 {
 
 /* =================== PAGE A PROPOS =================== */
 
-/* Conteneur global de la page À propos */
 .page-apropos .page-content {
   max-width: 1000px;
   margin: 3rem auto 5rem;
@@ -1945,16 +1944,13 @@ padding: .5rem 1.5rem 2.5rem;  /* même valeur que .page-hero sur les autres pag
   content: none;
 }
 
-/* Encadrés À propos */
 .apropos-section {
   background: rgba(255, 255, 255, 0.96);
   border-radius: 18px;
   padding: 1.8rem 1.6rem;
   box-shadow: 0 16px 36px rgba(15, 23, 42, 0.16);
   border: 1px solid rgba(148, 163, 184, 0.4);
-
-  max-width: 900px;     /* largeur fixe */
-  margin: 0 auto 2.5rem;/* centre + espace sous chaque encadré */
+  margin-bottom: 2rem;
 }
 
 .apropos-section p {
