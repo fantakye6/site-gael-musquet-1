@@ -1401,16 +1401,22 @@ body {
   color: #0f766e;
 }
 
-/* Désactive la petite barre pour le sous-titre de la page Engagement */
-engagement-hero .page-subtitle {
+/* Uniformise totalement le sous-titre de la page Agir */
+.engagement-hero .page-subtitle {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #0b2a33;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  text-align: center;
   padding-left: 0;
   position: static;
-  text-align: center;
 }
 
 .engagement-hero .page-subtitle::before {
   content: none;
 }
+
 
 /* Bloc Engagement plus clair, cohérent avec le reste */
 .engagement-section {
@@ -1483,6 +1489,13 @@ engagement-hero .page-subtitle {
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
+transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.engagement-pill.active {
+  border-color: #0e9f92;
+  box-shadow: 0 0 0 2px rgba(14, 159, 146, 0.25);
+  transform: translateY(-2px);
 }
 
 .pill-icon {
