@@ -982,7 +982,9 @@ body {
   margin: 0 auto 1.8rem;
   color: #4b5563;
 }
-
+.projects-hero .page-subtitle::before {
+  content: none;
+}
 
 .projects-hero-subtitle {
   max-width: 640px;
@@ -1379,6 +1381,9 @@ body {
   font-size: 0.98rem;
 }
 
+.engagement-hero.page-subtitle::before {
+  content: none;
+}
 /* Bloc Engagement */
 
 .engagement-section {
