@@ -1231,9 +1231,9 @@ body {
 
 /* Données & récits : bleu */
 #sos-med .pane-block-data:hover {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37,99,235,0.25);
-  background-color: #eff6ff;
+  border-color: #f97316;
+  box-shadow: 0 0 0 2px rgba(249,115,22,0.25);
+  background-color: #fff7ed;
 }
 
 
