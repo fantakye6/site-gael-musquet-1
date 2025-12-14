@@ -1307,13 +1307,13 @@ body {
 
 /* 50+ Conférences */
 .trainer-stat:nth-child(1):hover {
-  border-color: #0e9f92;
+  border-color: #7c3aed;
   box-shadow: 0 0 0 2px rgba(14,159,146,0.25);
 }
 
 /* 20+ Formations */
 .trainer-stat:nth-child(2):hover {
-  border-color: #2563eb;
+  border-color: #7c3aed;
   box-shadow: 0 0 0 2px rgba(37,99,235,0.25);
 }
 
