@@ -14,94 +14,109 @@
     <img src="../images/image-de-fond.png" alt="Carte du monde">
   </div>
 
-  <nav class="navbar">
+  <body class="page-contact-sources">
+
+  <!-- NAVBAR : copié/collé de index.html -->
+  <header class="navbar">
     <div class="nav-container">
-      <a href="../index.html" class="logo">Gaël Musquet</a>
-      <button class="nav-toggle" id="nav-toggle">☰</button>
+      <a href="../index.html" class="logo">TON LOGO</a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
       <ul id="nav-menu">
-        <li><a href="../index.html"><i class="fas fa-home"></i> Accueil</a></li>
-        <li><a href="../biographie/biographie.html"><i class="fas fa-user"></i> Biographie</a></li>
-        <li><a href="../projets/projets.html"><i class="fas fa-hands-helping"></i> Projets</a></li>
-        <li><a href="../agir-sur-le-terrain/engagement.html"><i class="fas fa-images"></i> Agir sur le terrain</a></li>
-        <li><a href="a-propos.html" class="active"><i class="fas fa-info-circle"></i> À propos</a></li>
-        <li><a href="../contact-et-sources/contact-et-souces.html"><i class="fas fa-envelope"></i> Contact & Sources</a></li>
+        <li><a href="../index.html#accueil">Accueil</a></li>
+        <li><a href="../projets/projets.html">Projets</a></li>
+        <li><a href="../agir/agir.html">Agir sur le terrain</a></li>
+        <li><a href="../apropos/apropos.html">À propos</a></li>
+        <li><a href="./contactetsources.html" class="active">Contact & Sources</a></li>
       </ul>
     </div>
-  </nav>
+  </header>
 
-  <main class="page-content">
-    <!-- Hero À propos -->
-    <section class="page-hero apropos-hero ">
-      <div class="hero-icon">
-        <i class="fas fa-info"></i>
+  <!-- HERO identique aux autres pages -->
+  <section class="page-hero engagement-hero">
+    <div class="hero-icon">📧</div>
+    <h1 class="page-title">Contact & Sources</h1>
+    <p class="page-subtitle">
+      Retrouve ici comment me contacter et l’ensemble des sources utilisées pour ce projet.
+    </p>
+  </section>
+
+  <!-- CONTENU dans une “carte” comme Projets / A propos -->
+  <main class="projects-shell">
+
+    <!-- Bloc contact -->
+    <section class="engagement-card" id="contact">
+      <div class="engagement-header">
+        <div class="engagement-icon">✉️</div>
+        <div>
+          <h2>Contact</h2>
+          <p class="engagement-tagline">Pour toute question ou retour sur le projet.</p>
+        </div>
       </div>
-      <h1 class="page-title">À propos de ce site</h1>
-      <p class="page-subtitle">
-        <p class="page-subtitle">
-      Ce site est né d’un intérêt pour le rôle que peut jouer l’information face aux crises :
-      lorsqu’elle est ouverte, partagée et bien structurée, elle devient un véritable outil
-      d’action, d’anticipation et de solidarité.
-   </p>
-</section>
 
-    <!-- Bloc "Rôle de l'information" -->
-    <section class="apropos-section fade-in-up">
-  <p>
-    Avec Gaël Musquet, les données ne sont pas abstraites : elles deviennent des outils d'action, d'anticipation et de solidarité.
-    À travers la cartographie libre, les données ouvertes et les méthodes de l'OSINT, il montre comment l'information, lorsqu'elle est partagée et bien structurée, peut aider les citoyens et les acteurs humanitaires à mieux comprendre et gérer les catastrophes.
-  </p>
-  <p>
-   Cette approche fait directement écho 
-   <span class="highlight-purple"> sciences de l'information et de la communication,</span> 
-   où l'enjeu n'est pas seulement de produire de l'information, mais de la rendre utile et accessible.
-  </p>
-  <div class="apropos-tags">
-    <span class="apropos-tag"><i class="fas fa-map"></i> Cartographie libre</span>
-    <span class="apropos-tag"><i class="fas fa-database"></i> Données ouvertes</span>
-    <span class="apropos-tag"><i class="fas fa-eye"></i> OSINT</span>
-    <span class="apropos-tag"><i class="fas fa-share-alt"></i> Partage de l'information</span>
-  </div>
-</section>
+      <p>Tu peux me contacter à l’adresse suivante :</p>
+      <p class="contact-mail">
+        <a href="mailto:ton.email@exemple.com">ton.email@exemple.com</a>
+      </p>
+      <p>…ou via ce formulaire simple :</p>
 
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" placeholder="Ton nom">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="ton.email@exemple.com">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Ton message"></textarea>
+        </div>
+        <button type="button" class="button-link">Envoyer</button>
+      </form>
+    </section>
 
-    <!-- Bloc "Design & développement" -->
-    <section class="apropos-section fade-in-up">
-  <h2 class="section-title">Design & développement</h2>
-  <p>
-    Le design reprend l’univers de la gestion de crise : une carte du monde en arrière‑plan
-    évoque l’engagement humanitaire, tandis que les lignes et effets lumineux suggèrent les
-    flux de données et de réseaux entre les communautés.
-  </p>
-  <p>
-    Le site a été développé sans CMS, uniquement en HTML, CSS et JavaScript, avec une
-    attention particulière portée à la lisibilité, à l’accessibilité et au confort de
-    navigation, y compris sur mobile.
-  </p>
-</section>
+    <!-- Bloc sources & crédits -->
+    <section class="engagement-card" id="sources">
+      <div class="engagement-header">
+        <div class="engagement-icon">📚</div>
+        <div>
+          <h2>Sources & crédits</h2>
+          <p class="engagement-tagline">Transparence, données ouvertes et respect des auteurs.</p>
+        </div>
+      </div>
 
-    <!-- Bloc "Contexte académique" -->
-    <section class="apropos-section apropos-contexte">
-  <h2 class="section-title contexte-title">
-  <span class="contexte-icon"><i class="fas fa-graduation-cap"></i></span>
-  Contexte académique</h2>
-  <p>Ce projet a été réalisé dans le cadre 
-  <span class="highlight-purple">du B.U.T Informations numériques</span>
-    à l'<span class="highlight-purple">IUT Bordeaux Montaigne, </span>sous la direction de 
-    <span class="highlight-purple">Monsieur Le Deuff</span>.
-  </p>
-  <p>
-    Il a pour objectif de montrer comment un site web peut devenir un outil de médiation scientifique, au service de la compréhension et du partage des savoirs en SIC.
-  </p>
-</section>
+      <h3>Sources</h3>
+      <ul class="sources-list">
+        <li><strong>OpenStreetMap France</strong> — <a href="https://www.openstreetmap.fr" target="_blank" rel="noopener">www.openstreetmap.fr</a></li>
+        <li><strong>Gaël Musquet</strong> — interviews, conférences, interventions publiques</li>
+        <li><strong>Wikipédia</strong> — repères chronologiques et informations générales</li>
+      </ul>
 
-</main>
+      <h3>Projets</h3>
+      <ul class="sources-list">
+        <li>Ensemble des sources citées dans la page <strong>Projet</strong></li>
+        <li>Données ouvertes et ressources publiques liées à l’OSINT et à l’humanitaire</li>
+      </ul>
 
-  <!-- FOOTER (reprends le tien, ici un exemple) -->
-   <footer>
-    <p>&copy; 2025 – Site réalisé dans le cadre du projet BUT. Inspiration humanitaire et données ouvertes.</p>
-    <p><a href="../contact.html">Contact & Sources</a></p>
+      <h3>Images & visuels</h3>
+      <ul class="sources-list">
+        <li><strong>Page d’accueil</strong> : images libres de droits ou personnelles</li>
+        <li><strong>Logos</strong> : OpenStreetMap, HAND, SOS Méditerranée</li>
+        <li><strong>Carte en arrière‑plan</strong> : image libre de droits — Freepik</li>
+      </ul>
+
+      <h3>Transparence & éthique</h3>
+      <p>Ce site s’inscrit dans une démarche de transparence, de partage des connaissances et de respect des sources.</p>
+      <p>Toutes les données et visuels sont utilisés dans un cadre pédagogique, informatif et non lucratif.</p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER : exactement le même que sur les autres pages -->
+  <footer>
+    <p>© 2025 – Site réalisé dans le cadre du projet BUT. Inspiration humanitaire et données ouvertes. |
+      <a href="./contactetsources.html">Contact & Sources</a>
+    </p>
   </footer>
-
-  <script src="../script.js"></script>
 </body>
-</html>
