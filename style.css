@@ -2011,6 +2011,180 @@ padding: .5rem 1.5rem 2.5rem;  /* même valeur que .page-hero sur les autres pag
   opacity: 1;
   transform: translateY(0);
 }
+/* ================================== PAGE CONTACT & SOURCES ================================ */
+
+.page-contact-sources .page-hero {
+  padding: 4.5rem 1.5rem 2.5rem;  /* même que bio/projets */
+  text-align: center;
+}
+
+.page-contact-sources .page-hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.1rem;
+  color: #072f34;
+}
+
+.page-contact-sources .page-hero .page-subtitle {
+  max-width: 640px;
+  margin: 0.5rem auto 0;
+  text-align: center;
+  padding-left: 0;
+  position: static;
+}
+
+/* Conteneur principal (même logique que projects-shell) */
+.contact-shell {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  padding: 0 1.5rem;
+}
+
+/* Carte Contact / Sources (style proche des cartes blanches) */
+.contact-card,
+.sources-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 18px;
+  padding: 1.8rem 1.6rem;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  color: #0b2a33;
+}
+
+.contact-card h2,
+.sources-card h2 {
+  margin: 0 0 0.9rem;
+  font-size: 1.4rem;
+  color: #0f172a;
+}
+
+.contact-card h3,
+.sources-card h3 {
+  margin: 1.4rem 0 0.5rem;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+/* Texte */
+.page-contact-sources p {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #0b2a33;
+}
+
+/* Liste des sources */
+.sources-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.sources-list li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+.sources-list a {
+  color: #0e7490;
+  text-decoration: none;
+}
+
+.sources-list a:hover {
+  text-decoration: underline;
+}
+
+/* Lien email mis en avant */
+.contact-mail a {
+  display: inline-block;
+  margin: 0.4rem 0 1rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(14, 116, 144, 0.08);
+  border: 1px solid rgba(14, 116, 144, 0.4);
+  color: #0b2a33;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.contact-mail a:hover {
+  background: rgba(14, 116, 144, 0.14);
+}
+
+/* Formulaire */
+.contact-form {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contact-form label {
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #111827;
+  background: #f9fafb;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #9ca3af;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0e9f92;
+  box-shadow: 0 0 0 2px rgba(14, 159, 146, 0.18);
+  background-color: #ffffff;
+}
+
+.contact-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+/* Bouton envoyer cohérent avec .button-link */
+.contact-form .btn-primary {
+  align-self: flex-start;
+  margin-top: 0.4rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  background: #30b690;
+  color: #ecfdf5;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(124, 214, 184, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contact-form .btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.45);
+}
+
+/* Petite marge en bas de page pour ne pas coller le footer */
+.page-contact-sources footer {
+  margin-top: 2rem;
+}
 
 /* ========================================== Footer ====================================== */
 footer {
