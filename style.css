@@ -199,7 +199,19 @@ page-hero {
   padding: 4.5rem 1.5rem 2.5rem;  /* distance nav → icône → titre */
   text-align: center;
 }
+/* Icône dans le hero (même taille pour les trois pages) */
 
+.page-hero .projects-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.9rem;
+  background: rgba(15, 118, 110, 0.1);
+  color: #0f766e;
+}
 
 /* ======================================= Accueil (intro) ================================================ */
 .intro {
@@ -625,17 +637,6 @@ page-hero {
   margin: 0 auto 2rem;
   text-align: left;
 }
-.bio-hero .hero-icon {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 0.9rem;
-  background: rgba(15, 118, 110, 0.1);  /* même couleur que les autres */
-  color: #0f766e;
-}
 
 .page-biographie .bio-intro::before {
   content: "";
@@ -938,19 +939,6 @@ body {
   margin: 4.5rem auto 3rem;
   padding: 0 1.5rem 4rem;
   color: #111827;
-}
-
-
-.projects-icon {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 0.9rem;
-  background: rgba(15, 118, 110, 0.1);  /* même couleur que les autres */
-  color: #0f766e;
 }
 .projects-hero {
   text-align: center;
@@ -1335,18 +1323,6 @@ body {
 }
 
 /* ====================================== Page Agir sur le terrain ========================= */
-
-.engagement-hero .hero-icon {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 0.9rem;
-  background: rgba(15, 118, 110, 0.1);
-  color: #0f766e;
-}
 
 .engagement-hero .page-subtitle {
   max-width: 40rem;
