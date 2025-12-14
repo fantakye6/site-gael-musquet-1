@@ -631,17 +631,21 @@ page-hero {
   padding: 4.5rem 1.5rem 2.5rem;
 }
 
-.bio-hero .hero-icon {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 0.9rem;
-  background: rgba(15, 118, 110, 0.1);  /* même couleur que les autres */
-  color: #0f766e;
+/* Forcer la taille de l'icône uniquement sur la page Biographie */
+.page-biographie .bio-hero .hero-icon {
+  width: 3rem !important;
+  height: 3rem !important;
+  border-radius: 999px !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 auto 0.9rem !important;
+  background: rgba(15, 118, 110, 0.1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
+
 
 .page-biographie .page-content {
   margin-top: 0;  /* pour éviter un décalage supplémentaire */
@@ -930,24 +934,6 @@ page-hero {
     max-width: 100%;
     padding: 16px 14px;
   }
-}
-/* Réglage propre du hero Biographie */
-.bio-hero {
-  padding: 4.5rem 1.5rem 2.5rem;  /* même espace que les autres pages */
-  text-align: center;
-}
-
-/* Icône de la page Biographie */
-.bio-hero .hero-icon {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 0.9rem;
-  background: rgba(15, 118, 110, 0.1);
-  color: #0f766e;
 }
 
 /* =============================================== Page Projets =========================================== */
