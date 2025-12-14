@@ -1537,16 +1537,15 @@ body {
   color: #0f766e;
 }
 
-/* Uniformise totalement le sous-titre de la page Agir */
+/* Variante Agir : même taille, centré, sans barre */
 .engagement-hero .page-subtitle {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #0b2a33;
-  max-width: 900px;
-  margin: 0 auto 2rem;
   text-align: center;
   padding-left: 0;
   position: static;
+}
+
+.engagement-hero .page-subtitle::before {
+  content: none;
 }
 
 .engagement-hero .page-subtitle::before {
