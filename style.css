@@ -1671,11 +1671,6 @@ transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   }
 }
 
-@media (min-width: 1024px) {
-  .terrain-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
 .terrain-section {
   padding: 2.5rem 1.5rem 3.5rem;
   max-width: 1100px;
@@ -1898,6 +1893,44 @@ html, body, p, h1, h2, h3, h4, h5, h6 {
 .page-subtitle {
   font-size: 16px !important;
   line-height: 1.8;
+  color: #0b2a33;
+}
+
+/* =================== PAGE A PROPOS =================== */
+.page-apropos .page-content {
+  max-width: 1000px;
+  margin: 3rem auto 5rem;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
+}
+
+.apropos-hero .hero-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  margin: 0 auto 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 99, 235, 0.1);
+  color: #1d4ed8;
+}
+
+.apropos-section {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 18px;
+  padding: 1.8rem 1.6rem;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.16);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  margin-bottom: 2rem;
+}
+
+.apropos-section p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
   color: #0b2a33;
 }
 
