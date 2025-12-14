@@ -1927,6 +1927,11 @@ padding: .5rem 1.5rem 2.5rem;  /* même valeur que .page-hero sur les autres pag
   color: #1d4ed8;
 }
 
+.highlight-green {
+  color: #880aab;
+  font-weight: 900;
+}
+
 /* Centrer les titres sur la page A propos */
 .page-apropos .section-title {
   text-align: center;
