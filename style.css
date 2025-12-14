@@ -1333,14 +1333,6 @@ body {
   color: #0f766e;
 }
 
-.engagement-hero .page-title {
-  font-family: "Space Grotesk", system-ui, sans-serif;
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 0.4rem;
-}
-
 .engagement-hero .page-subtitle {
   max-width: 40rem;
   margin: 0 auto;
