@@ -1525,6 +1525,7 @@ body {
   text-align: center;
   padding: 4.5rem 1.5rem 2.5rem;
 }
+
 .engagement-hero .hero-icon {
   width: 3rem;
   height: 3rem;
@@ -1620,7 +1621,7 @@ body {
   align-items: flex-start;
   gap: 0.6rem;
   cursor: pointer;
-transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 /* Effet au survol, commun aux trois */
@@ -1671,11 +1672,12 @@ transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   }
 }
 
+/* Présence sur le terrain – version cartes avec liens */
 .terrain-section {
   padding: 2.5rem 1.5rem 3.5rem;
   max-width: 1100px;
   margin: 0 auto;
-  text-align: center;     /* centre le titre et le paragraphe */
+  text-align: center;
 }
 
 .terrain-intro {
@@ -1685,94 +1687,11 @@ transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   font-size: 0.95rem;
 }
 
-.lightbox {
-  position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.lightbox.is-open {
-  display: flex;
-}
-
-.lightbox-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.7);
-}
-
-.lightbox-dialog {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  width: 90%;
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 1.5rem 2.25rem 1.75rem;
-  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.5);
-  text-align: center;
-}
-
-.lightbox-image {
-  max-width: 100%;
-  max-height: 60vh;
-  border-radius: 12px;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-
-.lightbox-title {
-  margin: 0 0 0.3rem;
-  font-size: 1.05rem;
-  color: #0f172a;
-}
-
-.lightbox-caption {
-  margin: 0 0 0.75rem;
-  font-size: 0.9rem;
-  color: #4b5563;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 0.6rem;
-  right: 0.9rem;
-  border: none;
-  background: transparent;
-  font-size: 1.6rem;
-  cursor: pointer;
-  color: #111827;
-}
-
-.lightbox-prev,
-.lightbox-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  background: rgba(15, 23, 42, 0.85);
-  color: #f9fafb;
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.lightbox-prev { left: 0.5rem; }
-.lightbox-next { right: 0.5rem; }
-
-/* Grille d’images */
+/* Grille de cartes */
 .terrain-grid {
-  margin-top: 0;          /* plus besoin de marge au-dessus, on l’a sur terrain-intro */
   display: grid;
   gap: 1.5rem;
-  justify-content: center;   /* centre les colonnes dans la grille */
+  justify-content: center;
 }
 
 @media (min-width: 720px) {
@@ -1787,81 +1706,54 @@ transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   }
 }
 
-/* Chaque carte reste centrée visuellement */
-.terrain-item {
-  border-radius: 18px;
-  background: rgba(248, 250, 252, 0.96);
+/* Carte individuelle (sans image locale) */
+.terrain-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.1rem 1.3rem;
   border: 1px solid #e5e7eb;
-  overflow: hidden;
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  text-align: left;
 }
 
-.terrain-caption {
-  padding: 0.85rem 1rem 1rem;
+.terrain-card-title {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.terrain-card-text {
+  margin: 0 0 0.75rem;
   font-size: 0.9rem;
-  color: #111827;
+  color: #4b5563;
 }
 
-.terrain-item {
-  border-radius: 18px;
-  background: rgba(248, 250, 252, 0.96);
-  border: 1px solid #e5e7eb;
-  overflow: hidden;
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
-  display: flex;
-  flex-direction: column;
-}
-
-.terrain-photo {
-  position: relative;
-  overflow: hidden;
-}
-
-.terrain-photo img {
-  display: block;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  transform: scale(1.02);
-  transition: transform 280ms ease-out;
-}
-
-.terrain-item:hover .terrain-photo img {
-  transform: scale(1.06);
-}
-
-.terrain-caption {
-  padding: 0.85rem 1rem 1rem;
-  font-size: 0.9rem;
-  color: #111827;
-}
-
-.terrain-more {
-  margin-top: 1.6rem;
-  text-align: center;
-}
-
-.link-ghost {
+.terrain-card-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid #0f766e;
-  color: #0f766e;
+  gap: 0.35rem;
   font-size: 0.9rem;
+  color: #0f766e;
   text-decoration: none;
-  background: rgba(15, 118, 110, 0.06);
+  font-weight: 600;
 }
 
-.link-ghost:hover {
-  background: rgba(15, 118, 110, 0.12);
+.terrain-card-link::after {
+  content: "↗";
+  font-size: 0.85rem;
+}
+
+.terrain-card-link:hover {
+  text-decoration: underline;
+}
+
+.terrain-credit {
+  margin: 0.35rem 0 0;
+  font-size: 0.75rem;
+  color: #6b7280;
 }
 
 /* Animations scroll */
-
 .fade-in-up {
   opacity: 0;
   transform: translateY(18px);
@@ -1874,7 +1766,6 @@ transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 /* Responsive bloc engagement */
-
 @media (max-width: 768px) {
   .engagement-card {
     padding: 1.7rem 1.4rem 1.5rem;
@@ -1884,6 +1775,7 @@ transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
     grid-template-columns: 1fr;
   }
 }
+
 /* Police unique pour tout le texte du site */
 html, body, p, h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif !important;
