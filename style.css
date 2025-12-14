@@ -2001,6 +2001,17 @@ padding: .5rem 1.5rem 2.5rem;  /* même valeur que .page-hero sur les autres pag
   font-size: 1rem;
 }
 
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ========================================== Footer ====================================== */
 footer {
   background-color: #e2e8f0;
