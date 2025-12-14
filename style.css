@@ -2017,16 +2017,17 @@ padding: .5rem 1.5rem 2.5rem;  /* même valeur que .page-hero sur les autres pag
 /* ================================== PAGE CONTACT & SOURCES ================================ */
 
 /* PAGE CONTACT & SOURCES / ENGAGEMENT */
-.page-contact-sources .projects-shell {
+/* PAGE CONTACT & SOURCES / ENGAGEMENT */
+.page-engagement .projects-shell {
   max-width: 980px;
-  margin: 3rem auto 4rem;   /* centre le bloc + marge haut/bas */
+  margin: 3rem auto 4rem;
   padding: 0 1.5rem;
   box-sizing: border-box;
 }
 
-.page-contact-sources .contact-sources-card {
+.page-engagement .engagement-card {
   max-width: 900px;
-  margin: 0 auto 2.8rem;    /* centre chaque encadré + espace entre eux */
+  margin: 0 auto 2.8rem;
 }
 
 .page-contact-sources .page-hero {
