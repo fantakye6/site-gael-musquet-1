@@ -402,18 +402,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        // l'élément doit être au moins à 40 % dans le viewport
+        if (entry.intersectionRatio >= 0.4) {
           entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target); // animation une seule fois
+          observer.unobserve(entry.target);
         }
       });
     },
     {
       root: null,
-      threshold: 0.15,
+      threshold: 0.4
     }
   );
 
   animatedBlocks.forEach((el) => observer.observe(el));
 });
-
