@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact & Sources – TON TITRE DE PROJET</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="dark-gradient-bg">
+  <!-- Navigation principale (même structure que les autres pages) -->
+  <header class="main-header">
+    <nav class="navbar">
+      <a href="../index.html" class="logo">TON LOGO / NOM</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#accueil">Accueil</a></li>
+        <li><a href="../index.html#projet">Projet</a></li>
+        <li><a href="../index.html#carte">Carte</a></li>
+        <li><a href="../index.html#apropos">À propos</a></li>
+        <li><a href="../contact et sources/contactetsources.html" class="active">Contact & Sources</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Titre de page -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-icon">
+          <!-- même style d’icône que sur les autres pages (SVG ou emoji) -->
+          <span class="icon-mail"></span>
+        </div>
+        <h1>Contact & Sources</h1>
+        <p>Retrouve ici les informations pour me contacter ainsi que l’ensemble des sources et crédits utilisés dans ce projet.</p>
+      </div>
+    </section>
+
+    <!-- Bloc contact -->
+    <section class="section-card">
+      <div class="container card">
+        <h2>Contact</h2>
+        <p>Tu peux me contacter à l’adresse suivante&nbsp;:</p>
+        <p class="contact-mail">
+          <a href="mailto:ton.email@exemple.com">ton.email@exemple.com</a>
+        </p>
+        <p>(ou via le formulaire de contact ci-dessous)</p>
+
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" placeholder="Ton nom" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="ton.email@exemple.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Ton message"></textarea>
+          </div>
+          <!-- Si tu n’as pas encore de backend, tu peux laisser le bouton inactif ou mettre type="button" -->
+          <button type="submit" class="btn-primary">Envoyer</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Sources & crédits -->
+    <section class="section-card">
+      <div class="container card">
+        <h2>Sources & crédits</h2>
+
+        <h3>Sources</h3>
+        <ul class="sources-list">
+          <li><strong>OpenStreetMap France</strong> — <a href="https://www.openstreetmap.fr" target="_blank" rel="noopener">www.openstreetmap.fr</a></li>
+          <li><strong>Gaël Musquet</strong> — interviews, conférences et interventions publiques</li>
+          <li><strong>Wikipédia</strong> — repères chronologiques et informations générales</li>
+        </ul>
+
+        <h3>Projets</h3>
+        <ul class="sources-list">
+          <li>Ensemble des sources citées dans la page <strong>Projet</strong></li>
+          <li>Données ouvertes et ressources publiques liées à l’OSINT et à l’humanitaire</li>
+        </ul>
+
+        <h3>Images & visuels</h3>
+        <ul class="sources-list">
+          <li><strong>Page d’accueil</strong> : images libres de droits ou personnelles</li>
+          <li><strong>Logos</strong> : OpenStreetMap, HAND, SOS Méditerranée</li>
+          <li><strong>Carte en arrière‑plan</strong> : image libre de droits — Freepik</li>
+        </ul>
+
+        <h3>Transparence & éthique</h3>
+        <p>Ce site s’inscrit dans une démarche de transparence, de partage des connaissances et de respect des sources.</p>
+        <p>Toutes les données et visuels sont utilisés dans un cadre pédagogique, informatif et non lucratif.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer identique aux autres pages -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2025 – Site réalisé dans le cadre du projet BUT. Inspiration humanitaire et données ouvertes.</p>
+      <div class="footer-links">
+        <a href="../index.html#projet">Projet</a>
+        <a href="../index.html#apropos">À propos</a>
+        <!-- lien depuis le footer vers cette même page -->
+        <a href="../contact et sources/contactetsources.html">Contact & Sources</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
