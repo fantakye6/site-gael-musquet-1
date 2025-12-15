@@ -1672,7 +1672,7 @@ body {
   }
 }
 
-/* Présence sur le terrain – version cartes avec liens */
+/* Présence sur le terrain – style passeport */
 .terrain-section {
   padding: 2.5rem 1.5rem 3.5rem;
   max-width: 1100px;
@@ -1680,11 +1680,78 @@ body {
   text-align: center;
 }
 
+.terrain-passport {
+  background: radial-gradient(circle at top left, #f5f5f0 0, #e5e0d5 38%, #dad2c4 100%);
+}
+
+.terrain-passport-label {
+  display: inline-block;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: #374151;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid rgba(55, 65, 81, 0.4);
+  border-radius: 999px;
+  background: rgba(243, 244, 246, 0.7);
+  backdrop-filter: blur(4px);
+  margin-bottom: 0.7rem;
+}
+
+.terrain-passport-title {
+  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  color: #111827;
+}
+
 .terrain-intro {
   max-width: 40rem;
-  margin: 0 auto 1.8rem;
+  margin: 0.8rem auto 2rem;
   color: #4b5563;
   font-size: 0.95rem;
+}
+
+/* Livret de passeport */
+.terrain-passport-book {
+  position: relative;
+  padding: 2rem 1.5rem 2.2rem;
+  border-radius: 20px;
+  background: #fdfaf3;
+  box-shadow:
+    0 22px 45px rgba(15, 23, 42, 0.18),
+    0 0 0 1px rgba(148, 163, 184, 0.4);
+  border: 1px solid rgba(209, 213, 219, 0.8);
+  overflow: hidden;
+}
+
+.terrain-passport-book::before {
+  content: "";
+  position: absolute;
+  inset: 0.6rem 0.7rem;
+  border-radius: 16px;
+  border: 1px dashed rgba(120, 113, 108, 0.35);
+  pointer-events: none;
+}
+
+/* Faux dos de livret */
+.terrain-passport-spine {
+  position: absolute;
+  left: 50%;
+  top: -10%;
+  bottom: -10%;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(148, 163, 184, 0.2),
+    rgba(55, 65, 81, 0.55),
+    rgba(148, 163, 184, 0.2)
+  );
+  box-shadow:
+    0 0 0 1px rgba(229, 231, 235, 0.9),
+    0 0 24px rgba(15, 23, 42, 0.35);
+  opacity: 0.7;
 }
 
 /* Grille de cartes */
@@ -1702,58 +1769,131 @@ body {
 
 @media (min-width: 1024px) {
   .terrain-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/* Carte individuelle (sans image locale) */
+/* Carte type page de passeport */
 .terrain-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 1.1rem 1.3rem;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  background: #fdfaf3;
+  border-radius: 14px;
+  padding: 1.1rem 1.2rem 1rem;
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  box-shadow:
+    0 12px 26px rgba(15, 23, 42, 0.12),
+    0 0 0 1px rgba(148, 163, 184, 0.4);
   text-align: left;
+  position: relative;
+  overflow: hidden;
 }
 
+/* texture légère façon papier */
+.terrain-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.24) 0, transparent 1px);
+  background-size: 10px 10px;
+  opacity: 0.25;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Tampons */
+.terrain-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  gap: 0.5rem;
+}
+
+.terrain-stamp,
+.terrain-stamp-date {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(55, 65, 81, 0.7);
+  color: #111827;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Effet “tampon encré” */
+.terrain-stamp {
+  border-style: dashed;
+  transform: rotate(-3deg);
+}
+
+.terrain-stamp-date {
+  border-style: solid;
+  transform: rotate(2deg);
+}
+
+.terrain-stamp::after,
+.terrain-stamp-date::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 10% 20%, rgba(15, 118, 110, 0.08), transparent 60%);
+  mix-blend-mode: multiply;
+}
+
+/* Contenu texte */
 .terrain-card-title {
   margin: 0 0 0.35rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #0f172a;
+  position: relative;
+  z-index: 1;
 }
 
 .terrain-card-text {
   margin: 0 0 0.75rem;
   font-size: 0.9rem;
   color: #4b5563;
+  position: relative;
+  z-index: 1;
 }
 
+/* Lien source */
 .terrain-card-link {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #0f766e;
   text-decoration: none;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  position: relative;
+  z-index: 1;
 }
 
 .terrain-card-link::after {
   content: "↗";
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .terrain-card-link:hover {
   text-decoration: underline;
 }
 
+/* Crédit photo */
 .terrain-credit {
-  margin: 0.35rem 0 0;
-  font-size: 0.75rem;
+  margin: 0.4rem 0 0;
+  font-size: 0.7rem;
   color: #6b7280;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
 }
 
-/* Animations scroll */
+/* Animations scroll déjà présentes */
 .fade-in-up {
   opacity: 0;
   transform: translateY(18px);
@@ -1765,27 +1905,32 @@ body {
   transform: translateY(0);
 }
 
-/* Responsive bloc engagement */
-@media (max-width: 768px) {
-  .engagement-card {
-    padding: 1.7rem 1.4rem 1.5rem;
-  }
-
-  .engagement-pill-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Police unique pour tout le texte du site */
+/* Police */
 html, body, p, h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif !important;
 }
 
-/* Sous-titres identiques partout */
+/* Sous-titres globaux */
 .page-subtitle {
   font-size: 16px !important;
   line-height: 1.8;
   color: #0b2a33;
+}
+
+/* Petits ajustements mobile */
+@media (max-width: 640px) {
+  .terrain-passport-book {
+    padding: 1.4rem 0.9rem 1.7rem;
+  }
+
+  .terrain-passport-spine {
+    display: none;
+  }
+
+  .terrain-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 /* =================== PAGE A PROPOS =================== */
