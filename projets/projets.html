@@ -4,114 +4,371 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projets humanitaires & engagements</title>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    lucide.createIcons();
+  });
+</script>
 
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      lucide.createIcons();
-    });
-  </script>
 
+  <!-- CSS global à la racine -->
   <link rel="stylesheet" href="../style.css">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body class="page-projets">
-  <!-- Fond carte -->
+<body>
+  <!-- Fond carte identique -->
   <div class="map-bg">
     <img src="../images/image-de-fond.png" alt="Carte du monde">
   </div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="../index.html" class="logo">Gaël Musquet</a>
-      <button class="nav-toggle" id="nav-toggle">☰</button>
-      <ul id="nav-menu">
-        <li><a href="../index.html"><i class="fas fa-home"></i> Accueil</a></li>
-        <li><a href="../biographie/biographie.html"><i class="fas fa-user"></i> Biographie</a></li>
-        <li><a href="projets.html" class="active"><i class="fas fa-hands-helping"></i> Projets</a></li>
-        <li><a href="../agir-sur-le-terrain/engagement.html"><i class="fas fa-images"></i> Agir sur le terrain</a></li>
-        <li><a href="../a-propos/a-propos.html"><i class="fas fa-info-circle"></i> À propos</a></li>
-        <li><a href="../contact-et-sources/contact-et-sources.html"><i class="fas fa-envelope"></i> Contact & Sources</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- Navigation identique (chemins adaptés) -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="logo">Gaël Musquet</a>
+    <button class="nav-toggle" id="nav-toggle">☰</button>
+    <ul id="nav-menu">
+      <li><a href="../index.html"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="../biographie/biographie.html"><i class="fas a-user"></i> Biographie</a></li>
+      <li><a href="projets.html" class="active"><i class="fas fa-hands-helping"></i> Projets</a></li>
+      <li><a href="../agir-sur-le-terrain/engagement.html"><i class="fas fa-images"></i> Agir sur le terrain</a></li>
+      <li><a href="../a-propos/a-propos.html"><i class="fas fa-info-circle"></i> À propos</a></li>
+      <li><a href="../contact-et-sources/contact-et-sources.html"><i class="fas fa-envelope"></i> Contact & Sources</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <main>
-    <section class="page-hero projects-hero">
-      <div class="projects-icon">
-        <i class="fas fa-briefcase"></i>
+<main>
+  <section class="page-hero projects-hero">
+    <div class="projects-icon">
+      <i class="fas fa-briefcase"></i>
+    </div>
+    <h1 class="page-title">Projets humanitaires & engagements</h1>
+    <p class="page-subtitle">
+      De la cartographie libre à l’innovation technologique au service de l’humanitaire.
+    </p>
+  </section>
+
+  <div class="projects-shell">
+   
+
+    <!-- PROJETS PRINCIPAUX -->
+    <section class="projects-section" id="projets-principaux">
+      <p class="section-subtitle">
+  Un parcours entre cartographie libre, hack citoyen et innovation technique au service des populations exposées aux risques.
+</p>
+
+      <!-- 2 grandes cartes en haut : OSM + HAND + SOS  -->
+      <div class="projects-grid">
+        
+        <!-- OSM -->
+        <article class="project-pane tilt-left animate" data-delay="0" id="openstreetmap">
+          <div class="pane-header">
+            <div class="pane-icon"><i class="fas fa-map"></i></div>
+            <div>
+              <h3>Co‑fondateur OpenStreetMap France</h3>
+              <div class="pane-tags">
+                <span>Cartographie libre</span>
+                <span>Open Data</span>
+                <span>Communauté</span>
+                
+              </div>
+            </div>
+          </div>
+          <p class="pane-text">
+            Développement et promotion de la cartographie libre en France, via une carte collaborative et open source,
+            créée par des citoyens et utilisée en situation d’urgence.
+          </p>
+          <div class="pane-block">
+        <h4>
+        <i class="fas fa-globe-europe"></i>
+        Impact communautaire
+        </h4>
+        <p>
+        Une infrastructure cartographique essentielle pour les ONG, les collectivités et les citoyens en situation d’urgence.
+        </p>
+    </div>
+</article>
+
+        <!-- HAND -->
+<article class="project-pane tilt-right animate" data-delay="150" id="hand">
+  <div class="pane-header">
+    <div class="pane-icon danger"><i class="fas fa-mobile-alt"></i></div>
+    <div>
+      <h3>Créateur du collectif HAND</h3>
+      <div class="pane-tags">
+        <span>Humanitaire</span>
+        <span>Tech</span>
+        <span>Innovation</span>
       </div>
-      <h1 class="page-title">Projets humanitaires & engagements</h1>
-      <p class="page-subtitle">
-        De la cartographie libre à l’innovation technologique au service de l’humanitaire.
-      </p>
+    </div>
+  </div>
+  <p class="pane-text">
+    Hackers Against Natural Disasters : utilisation de technologies ouvertes (drones, réseaux mesh, capteurs, open data)
+    pour anticiper, cartographier et documenter les catastrophes naturelles.
+  </p>
+
+  <!-- Nouveau bloc encadré avec icônes -->
+  <div class="hand-features">
+    <span class="hand-chip">🛰️ Drones de reconnaissance</span>
+    <span class="hand-chip">📡 Réseaux mesh</span>
+    <span class="hand-chip">📶 Capteurs IoT & météo DIY</span>
+    <span class="hand-chip">📊 Open data & cartographie</span>
+  </div>
+</article>
+
+ <!-- SOS Méditerranee -->
+<article class="project-pane tilt-left animate" data-delay="260" id="sos-med">
+  <div class="pane-header">
+    <div class="pane-icon danger">
+      <i class="fas fa-life-ring"></i>
+    </div>
+    <div>
+      <h3>Soutien à SOS MEDITERRANEE</h3>
+      <div class="pane-tags">
+        <span>Recherche & sauvetage</span>
+        <span>Méditerranée</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="pane-text">
+    Engagement aux côtés de l’ONG européenne de sauvetage en mer pour appuyer la documentation,
+    la sensibilisation et le plaidoyer autour des opérations de recherche et de secours en Méditerranée.
+  </p>
+
+  <div class="pane-block pane-block-plaido">
+  <h4>🛟 Sensibilisation & plaidoyer</h4>
+  <p>Interventions publiques et contenus pédagogiques sur les naufrages et le droit maritime.</p>
+</div>
+
+<div class="pane-block pane-block-data">
+  <h4>📊 Données & récits</h4>
+  <p>Contribution à la mise en récit et à la visualisation des données issues des missions en mer.</p>
+</div>
+
+
+
+      <!-- 2 cartes en dessous : Formateur & Expérimentations -->
+      <div class="projects-grid secondary-grid">
+    
+        <!-- Formateur & conférencier -->
+<article class="project-pane tilt-left animate" data-delay="250" id="formateur-conferencier">
+  <div class="pane-header">
+    <div class="pane-icon"><i class="fas fa-microphone"></i></div>
+    <div>
+      <h3>Formateur & conférencier</h3>
+      <div class="pane-tags">
+        <span>Formation</span>
+        <span>Sensibilisation</span>
+        <span>Expertise</span>
+      </div>
+    </div>
+  </div>
+  <p class="pane-text">
+    Interventions publiques sur les risques naturels, les données ouvertes et la souveraineté numérique
+    auprès d’institutions, universités et événements tech.
+  </p>
+
+  <!-- bloc chiffres -->
+  <div class="trainer-stats">
+    <div class="trainer-stat">
+      <span class="trainer-number">50+</span>
+      <span class="trainer-label">Conférences</span>
+    </div>
+    <div class="trainer-stat">
+      <span class="trainer-number">20+</span>
+      <span class="trainer-label">Formations</span>
+    </div>
+    <div class="trainer-stat">
+      <span class="trainer-number">∞</span>
+      <span class="trainer-label">Personnes</span>
+    </div>
+  </div>
+</article>
+
+<!-- Expérimentations technologiques -->
+<article class="project-pane tilt-right animate" data-delay="300" id="experiments">
+  <div class="pane-header">
+    <div class="pane-icon"><i class="fas fa-flask"></i></div>
+    <div>
+      <h3>Expérimentations technologiques</h3>
+      <div class="pane-tags">
+        <span>R&D</span>
+        <span>DIY</span>
+        <span>IoT</span>
+      </div>
+    </div>
+  </div>
+  <p class="pane-text">
+    Réseaux radio libres, capteurs météo DIY et énergies autonomes pour concevoir des solutions résilientes
+    adaptées aux contextes de crise.
+  </p>
+<ul class="experiments-list">
+  <li>
+    <i data-lucide="radio"></i>
+    Réseaux radio libres (LoRa, Sigfox).
+  </li>
+  <li>
+    <i data-lucide="cloud-sun"></i>
+    Capteurs météo et environnementaux DIY.
+  </li>
+  <li>
+    <i data-lucide="battery-charging"></i>
+    Systèmes d’énergie autonome pour les infrastructures critiques.
+  </li>
+</ul>
+
+</article>
+     </div>
     </section>
 
-    <div class="projects-shell">
-
-      <!-- A. PROJETS PRINCIPAUX -->
-      <section class="projects-section" id="projets-principaux">
-        <p class="section-subtitle">
-          Un parcours entre cartographie libre, hack citoyen et innovation technique au service des populations exposées aux risques.
-        </p>
-
-        <div class="projects-grid">
-          <!-- OSM -->
-          <article class="project-pane tilt-left animate" data-delay="0" id="openstreetmap">
-            ...
-          </article>
-
-          <!-- HAND -->
-          <article class="project-pane tilt-right animate" data-delay="150" id="hand">
-            ...
-          </article>
-
-          <!-- SOS Méditerranée -->
-          <article class="project-pane tilt-left animate" data-delay="260" id="sos-med">
-            ...
-          </article>
-        </div>
-
-        <!-- Formateur + Expérimentations -->
-        <div class="projects-grid secondary-grid">
-          <article class="project-pane tilt-left animate" data-delay="250" id="formateur-conferencier">
-            ...
-          </article>
-
-          <article class="project-pane tilt-right animate" data-delay="300" id="experiments">
-            ...
-          </article>
-        </div>
-      </section>
-
-      <!-- B. PUBLICATIONS & INTERVENTIONS -->
       <section class="projects-section" id="publications-interventions">
-        <h2 class="section-title">Publications & Interventions</h2>
-        ...
-      </section>
+  <h2 class="section-title">Publications & Interventions</h2>
+  <p class="section-subtitle">
+    Conférences, entretiens et prises de parole qui diffusent une culture du risque et de l’open data.
+  </p>
 
-      <!-- C. ARTICLES & RESSOURCES -->
-      <section class="projects-section" id="articles-ressources">
-        <h2 class="section-title">Articles & Ressources</h2>
-        ...
-      </section>
+  <div class="projects-grid publications-grid">
+    
+    <!-- Conférence -->
+    <article class="project-pane vertical-card animate" data-delay="350">
+      <div class="pane-header">
+        <div class="pane-icon"><i class="fas fa-play-circle"></i></div>
+        <div>
+          <h3>Conférence : Cartographier l’urgence</h3>
+          <div class="pane-tags">
+            <span>HAND</span>
+            <span>Cartographie collaborative</span>
+            <span>Gestion de crise</span>
+          </div>
+        </div>
+      </div>
+      <p class="pane-text">
+        Présentation des méthodologies de cartographie collaborative en situation d’urgence,
+        avec retours d’expérience sur les missions internationales du collectif HAND.
+      </p>
+      <a class="button-link"
+         href="https://journals.openedition.org/factsreports/4844"
+         target="_blank" rel="noopener">
+        📘 Lire l’article associé (Facts Reports)
+      </a>
+    </article>
 
-    </div>
+    <!-- Entretiens Médias -->
+    <article class="project-pane vertical-card animate" data-delay="400">
+      <div class="pane-header">
+        <div class="pane-icon"><i class="fas fa-podcast"></i></div>
+        <div>
+          <h3>Entretiens Médias</h3>
+          <div class="pane-tags">
+            <span>Arte</span>
+            <span>France Culture</span>
+            <span>INRIA</span>
+            <span>TF1</span>
+          </div>
+        </div>
+      </div>
+      <p class="pane-text">
+        Interviews sur la tech humanitaire, la cartographie citoyenne
+        et le rôle de l’open data dans la prévention des risques.
+      </p>
+    <a class="button-link"
+       href="https://www.tf1info.fr/high-tech/un-jour-une-idee-gael-musquet-aide-les-populations-a-reagir-en-cas-de-catastrophes-naturelles-2074225.html"
+       target="_blank" rel="noopener noreferrer">
+      Voir le reportage TF1
+    </a>
+  </article>
+
+    <!-- Interventions publiques -->
+    <article class="project-pane vertical-card animate" data-delay="450">
+      <div class="pane-header">
+        <div class="pane-icon"><i class="fas fa-users"></i></div>
+        <div>
+          <h3>Interventions publiques</h3>
+          <div class="pane-tags">
+            <span>Open Data</span>
+            <span>Souveraineté numérique</span>
+            <span>Cartographie citoyenne</span>
+          </div>
+        </div>
+      </div>
+      <p class="pane-text">
+        Conférences et tables rondes sur l’Open Data pour les catastrophes,
+        la souveraineté numérique et la participation citoyenne dans la gestion de crise.
+      </p>
+    </article>
+  </div>
+</section>
+
+    <!-- C. Articles & Ressources -->
+    <section class="projects-section">
+      <h2 class="section-title">Articles & Ressources</h2>
+            <p class="section-subtitle">
+             Une sélection d’articles et de portraits pour approfondir l’engagement et les projets de Gaël Musquet.
+            </p>
+
+      <div class="articles-grid">
+        <a class="article-card animate" data-delay="500" target="_blank" rel="noopener"
+           href="https://www.sogoodstories.com/magazine/gael-musquet-est-le-robin-des-bois-du-net/">
+          <h3>Le Robin des Bois du net</h3>
+          <p class="article-source">So Good Stories</p>
+          <p class="article-text">Portrait d’un hacker éthique au service de l’humanitaire.</p>
+        </a>
+
+        <a class="article-card animate" data-delay="550" target="_blank" rel="noopener"
+           href="https://www.tourmag.com/Projet-HAND-des-hackers-pour-avertir-les-touristes-des-risques-de-catastrophes-naturelles_a85938.html">
+          <h3>Projet HAND : avertir les touristes des risques</h3>
+          <p class="article-source">Tour Mag</p>
+          <p class="article-text">Des hackers pour alerter sur les catastrophes naturelles.</p>
+        </a>
+
+        <a class="article-card animate" data-delay="600" target="_blank" rel="noopener"
+           href="https://journals.openedition.org/factsreports/4844">
+          <h3>Cartographie citoyenne en situation d’urgence</h3>
+          <p class="article-source">OpenEdition Journals</p>
+          <p class="article-text">Étude académique sur la cartographie collaborative.</p>
+        </a>
+
+        <a class="article-card animate" data-delay="650" target="_blank" rel="noopener"
+           href="https://www.geekmaispasque.com/2020/10/innovacteur-gael-musquet-hackers-against-natural-disasters-hacker-ethique/">
+          <h3>Hacker éthique contre les catastrophes</h3>
+          <p class="article-source">Geek Mais Pas Que</p>
+          <p class="article-text">Innovacteur : utiliser la tech pour sauver des vies.</p>
+        </a>
+
+        <a class="article-card animate" data-delay="700" target="_blank" rel="noopener"
+           href="https://www.urbanisme.fr/invite/gael-musquet-la-donnee-produite-par-la-puissance-publique-devait-revenir-au-public/">
+          <h3>La donnée devait revenir au public</h3>
+          <p class="article-source">Urbanisme.fr</p>
+          <p class="article-text">Interview sur l’Open Data et la souveraineté numérique.</p>
+        </a>
+
+        <a class="article-card animate" data-delay="750" target="_blank" rel="noopener"
+           href="https://www.ouest-france.fr/normandie/eure-gael-musquet-est-un-corsaire-des-temps-modernes-4294362">
+          <h3>Un corsaire des temps modernes</h3>
+          <p class="article-source">Ouest‑France</p>
+          <p class="article-text">Portrait d’un pionnier de la tech humanitaire.</p>
+        </a>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>
-      © 2025 – Site réalisé dans le cadre d’un projet de B.U.T. Info‑num à l’IUT Bordeaux Montaigne.
-      Site hébergé par GitHub Pages.
-      |
-      <a href="../contact-et-sources/contact-et-sources.html">Contact & Sources</a>
-    </p>
-  </footer>
+</div>
+</main>
 
+  <!-- Footer identique -->
+  <footer>
+    <footer>
+  <p>
+    © 2025 – Site réalisé dans le cadre d’un projet de B.U.T. Info-num à l’IUT Bordeaux Montaigne.
+    Site hébergé par GitHub Pages.
+    |
+    <a href="../contact-et-sources/contact-et-sources.html">Contact & Sources</a>
+  </p>
+</footer>
   <script src="../script.js"></script>
 </body>
 </html>
