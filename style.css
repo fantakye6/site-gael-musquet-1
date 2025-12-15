@@ -2020,6 +2020,16 @@ padding: .5rem 1.5rem 2.5rem;  /* même valeur que .page-hero sur les autres pag
   font-size: 0.9rem;
   color: #0e9f92;
 }
+/* Espacement dans le bloc Design & développement */
+.apropos-section p {
+  margin-bottom: 0.9rem;      /* espace entre chaque paragraphe */
+  line-height: 1.7;           /* texte plus respirant */
+}
+
+.apropos-section p:last-child {
+  margin-bottom: 0;           /* pas de marge inutile en bas de la carte */
+}
+
 /* Titre Contexte académique avec icône */
 .contexte-title {
   display: flex;
