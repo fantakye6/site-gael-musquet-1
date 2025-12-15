@@ -1702,7 +1702,7 @@ body {
 
 /* Titre dans l’esprit des sections existantes */
 .terrain-passport-title {
-  font-family: 'Lato', sans-serif;   /* comme les autres titres */
+  font-family: 'Open Sans', sans-serif;   /* comme les autres titres */
   font-size: 1.6rem;
   font-weight: 700;
   color: #0f172a;
